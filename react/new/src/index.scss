@@ -1,0 +1,114 @@
+@import url("./variables");
+
+@font-face {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/Rubik-Regular.ttf)
+}
+
+@font-face {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  src: url(./assets/fonts/Rubik-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Abril Fatface", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/AbrilFatface-Regular.ttf);
+}
+// === ОБЩИЕ ПЕРЕМЕННЫЕ 
+$base-size: 5px;
+
+// === МИКСИНЫ ДЛЯ ШРИФТОВ === ДЛЯ ИСПОЛЬЗОВАНИЯ МИКСИНОВ - @include name() ===
+@mixin font-logo {
+    font-family: "Abril Fatface", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+}
+
+@mixin font-navigation {
+    font-family: "Abril Fatface", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+@mixin font-title {
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--font-color-main);
+}
+
+@mixin font-main {
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+@mixin font-post {
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+// === ОБНУЛЕНИЕ СТИЛЕЙ ===
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,h2,h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+// === БАЗОВЫЕ СТИЛИ === 
+
+body {
+    @include font-main();
+    color: var(--font-color-main);
+    background: var(--main-bg);
+    background-size: cover;
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+h1, h2, h3 {
+    @include font-title();
+}
+
+.section-wrapper {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    margin-bottom: $base-size * 10;
+}
+
+.btn {
+    width: 250px;
+    height: 50px;
+    @include font-main();
+    padding: $base-size * 2;
+    border: 2px solid var(--border-color);
+    border-radius: $base-size;
+    background-color: var(--btn);
+}
