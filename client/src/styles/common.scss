@@ -26,24 +26,24 @@ $base-size: 5px;
 
 // === МИКСИНЫ ДЛЯ ШРИФТОВ === ДЛЯ ИСПОЛЬЗОВАНИЯ МИКСИНОВ - @include name() ===
 @mixin font-logo {
-    font-family: "Abril Fatface", sans-serif;
+    font-family: "Abril Fatface";
     font-style: normal;
-    font-weight: 400;
-    font-size: 4rem;
+    font-weight: 600;
+    font-size: 3rem;
 }
 
 @mixin font-navigation {
-    font-family: "Abril Fatface", sans-serif;
+    font-family: "Abril Fatface";
     font-style: normal;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 @mixin font-title {
     font-family: "Rubik", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--font-color-main);
 }
 
@@ -51,14 +51,14 @@ $base-size: 5px;
     font-family: "Rubik", sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 @mixin font-post {
     font-family: "Rubik", sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 // === ОБНУЛЕНИЕ СТИЛЕЙ ===
@@ -71,6 +71,10 @@ ul {
 
 a {
     text-decoration: none;
+    
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 h1,h2,h3, p {
@@ -100,16 +104,26 @@ h1, h2, h3 {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: 2rem;
+    padding: 1rem;
     margin-bottom: $base-size * 10;
 }
 
 .btn {
-    width: 250px;
-    height: 50px;
+    width: 12rem;
+    height: 3rem;
     @include font-main();
     padding: $base-size * 2;
     border: 2px solid var(--border-color);
     border-radius: $base-size;
-    background-color: var(--btn);
+    background-color: var(--bg-btn);
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 5px 0 var(--hover-color);
+    }
+
+    &:active {
+        cursor: pointer;
+        box-shadow: none;
+    }
 }
