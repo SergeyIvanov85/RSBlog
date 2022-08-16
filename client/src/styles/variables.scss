@@ -1,4 +1,4 @@
-html.light {
+body.light {
     --border-color: #212121; /* цвета бордеров кнопок/блоков */
     --font-color-main: #212121; /* для основного текста, заголовков, навигации, логотипа, гит-ссылок */
     --font-color-secondary: #51004E; /* заголовки статей, теги */
@@ -14,7 +14,7 @@ html.light {
     --bg-comments: rgba(95, 43, 93, 0.5); /* для фона иконок комментирующих и фон поля ввода коммента */
 }
 
-html.dark {
+body.dark {
     --border-color: #212121;
     --font-color-main: #FFFFFF;
     --font-color-secondary: #FFFFFF;
