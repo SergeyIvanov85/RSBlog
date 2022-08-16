@@ -71,6 +71,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--font-color-main);
 
   &:hover {
     cursor: pointer;
@@ -90,6 +91,10 @@ body {
   background: var(--main-bg);
   background-size: cover;
   height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 ::-webkit-scrollbar {
