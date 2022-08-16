@@ -1,4 +1,5 @@
 import React from 'react';
+import menu from '../assets/images/menu-icon.png'
 
 export  const Navbar = () => {
     return <header className='header-wrapper'>
@@ -13,7 +14,7 @@ export  const Navbar = () => {
                     </ul> 
                 </nav>
                 <div className='menu'>
-                    <img src='../assets/images/menu-icon.png' alt='Menu'></img>
+                    <img src={menu} alt='Menu'></img>
                 </div>
             </div>
     </header>
