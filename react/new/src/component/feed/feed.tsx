@@ -1,9 +1,10 @@
 import { BlogPrev } from "./blog-prev";
+import {data} from "../../data"
 
 export function Feed (){
   return (
-    <div>Feed
-<BlogPrev/>
+    <div>
+<BlogPrev data={data[0]}/>
 
     </div>
   )
