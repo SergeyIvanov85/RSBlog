@@ -1,5 +1,9 @@
 @import "./common";
-@import './variables';
+@import "./variables";
+
+.main-nav {
+  margin-bottom: 2rem;
+}
 
 .main-nav__list {
   display: flex;
@@ -11,7 +15,7 @@
 
 .main-nav__link {
   position: relative;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
   &::after {
     content: " ";
@@ -22,7 +26,7 @@
     left: 0;
     border-bottom: 2px solid var(--border-color);
     opacity: 0;
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
   &:hover {
@@ -33,7 +37,6 @@
       opacity: 1;
     }
   }
-
 }
 
 .active {

@@ -1,10 +1,10 @@
-@import './variables';
+@import "./variables";
 
 @font-face {
   font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;
-  src: url("../assets/fonts/Rubik-Regular.ttf")
+  src: url("../assets/fonts/Rubik-Regular.ttf");
 }
 
 @font-face {
@@ -77,7 +77,10 @@ a {
   }
 }
 
-h1,h2,h3, p {
+h1,
+h2,
+h3,
+p {
   margin: 0;
   padding: 0;
 }
@@ -96,7 +99,9 @@ body {
   display: none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   @include font-title();
 }
 
@@ -106,6 +111,7 @@ h1, h2, h3 {
   margin-right: auto;
   padding: 1rem;
   margin-bottom: $base-size * 10;
+  height: 100%;
 }
 
 .btn {
