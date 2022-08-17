@@ -1,13 +1,8 @@
-import { Feed } from "./component/feed/feed";
 
 
 function App() {
-  return (<div>
-     <Feed/>
-    </div>
-
+  return 
    
-  );
 }
 
 export default App;

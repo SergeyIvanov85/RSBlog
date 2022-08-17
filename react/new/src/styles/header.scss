@@ -1,0 +1,52 @@
+@import "./common";
+@import "./variables";
+
+.main-nav {
+  margin-bottom: 2rem;
+}
+
+.main-nav__list {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  @include font-navigation();
+}
+
+.main-nav__link {
+  position: relative;
+  transition: all 0.5s ease-in-out;
+
+  &::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-bottom: 2px solid var(--border-color);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::after {
+      bottom: -2px;
+      opacity: 1;
+    }
+  }
+}
+
+.active {
+  border-bottom: 2px solid var(--border-color);
+
+  &:hover {
+    cursor: pointer;
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}

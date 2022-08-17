@@ -1,0 +1,135 @@
+@import "./variables";
+
+@font-face {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/Rubik-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/Rubik-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Abril Fatface", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/AbrilFatface-Regular.ttf");
+}
+
+// === ОБЩИЕ ПЕРЕМЕННЫЕ
+$base-size: 5px;
+
+// === МИКСИНЫ ДЛЯ ШРИФТОВ === ДЛЯ ИСПОЛЬЗОВАНИЯ МИКСИНОВ - @include name() ===
+@mixin font-logo {
+  font-family: "Abril Fatface";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+@mixin font-navigation {
+  font-family: "Abril Fatface";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+@mixin font-title {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--font-color-main);
+}
+
+@mixin font-main {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+@mixin font-post {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+// === ОБНУЛЕНИЕ СТИЛЕЙ ===
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+// === БАЗОВЫЕ СТИЛИ ===
+
+body {
+  @include font-main();
+  color: var(--font-color-main);
+  background: var(--main-bg);
+  background-size: cover;
+  height: 100vh;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1,
+h2,
+h3 {
+  @include font-title();
+}
+
+.section-wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  margin-bottom: $base-size * 10;
+  height: 100%;
+}
+
+.btn {
+  width: 12rem;
+  height: 3rem;
+  @include font-main();
+  padding: $base-size * 2;
+  border: 2px solid var(--border-color);
+  border-radius: $base-size;
+  background-color: var(--bg-btn);
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 0 var(--hover-color);
+  }
+
+  &:active {
+    cursor: pointer;
+    box-shadow: none;
+  }
+}
