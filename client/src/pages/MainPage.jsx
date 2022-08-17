@@ -1,9 +1,12 @@
+
 import React from "react";
-import { Link, NavLink} from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import githubImage from '../assets/images/github-icon.png';
 import rsLogo from '../assets/images/rs-logo.png';
 
 export const MainPage = () => {
+
 
     const isAuth = false;
 

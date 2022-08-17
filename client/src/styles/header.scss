@@ -1,5 +1,30 @@
-@import "./common";
-@import './variables';
+/* cпрятать иконку меню и логотип для главной страницы можно добавление класса hidden */
+.hidden {
+  opacity: 0;
+}
+
+.header-wrapper {
+  background: rgba(235, 221, 228, 0.4);
+  border-bottom: 1px solid #212121;
+  margin-bottom: $base-size * 10;
+}
+
+.header {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  min-height: 5rem;
+}
+
+.logo {
+  @include font-logo();
+  
+  &:hover {
+      cursor: pointer;
+  }
+}
 
 .main-nav__list {
   display: flex;
@@ -18,32 +43,35 @@
     display: block;
     width: 100%;
     position: absolute;
-    bottom: -10px;
+    bottom: -2px;
     left: 0;
     border-bottom: 2px solid var(--border-color);
     opacity: 0;
     transition: all .5s ease-in-out;
   }
-
+  
   &:hover {
     cursor: pointer;
-
+  
     &::after {
-      bottom: -2px;
       opacity: 1;
     }
   }
-
 }
 
 .active {
   border-bottom: 2px solid var(--border-color);
+}
 
+.menu {
+  min-width: 7rem;
+  text-align: end;
+  & img {
+      width: 50px;
+      height: 50px;
+  }
+  
   &:hover {
-    cursor: pointer;
-
-    &::after {
-      opacity: 0;
-    }
+      cursor: pointer;
   }
 }
