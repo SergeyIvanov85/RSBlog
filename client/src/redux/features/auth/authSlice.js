@@ -34,10 +34,13 @@ export const authSlice = createSlice({
         },
         [registerUser.fulfilled]: (state, action) => {
             state.isLoading = false
-            state.status = action.payload.message()
+            state.status = action.payload.message
+            state.user = action.payload.user
+            state.token = action.payload.token
         },
         [registerUser.rejected]: (state, action) => {
-            state.status =
+            state.status = action.payload.message
+            state.isLoading = false
         },
     },
 })
