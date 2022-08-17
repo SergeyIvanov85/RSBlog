@@ -4,6 +4,7 @@ body.light {
     --font-color-secondary: #51004E; /* заголовки статей, теги */
     --font-color-auxiliary: rgba(33, 33, 33, 0.5); /* вспомогательные элементы (подсказки в инпутах, автор и дата поста)*/
     --font-color-btn: #212121; /* цвет шрифта в кнопках*/
+    --hover-color: #5c0159;
 
     --main-bg: no-repeat center url("../assets/images/bg-image.jpg");
     --bg-header: rgba(235, 221, 228, 0.4);
@@ -20,6 +21,7 @@ body.dark {
     --font-color-secondary: #FFFFFF;
     --font-color-auxiliary: #000000;
     --font-color-btn: #000000;
+    --hover-color: #5c0159;
 
     --main-bg: linear-gradient(180deg, #232223 0%, #2B232D 30%, #342634 50%, #202D39 70%, rgba(0, 2, 10, 0.94) 100%);
     --bg-input: rgba(255, 255, 255, 0.5);
