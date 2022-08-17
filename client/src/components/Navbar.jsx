@@ -12,10 +12,10 @@ export  const Navbar = () => {
                 <nav className='main-nav'>
                     { isAuth && (
                         <ul className='main-nav__list'>
-                            <li className='main-nav__link'><NavLink to={'/'}><a href='/'>Главная</a></NavLink></li>
-                            <li className='main-nav__link'><NavLink to={'/posts'}><a href='/'>Лента</a></NavLink></li>
-                            <li className='main-nav__link'><NavLink to={'/new'}><a href='/'>Мои статьи</a></NavLink></li>
-                            <li className='main-nav__link'><NavLink to={'/about'}><a href='/'>О проекте</a></NavLink></li>
+                            <li className='main-nav__link'><NavLink to={'/'} href='/'>Главная</NavLink></li>
+                            <li className='main-nav__link'><NavLink to={'/posts'} href='/'>Лента</NavLink></li>
+                            <li className='main-nav__link'><NavLink to={'/new'} href='/'>Мои статьи</NavLink></li>
+                            <li className='main-nav__link'><NavLink to={'/about'} href='/'>О проекте</NavLink></li>
                         </ul> 
                     )}
                 </nav>
