@@ -3,7 +3,7 @@ import { Options } from "./feed/options";
 
 
 export  const AddPostPage = () => {
-       return <div className = "feed-page__wrapper ">
+    return <div className = "feed-page__wrapper ">
 <Feed/>
 <Options/>
     </div>
