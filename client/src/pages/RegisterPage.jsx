@@ -20,31 +20,32 @@ export const RegisterPage = () => {
 
 
     return <form onSubmit={e => e.preventDefault()}
-                 className=''
-    >
-        <h1 className=''>Регистрация</h1>
-        <label className=''>
+                 className='section-wrapper form-container'>
+        <div className='form-inner'>
+            <h1 className='auth-form-title'>Регистрация</h1>
+        <label className='label'>
             Логин
             <input type='text'
                    value={username}
                    onChange={(e) => setUsername(e.target.value)}
                    placeholder='Username'
-                   className=''
+                   className='input'
             />
         </label>
 
-        <label className=''>
+        <label className='label'>
             Пароль
             <input type='password'
                    value={password}
                    onChange={(e) => setPassword(e.target.value)}
                    placeholder='Password'
-                   className=''
+                   className='input'
             />
         </label>
-        <div className=''>
-            <button type='submit' onClick={handleSubmit} className=''>Подтвердить</button>
-            <Link to={'/login'} className=''>Уже зарегистрированы?</Link>
+        <div className='confirm-btns'>
+            <button type='submit' onClick={handleSubmit} className='btn'>Подтвердить</button>
+            <Link to={'/login'} className='login-link'>Уже зарегистрированы?</Link>
+        </div>
         </div>
     </form>
 }
