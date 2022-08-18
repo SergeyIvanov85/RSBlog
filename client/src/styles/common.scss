@@ -113,8 +113,9 @@ h1, h2, h3 {
 
 .btn {
   width: 12rem;
-  height: 3rem;
+  height: 2.5rem;
   @include font-main();
+  line-height: 1rem;
   padding: $base-size * 2;
   border: 2px solid var(--border-color);
   border-radius: $base-size;
