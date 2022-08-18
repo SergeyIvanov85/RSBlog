@@ -16,7 +16,11 @@ export function BlogPrev ({data}:BlogItemProps){
                    {data.text}
            </div>
            </div>
+           <div className="blog__count">
            <Count count={data.count}/>
+           <button> Подробнее </button>
+           </div>
+          
      </div>
   )
 }
