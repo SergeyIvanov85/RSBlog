@@ -23,11 +23,27 @@ export const registerUser = createAsyncThunk('auth/registerUser', async ({userna
     }
 })
 
+export const loginUser = createAsyncThunk('auth/loginUser', async ({username, password}) => {
+    try {
+        const { data } = await axios.post('/auth/login', {
+            username,
+            password,
+        })
+        if (data.token) {
+            window.localStorage.setItem('token', data.token)
+        }
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {},
     extraReducers: {
+        // Register user
         [registerUser.pending]: (state) => {
             state.isLoading = true
             state.status = null
@@ -39,6 +55,21 @@ export const authSlice = createSlice({
             state.token = action.payload.token
         },
         [registerUser.rejected]: (state, action) => {
+            state.status = action.payload.message
+            state.isLoading = false
+        },
+        // Login user
+        [loginUser.pending]: (state) => {
+            state.isLoading = true
+            state.status = null
+        },
+        [loginUser.fulfilled]: (state, action) => {
+            state.isLoading = false
+            state.status = action.payload.message
+            state.user = action.payload.user
+            state.token = action.payload.token
+        },
+        [loginUser.rejected]: (state, action) => {
             state.status = action.payload.message
             state.isLoading = false
         },
