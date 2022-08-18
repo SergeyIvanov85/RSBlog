@@ -38,10 +38,26 @@ export const loginUser = createAsyncThunk('auth/loginUser', async ({username, pa
     }
 })
 
+export const getMe = createAsyncThunk('auth/loginUser', async () => {
+    try {
+        const { data } = await axios.get('/auth/me')
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 export const authSlice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {},
+    reducers: {
+        logout: (state) => {
+            state.user = null
+            state.token = null
+            state.isLoading = false
+            state.status = null
+        }
+    },
     extraReducers: {
         // Register user
         [registerUser.pending]: (state) => {
@@ -73,7 +89,26 @@ export const authSlice = createSlice({
             state.status = action.payload.message
             state.isLoading = false
         },
+        // Проверка авторизации
+        [getMe.pending]: (state) => {
+            state.isLoading = true
+            state.status = null
+        },
+        [getMe.fulfilled]: (state, action) => {
+            state.isLoading = false
+            state.status = null
+            state.user = action.payload?.user
+            state.token = action.payload?.token
+        },
+        [getMe.rejected]: (state, action) => {
+            state.status = action.payload.message
+            state.isLoading = false
+        },
     },
 })
 
+export const checkIsAuth = (state) => Boolean(state.auth.token)
+
+
+export const {logout} = authSlice.actions
 export default authSlice.reducer

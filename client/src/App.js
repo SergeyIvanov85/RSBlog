@@ -11,8 +11,17 @@ import {EditPostPage} from "./pages/EditPostPage";
 import {AboutPage} from "./pages/AboutPage";
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import {useDispatch} from "react-redux";
+import {useEffect} from "react";
+import {getMe} from "./redux/features/auth/authSlice";
 
 function App() {
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getMe())
+    }, [dispatch])
+
   return (
     <Layout>
       <Routes>

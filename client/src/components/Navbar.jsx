@@ -1,11 +1,14 @@
-
 import React from 'react';
 import menu from '../assets/images/menu-icon.png';
 import { NavLink } from "react-router-dom";
+import { useSelector} from "react-redux";
+import { checkIsAuth } from "../redux/features/auth/authSlice";
 
-export  const Navbar = () => {
 
-    const isAuth = true;
+export const Navbar = () => {
+
+    const isAuth = useSelector(checkIsAuth)
+
 
     return <header className='header-wrapper'>
             <div className='section-wrapper header'>

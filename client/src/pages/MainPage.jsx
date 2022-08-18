@@ -1,14 +1,23 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
 import githubImage from '../assets/images/github-icon.png';
 import rsLogo from '../assets/images/rs-logo.png';
+import {useDispatch, useSelector} from "react-redux";
+import {checkIsAuth, logout} from "../redux/features/auth/authSlice";
+import {toast} from "react-toastify";
 
 export const MainPage = () => {
 
 
-    const isAuth = false;
+    const isAuth = useSelector(checkIsAuth);
+    const  dispatch = useDispatch()
+
+    const logoutHandler = () => {
+        dispatch(logout())
+        window.localStorage.removeItem('token')
+        toast('Вы вышли из аккаунта')
+    }
 
     return <div className='main-container'>
         <main className='section-wrapper main'>
@@ -17,7 +26,7 @@ export const MainPage = () => {
                 <p>Делись своими историями на платформе RS Blog, читай статьи на любые темы и&nbsp;находи для себя интересных людей.</p>
                 <div className='auth-btns'>
                     {isAuth ?
-                        ( <button className='btn login-btn'>Выйти</button>
+                        ( <button onClick={logoutHandler} className='btn login-btn'>Выйти</button>
                     ) : (
                         <Link to={'/login'}><button className='btn login-btn'>Войти</button></Link>
                         )}
