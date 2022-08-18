@@ -1,5 +1,3 @@
-@import "./variables";
-
 .feed-page__wrapper {
   width: 100%;
   height: 80vh;
@@ -20,7 +18,7 @@
     flex-direction: column;
     padding: 0 0 5px 0;
     margin-top: 10px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
     row-gap: 7px;
     box-sizing: border-box;
     background-color: var(--bg-block);
@@ -54,6 +52,7 @@
         height: 80%;
         width: 100%;
         overflow: hidden;
+        border-radius: 10px 10px 0 0;
 
         img{
           object-fit: contain;
