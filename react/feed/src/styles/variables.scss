@@ -4,7 +4,7 @@ body.light {
     --font-color-secondary: #51004E; /* заголовки статей, теги */
     --font-color-auxiliary: rgba(33, 33, 33, 0.5); /* вспомогательные элементы (подсказки в инпутах, автор и дата поста)*/
     --font-color-btn: #212121; /* цвет шрифта в кнопках*/
-    --filter-SVG: brightness(1); 
+    --filter-SVG: brightness(1); /* цвет иконок просмотра, лайков и комментариев*/
     --filter-SVG-input: invert(0);
 
     --main-bg: no-repeat center url("../assets/images/bg-image.jpg");
