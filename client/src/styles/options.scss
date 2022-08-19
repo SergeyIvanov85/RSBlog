@@ -7,25 +7,23 @@ $border-input: 1px solid;
   padding: 20px 0 0 30px;
   height: 100%;
   border-left: 2px solid var(--border-color);
-  display: flex;
   row-gap: 30px;
 
-  &__title{
-    font-size: 20px;
-    color:var(--font-color-secondary);
-    font-weight: bold;
+  &__title {
+    @include font-title();
+    color: var(--font-color-secondary);
   }
 
-  &__search{
+  &__search {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 
-    &_input{
+    &_input {
       display: flex;
       height: 30px;
 
-      input{
+      input {
         width: 90%;
         height: 100%;
         border-radius: 3px 0 0 3px;
@@ -33,10 +31,10 @@ $border-input: 1px solid;
         border-right: none;
         background-color: var(--bg-input);
         outline: none;
-        padding:5px  0 0 5px;
-       
+        padding: 5px 0 0 5px;
+
         &::placeholder {
-          color:--font-color-auxiliary;
+          color: --font-color-auxiliary;
           font-size: 16px;
         }
       }
@@ -44,7 +42,6 @@ $border-input: 1px solid;
       button {
         height: 100%;
         width: 30px;
-        @include p0-m0();
         border-radius: 0 3px 3px 0;
         border: 1px solid var(--input-border);
         border-left: none;
@@ -52,62 +49,59 @@ $border-input: 1px solid;
         outline: none;
         background-color: var(--bg-input);
 
-        .icon-search{
+        .icon-search {
           height: 100%;
           width: 100%;
           background-image: url(../assets/images/search.svg);
           background-repeat: no-repeat;
           background-size: contain;
-          filter:var(--filter-SVG-input)
+          filter: var(--filter-SVG-input);
         }
       }
     }
   }
 
-  .sort{
+  .sort {
     width: 90%;
     display: flex;
     flex-direction: column;
     row-gap: 5px;
 
-    &__item{
+    &__item {
       display: flex;
       width: 100%;
       justify-content: space-between;
-      color:var(--font-color-secondary);
+      color: var(--font-color-secondary);
 
-      button{
-      background-color: transparent;
-      border: none;
-      @include p0-m0();
-      font-size: 19px;
+      button {
+        background-color: transparent;
+        border: none;
+        font-size: 19px;
       }
     }
   }
 
-  .theme{
+  .theme {
     width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 5px;
 
-    &__item{
+    &__item {
       display: flex;
       width: 100%;
-      color:var(--font-color-secondary);
+      color: var(--font-color-secondary);
       column-gap: 30px;
 
-      button{
+      button {
         width: 32px;
         height: 100%;
-        @include p0-m0();
         background-color: transparent;
         border: none;
         background-image: url(../assets/images/theme-icon-light.svg);
         background-repeat: no-repeat;
         background-size: contain;
       }
-
     }
   }
 }
