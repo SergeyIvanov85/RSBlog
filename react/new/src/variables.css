@@ -1,0 +1,31 @@
+html.light {
+  --border-color: #212121; /* цвета бордеров кнопок/блоков */
+  --font-color-main: #212121; /* для основного текста, заголовков, навигации, логотипа, гит-ссылок */
+  --font-color-secondary: #51004E; /* заголовки статей, теги */
+  --font-color-auxiliary: rgba(33, 33, 33, 0.5); /* вспомогательные элементы (подсказки в инпутах, автор и дата поста)*/
+  --font-color-btn: #212121; /* цвет шрифта в кнопках*/
+
+  --main-bg: no-repeat center url("./assets/images/bg-image.jpg");
+  --bg-header: rgba(235, 221, 228, 0.4);
+  --bg-footer: rgba(235, 221, 228, 0.4);
+  --bg-input: rgba(255, 255, 255, 0.5); /* для фона инпутов */
+  --bg-btn: rgba(95, 43, 93, 0.5); /* для фона кнопок */
+  --bg-block: rgba(255, 255, 255, 0.5); /* для фона блоков */
+  --bg-comments: rgba(95, 43, 93, 0.5); /* для фона иконок комментирующих и фон поля ввода коммента */
+}
+
+html.dark {
+  --border-color: #212121;
+  --font-color-main: #FFFFFF;
+  --font-color-secondary: #FFFFFF;
+  --font-color-auxiliary: #000000;
+  --font-color-btn: #000000;
+ 
+  --main-bg: linear-gradient(180deg, #232223 0%, #2B232D 30%, #342634 50%, #202D39 70%, rgba(0, 2, 10, 0.94) 100%);
+  --bg-input: rgba(255, 255, 255, 0.5);
+  --bg-btn: rgba(255, 255, 255, 0.5);
+  --bg-block: rgba(122, 122, 122, 0.5);
+  --bg-comments: rgba(33, 33, 33, 0.5);
+  --bg-header: transparent;
+  --bg-footer: rgba(122, 122, 122, 0.5);
+}

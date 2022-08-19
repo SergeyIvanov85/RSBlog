@@ -1,0 +1,128 @@
+.feed-page__wrapper {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.feed-feed__wrapper {
+  width: 70%;
+  height: 100%;
+  flex-direction: column;
+  overflow-y: scroll;
+
+  .blog {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 5px 0;
+    margin-top: 10px;
+    border-radius: 10px;
+    row-gap: 7px;
+    box-sizing: border-box;
+    background-color: var(--bg-block);
+  
+    &__count{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      button{
+        background-color: transparent;
+        border: none;
+        font-size: 11px;
+        color:var(--font-color-auxiliary);
+      }
+    }
+
+    &__text{
+      width: 100%;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      line-height: 1.3em;
+      height: 3.9em;
+      color:var(--font-color-main);
+      font-size:14px;
+      box-sizing: border-box;
+      padding: 2px 7px;
+
+      &_wrapper{
+        height: 15%;
+        overflow: hidden;
+      }
+    }
+
+    &-info{
+      width: 100%;
+      height: 85%;
+      
+      &__image{
+        height: 80%;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        background-size: cover;
+        background-position: center;
+      }
+
+      &__caption{
+        box-sizing: border-box;
+        padding: 2px 7px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 10px;
+        color:var(--font-color-auxiliary);
+      }
+
+      &__title{
+        display: flex;
+        box-sizing: border-box;
+        padding: 2px 7px;
+        color:var(--font-color-secondary);
+        justify-content: space-between;
+        font-size: 18px;
+
+        &_category{
+          font-size: 10px;
+          color:var(--font-color-auxiliary);
+        }
+      }
+    }
+  }
+}
+
+.icon{
+  box-sizing: border-box;
+  padding: 0 7px;
+  width: 100px;
+  display: flex;
+  column-gap: 10px;
+  color: var(--font-color-main);
+  font-size: 12px;
+
+  .icon__view,.icon__comment, .icon__like {
+    display:flex;
+    column-gap: 5px;
+
+    &_img{
+      width: 16px;
+      filter: var(--filter-SVG);
+      background-image: url('../assets/images/view.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .icon__comment_img{
+    background-image: url('../assets/images/comment-Regular.svg');
+  }
+
+  .icon__like_img{
+    background-image: url('../assets/images/like.svg');
+  }
+}
