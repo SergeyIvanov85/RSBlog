@@ -25,8 +25,7 @@ export const LoginPage = () => {
             console.log(error)
         }
     }
-
-
+    
     return <form onSubmit={e => e.preventDefault()}className='section-wrapper form-container'>
         <div className='form-inner'>
             <h1 className='auth-form-title'>Войти</h1>
@@ -46,6 +45,7 @@ export const LoginPage = () => {
             </label>
             <div className='confirm-btns'>
                 <button type='submit' onClick={handleSubmit} className='btn'>Подтвердить</button>
+
                 <Link to={'/register'} className='login-link'>Еще не зарегистрированы?</Link>
             </div>
         </div>
