@@ -16,20 +16,6 @@
 .label {
     display: block;
 }
-.input {
-    @include font-main();
-    display: block;
-    width: 100%;
-    border: 1px solid var(--border-color);
-    border-radius: $base-size;
-    background-color: var(--bg-input);
-    min-height: $base-size * 5;
-    margin-top: $base-size;
-
-    &:focus {
-        outline: none;
-    }
-}
 .confirm-btns {
     display: flex;
     gap: $base-size * 3;

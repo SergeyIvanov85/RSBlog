@@ -8,12 +8,12 @@ export const LoginPage = () => {
             <label className='label'>Логин:
                 <input type='text'
                     placeholder='Username'
-                    className='input'/>
+                    className='text-input'/>
             </label>
             <label className='label'>Пароль:
                 <input type='password'
                     placeholder='Password'
-                    className='input'/>
+                    className='text-input'/>
             </label>
             <div className='confirm-btns'>
                 <button type='submit' className='btn'>Подтвердить</button>
