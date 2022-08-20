@@ -1,3 +1,19 @@
+@mixin close-btn {
+  display: block;
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  background-color: var(--font-color-secondary);
+  content: "";
+  top: 50%;
+  left: 10%;
+}
+
+@mixin bg-border {
+  background-color: var(--bg-btn);
+  border: 1px solid var(--font-color-secondary);
+}
+
 .post-page__wrapper {
   width: 100%;
   height: 85vh;
@@ -77,10 +93,87 @@
   }
 }
 
-.comments__wrapper {
-  height: 70%;
+.comments {
+  height: 73%;
   width: 38%;
+  display: flex;
+  flex-direction: column;
   background-color: var(--bg-block);
   border-radius: 25px;
+  row-gap: 30px;
   border: 1px solid var(--input-border);
+  padding: 15px 25px 25px 25px;
+
+  &__button-close {
+    align-self: flex-end;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    @include bg-border();
+    position: relative;
+
+    &::after {
+      @include close-btn();
+      transform: rotate(45deg);
+    }
+    &::before {
+      @include close-btn();
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 40%;
+    overflow-y: scroll;
+
+    .comment-item {
+      display: flex;
+      column-gap: 20px;
+      height: 40px;
+      align-items: center;
+
+      &__user {
+        height: 100%;
+        width: 40px;
+        border-radius: 50%;
+        @include bg-border();
+        font-size: 32px;
+        text-align: center;
+      }
+
+      &__text {
+        font-weight: 700;
+      }
+    }
+  }
+
+  textarea {
+    resize: none;
+    height: 20%;
+    @include bg-border();
+    border-radius: 5px;
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+    &::placeholder {
+      color: var(--font-color-btn);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+
+    .btn_small {
+      width: 35%;
+      height: 100%;
+      padding: 0;
+    }
+  }
 }
