@@ -1,6 +1,6 @@
 import { BlogInfo } from "./blog-info";
 import { Count } from "./count";
-import { IBlogItem } from "./interfaces";
+import { IBlogItem } from "../for-posts-pages/interfaces";
 
 interface BlogItemProps {
   data: IBlogItem;

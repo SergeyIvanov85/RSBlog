@@ -1,0 +1,86 @@
+.post-page__wrapper {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.post {
+  &__wrapper {
+    height: 100%;
+    width: 60%;
+    background-color: var(--bg-block);
+    border-radius: 25px;
+    border: 1px solid var(--input-border);
+    padding: 3px 5px;
+  }
+
+  &__caption,
+  &__title {
+    padding: 5px 30px;
+  }
+  &__image {
+    height: 30%;
+    width: 100%;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+  }
+  &__text {
+    width: 100%;
+    height: 46%;
+    overflow-y: scroll;
+    padding: 0px 30px;
+    p {
+      width: 100%;
+      color: var(--font-color-main);
+      text-align: justify;
+      @include font-post();
+    }
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+
+    &_icons {
+      height: 18px;
+      display: flex;
+      column-gap: 30px;
+      align-items: flex-end;
+    }
+
+    .icon__change {
+      height: 100%;
+      column-gap: 20px;
+      display: flex;
+
+      &_edit {
+        height: 100%;
+        width: 20px;
+        filter: var(--filter-SVG);
+        background-image: url("../assets/images/svg-edit.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      &_delete {
+        height: 100%;
+        width: 20px;
+        filter: var(--filter-SVG);
+        background-image: url("../assets/images/svg-delete.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+.comments__wrapper {
+  height: 70%;
+  width: 38%;
+  background-color: var(--bg-block);
+  border-radius: 25px;
+  border: 1px solid var(--input-border);
+}
