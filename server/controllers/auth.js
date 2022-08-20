@@ -35,8 +35,8 @@ export const register = async (req, res) => {
 
         res.json({
             newUser,
-            message: 'Регистрация прошла успешно!',
             token,
+            message: 'Регистрация прошла успешно!',
         })
 
     } catch (error) {
@@ -66,7 +66,7 @@ export const login = async (req, res) => {
 
         const token = jwt.sign(
             {
-            id: user._id,
+                id: user._id,
             },
             process.env.JWT_SECRET,
             {expiresIn: '30d'},
