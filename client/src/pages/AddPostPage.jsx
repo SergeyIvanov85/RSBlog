@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
 import {useDispatch} from "react-redux";
 import {createPost} from "../redux/features/post/postSlice";
@@ -35,13 +36,12 @@ export  const AddPostPage = () => {
       <div className='add-image'>
         <input type="file" name='add-image__input' id='add-image__input' accept='.jpeg, .jpg, .png, .heic' className='hidden' onChange={(e) => setImage(e.target.files[0])}/>
       <label htmlFor='add-image__input' className='add-image__label'>Прикрепить изображение:</label>
-        <div className=''>
+        <div className='image-preview'>
           { image && (
-            <img src={URL.createObjectURL(image)} alt='image' />
+            <img src={URL.createObjectURL(image)} alt='photo for the post'/>
           )}
         </div>
         </div>
-
 
         <div className='add-title'>
         <label htmlFor='add-title__input'>Заголовок статьи:</label>

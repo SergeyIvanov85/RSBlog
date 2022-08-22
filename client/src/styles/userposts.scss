@@ -1,7 +1,6 @@
 .no-posts-title {
   text-align: center;
 }
-
 .user-posts {
   display: flex;
   flex-direction: column;
@@ -14,6 +13,7 @@
   max-width: 500px;
   margin: 0 auto;
   gap: $base-size * 3;
+  height: auto;
 }
 .add-image,
 .add-title,
@@ -57,4 +57,18 @@
 .add-post-btns {
   display: flex;
   gap: $base-size * 3;
+}
+
+.image-preview {
+  width: 100%;
+  max-height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $base-size;
+}
+
+.image-preview img {
+  width: 100%;
 }
