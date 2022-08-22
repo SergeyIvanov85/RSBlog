@@ -29,6 +29,7 @@ export  const AddPostPage = () => {
   const clearFormHandler = () => {
     setText('')
     setTitle('')
+    setImage('')
   }
 
     return <form className='section-wrapper' onSubmit={e => e.preventDefault()}>

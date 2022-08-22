@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
 import {getMe} from "./redux/features/auth/authSlice";
+import {FeedPostsPage} from "./pages/FeedPostsPage";
 
 function App() {
     const dispatch = useDispatch()
@@ -30,6 +31,7 @@ function App() {
         <Route path=':id' element={<PostPage />} />
         <Route path=':id/edit' element={<EditPostPage />} />
         <Route path='new' element={<AddPostPage />} />
+        <Route path='feed' element={<FeedPostsPage />} />
         <Route path='register' element={<RegisterPage />} />
         <Route path='login' element={<LoginPage />} />
         <Route path='about' element={<AboutPage />} />
