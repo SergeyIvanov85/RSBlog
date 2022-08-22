@@ -34,14 +34,14 @@ export const LoginPage = () => {
                        value={username}
                        onChange={(e) => setUsername(e.target.value)}
                        placeholder='Username'
-                       className='input'/>
+                       className='text-input'/>
             </label>
             <label className='label'>Пароль:
                 <input type='password'
                        value={password}
                        onChange={(e) => setPassword(e.target.value)}
                        placeholder='Password'
-                       className='input'/>
+                       className='text-input'/>
             </label>
             <div className='confirm-btns'>
                 <button type='submit' onClick={handleSubmit} className='btn'>Подтвердить</button>

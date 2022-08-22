@@ -90,7 +90,7 @@ body {
   color: var(--font-color-main);
   background: var(--main-bg);
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   box-sizing: border-box;
 }
@@ -129,5 +129,20 @@ h1, h2, h3 {
   &:active {
     cursor: pointer;
     box-shadow: none;
+  }
+}
+.text-input {
+  @include font-main();
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: $base-size;
+  background-color: var(--bg-input) !important;
+  margin-top: $base-size;
+  padding: $base-size;
+
+  &:focus {
+    outline: none;
   }
 }
