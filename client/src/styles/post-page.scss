@@ -167,7 +167,8 @@
 
   &__buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    column-gap: 5%;
     height: 30px;
 
     .btn_small {
