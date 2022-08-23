@@ -41,7 +41,7 @@ export const RegisterPage = () => {
                    value={username}
                    onChange={(e) => setUsername(e.target.value)}
                    placeholder='Username'
-                   className='input'
+                   className='text-input'
             />
         </label>
 
@@ -51,7 +51,7 @@ export const RegisterPage = () => {
                    value={password}
                    onChange={(e) => setPassword(e.target.value)}
                    placeholder='Password'
-                   className='input'
+                   className='text-input'
             />
         </label>
         <div className='confirm-btns'>
