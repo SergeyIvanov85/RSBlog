@@ -6,7 +6,7 @@ import  {fileURLToPath} from 'url'
 // Create Post
 export const createPost = async (req, res) => {
     try {
-        const {title, text} = req.body
+        const {title, text, topic} = req.body
         const user = await User.findById(req.userId)
 
         if(req.files) {
@@ -20,6 +20,7 @@ export const createPost = async (req, res) => {
                 text,
                 imgUrl: fileName,
                 author: req.userId,
+                topic,
             })
 
             await newPostWithImage.save()
@@ -36,6 +37,7 @@ export const createPost = async (req, res) => {
             text,
             imgUrl: '',
             author: req.userId,
+            topic,
         })
 
         await newPostWithoutImage.save()

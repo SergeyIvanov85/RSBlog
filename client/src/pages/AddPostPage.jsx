@@ -9,6 +9,7 @@ export  const AddPostPage = () => {
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
   const [image, setImage] = useState('')
+  const [topic, setTopic] = useState('')
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -19,6 +20,7 @@ export  const AddPostPage = () => {
       data.append('title', title)
       data.append('text', text)
       data.append('image', image)
+      data.append('topic', topic)
       dispatch(createPost(data))
       navigate('/')
     } catch (error) {
@@ -30,6 +32,7 @@ export  const AddPostPage = () => {
     setText('')
     setTitle('')
     setImage('')
+    setTopic('')
   }
 
     return <form className='section-wrapper' onSubmit={e => e.preventDefault()}>
@@ -58,7 +61,7 @@ export  const AddPostPage = () => {
 
         <div className='add-topic'>
       <label htmlFor='add-topic__select'>Тема статьи:
-        <select name='add-topic__select' id='add-topic__select' className='add-topic__select'>
+        <select name='add-topic__select' onChange={(e) => setTopic(e.target.value)} value={topic} id='add-topic__select' className='add-topic__select'>
           <option value='travel'>Путешествия</option>
           <option value='health'>Здоровье</option>
           <option value='education'>Образование</option>
