@@ -50,3 +50,20 @@ export const createPost = async (req, res) => {
         res.json({message: 'Что-то пошло не так!'})
     }
 }
+
+// Get All Posts
+export const getAll = async (req, res) => {
+    try {
+        const posts = await Post.find().sort('-createdAt')
+        const popularPosts = await Post.find().limit(5).sort('-views')
+        const topicPosts = await Post.find().sort('-topic')
+
+        if(!posts) {
+            return res.json({message: 'Пока статей не существует!'})
+        }
+
+        res.json({posts, popularPosts, topicPosts})
+    } catch (error) {
+        res.json({message: 'Что-то пошло не так..'})
+    }
+}

@@ -22,7 +22,7 @@ export  const AddPostPage = () => {
       data.append('image', image)
       data.append('topic', topic)
       dispatch(createPost(data))
-      navigate('/')
+      navigate('/feed')
     } catch (error) {
       console.log(error)
     }
@@ -42,7 +42,7 @@ export  const AddPostPage = () => {
       <label htmlFor='add-image__input' className='add-image__label'>Прикрепить изображение:</label>
         <div className='image-preview'>
           { image && (
-            <img src={URL.createObjectURL(image)} alt='photo for the post'/>
+            <img src={URL.createObjectURL(image)} alt={image.name}/>
           )}
         </div>
         </div>
