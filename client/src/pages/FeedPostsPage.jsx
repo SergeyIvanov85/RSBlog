@@ -21,13 +21,11 @@ export const FeedPostsPage = () => {
   }
 
 
-  return <div className='feed-page__wrapper'>
-    <div className='feed-feed__wrapper'>
-      <div className='blog'>
+  return <div className='section-wrapper'>
+    <div className='feed-page__wrapper'>
+      <div className='feed-feed__wrapper'>
         {posts?.map((post, idx) => (<PostItem key={idx} post={post}/>))}
       </div>
-    </div>
-    <div className=''>
       <RightSideMenu />
     </div>
   </div>

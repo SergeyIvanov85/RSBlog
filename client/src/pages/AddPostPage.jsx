@@ -62,6 +62,7 @@ export  const AddPostPage = () => {
         <div className='add-topic'>
       <label htmlFor='add-topic__select'>Тема статьи:
         <select name='add-topic__select' onChange={(e) => setTopic(e.target.value)} value={topic} id='add-topic__select' className='add-topic__select'>
+          <option>Выбрать тему:</option>
           <option value='travel'>Путешествия</option>
           <option value='health'>Здоровье</option>
           <option value='education'>Образование</option>
