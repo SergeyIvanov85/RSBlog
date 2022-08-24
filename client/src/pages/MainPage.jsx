@@ -1,19 +1,39 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+
 import githubImage from '../assets/images/github-icon.png';
 import rsLogo from '../assets/images/rs-logo.png';
+import {useDispatch, useSelector} from "react-redux";
+import {checkIsAuth, logout} from "../redux/features/auth/authSlice";
+import {toast} from "react-toastify";
 
 export const MainPage = () => {
+
+
+    const isAuth = useSelector(checkIsAuth);
+    const  dispatch = useDispatch()
+
+    const logoutHandler = () => {
+        dispatch(logout())
+        window.localStorage.removeItem('token')
+        toast('Вы вышли из аккаунта')
+    }
+
     return <div className='main-container'>
         <main className='section-wrapper main'>
             <div className='main-description'>
-            <h1 className='title'>FREE RS BLOG</h1>
-            <p>Делись своими историями на платформе RS Blog, читай статьи на любые темы и&nbsp;находи для себя интересных людей.</p>
+                <h1 className='title'>FREE RS BLOG</h1>
+                <p>Делись своими историями на платформе RS Blog, читай статьи на любые темы и&nbsp;находи для себя интересных людей.</p>
                 <div className='auth-btns'>
-                    <button className='btn registration-btn'>Регистрация</button>
-                    <button className='btn login-btn'>Войти</button>
+                    {isAuth ?
+                        ( <button onClick={logoutHandler} className='btn login-btn'>Выйти</button>
+                    ) : (
+                        <Link to={'/login'}><button className='btn login-btn'>Войти</button></Link>
+                        )}
+                    {isAuth ? ('') : (<Link to={'/register'}><button className='btn registration-btn'>Регистрация</button></Link>)}
                 </div>
             </div>
-        </main>  
+        </main>
         <footer className='footer-wrapper'>
             <div className='footer-container'>
                 <ul className='members'>

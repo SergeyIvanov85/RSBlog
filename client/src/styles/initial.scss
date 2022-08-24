@@ -4,7 +4,6 @@
 .main-container {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 10.2rem);
 }
 .main {
     flex: 1;
@@ -28,6 +27,9 @@
     border-top: 1px solid #212121;
     padding-top: 1rem;
     height: 5rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 .footer-container {
     max-width: 1200px;

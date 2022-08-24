@@ -1,56 +1,77 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/img-redundant-alt */
+import React, { useState } from "react";
+import {useDispatch} from "react-redux";
+import {createPost} from "../redux/features/post/postSlice";
+import {useNavigate} from "react-router-dom";
 
 export  const AddPostPage = () => {
-    return <div>
-        {/*проверка на наличие созданных статей, если нет, то */}
-            <h1 className='no-posts-title'>Кажется вы еще не добавили ни одной статьи &#129300;</h1>
-        
-        {/*проверка на наличие созданных статей, если нет, то */}
-            <div className="section-wrapper user-posts">
-            <button className="btn">Добавить cтатью</button>
-                {/*тут выводятся существующие статьи пользователя*/}
-            </div>
 
-         {/*форма добавления статьи при клике на кнопку Добавить статью*/}
-        <form onSubmit={e => e.preventDefault()}className='section-wrapper'>
-            <div className='form-container'>
-                <div className='add-image'>
-                    <input type='file'
-                    name='add-image__input'
-                    id='add-image__input'
-                    accept='.jpeg, .jpg, .png, .heic'
-                    />
-                    <label for='add-image__input' className='add-image__label'>Прикрепить изображение</label>
-                </div>
-                <div className='add-title'>
-                    <label for='add-title__input'>Заголовок:</label> 
-                    <input type='text'
-                        id='add-title__input'
-                        className='text-input'/>
-                </div>
-                <div className='add-text'>
-                <label for='add-text__input'>Текст статьи:</label> 
-                    <textarea id='add-text__input'
-                        placeholder='Введите текст'
-                        rows='7'
-                        className='text-input'>
-                    </textarea>
-                </div>
-                <div className='add-topic'>
-                <label for='add-topic__select'>Тема статьи:</label> 
-                    <select name='add-topic__select' id='add-topic__select' className='add-topic__select'>
-                        <option value='travel'>Путешествия</option>
-                        <option value='health'>Здоровье</option>
-                        <option value='education'>Образование</option>
-                        <option value='sport'>Спорт</option>
-                        <option value='other'>Другое</option>
-                    </select>
-                </div>
-                <div className='add-post-btns'>
-                    <button className='btn'>Добавить</button>
-                    <button className='btn'>Отменить</button>
-                </div>
-            </div>
-        </form>
-    </div>
+  const [title, setTitle] = useState('')
+  const [text, setText] = useState('')
+  const [image, setImage] = useState('')
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const submitHandler = () => {
+    try {
+      const data = new FormData()
+      data.append('title', title)
+      data.append('text', text)
+      data.append('image', image)
+      dispatch(createPost(data))
+      navigate('/')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const clearFormHandler = () => {
+    setText('')
+    setTitle('')
+    setImage('')
+  }
+
+    return <form className='section-wrapper' onSubmit={e => e.preventDefault()}>
+      <div className='form-container'>
+      <div className='add-image'>
+        <input type="file" name='add-image__input' id='add-image__input' accept='.jpeg, .jpg, .png, .heic' className='hidden' onChange={(e) => setImage(e.target.files[0])}/>
+      <label htmlFor='add-image__input' className='add-image__label'>Прикрепить изображение:</label>
+        <div className='image-preview'>
+          { image && (
+            <img src={URL.createObjectURL(image)} alt='photo for the post'/>
+          )}
+        </div>
+        </div>
+
+        <div className='add-title'>
+        <label htmlFor='add-title__input'>Заголовок статьи:</label>
+          <input type='text' id='add-title__input' className='text-input'value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Заголовок'/>
+        </div>
+
+
+        <div className='add-text'>
+        <label htmlFor='add-text__input'>Текст статьи:
+          <textarea id='add-text__input' onChange={(e) => setText(e.target.value)} value={text} placeholder='Введите текст...' rows='7' className='text-input'/>
+        </label>
+        </div>
+
+        <div className='add-topic'>
+      <label htmlFor='add-topic__select'>Тема статьи:
+        <select name='add-topic__select' id='add-topic__select' className='add-topic__select'>
+          <option value='travel'>Путешествия</option>
+          <option value='health'>Здоровье</option>
+          <option value='education'>Образование</option>
+          <option value='sport'>Спорт</option>
+          <option value='other'>Другое</option>
+        </select>
+      </label>
+        </div>
+
+      <div className='add-post-btns'>
+        <button onClick={submitHandler} className='btn'>Добавить</button>
+        <button onClick={clearFormHandler} className='btn'>Отменить</button>
+      </div>
+      </div>
+    </form>
 }

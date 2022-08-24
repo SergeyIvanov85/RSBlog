@@ -110,7 +110,6 @@ h1, h2, h3 {
   padding: 1rem;
   margin-bottom: $base-size * 10;
 }
-
 .btn {
   width: 12rem;
   height: 2.5rem;
@@ -143,6 +142,6 @@ h1, h2, h3 {
   padding: $base-size;
 
   &:focus {
-      outline: none;
+    outline: none;
   }
 }
