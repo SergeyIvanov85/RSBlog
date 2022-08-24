@@ -1,19 +1,9 @@
-.no-posts-title {
-  text-align: center;
-}
-.user-posts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: $base-size * 5;
-}
 .form-container {
     display: flex;
     flex-direction: column;
     max-width: 500px;
     margin: 0 auto;
     gap: $base-size * 3;
-    text-align: center;
 }
 .user-posts {
   display: flex;
@@ -71,7 +61,7 @@
 .add-post-btns {
     display: flex;
     gap: $base-size * 3;
-    width: 100%;
+    align-self: center;
 }
 .add-image__label {
   @include font-main();
@@ -87,6 +77,7 @@
 
   &:hover {
     color: var(--font-color-main);
+    cursor: pointer;
   }
 }
 .add-image > input {
@@ -110,7 +101,6 @@
   display: flex;
   gap: $base-size * 3;
 }
-
 .image-preview {
   width: 100%;
   max-height: 250px;
@@ -121,7 +111,19 @@
   border-radius: $base-size;
   margin-top: 5px;
 }
-
 .image-preview img {
   width: 100%;
+}
+.add-topic__select {
+  color: var(--font-color-main);
+  
+  & option {
+    color: var(--font-color-main);
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+.add-topic__select option:disabled {
+  color: var(--font-color-auxiliary);
 }
