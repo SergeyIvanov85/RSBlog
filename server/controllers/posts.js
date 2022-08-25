@@ -6,7 +6,7 @@ import  {fileURLToPath} from 'url'
 // Create Post
 export const createPost = async (req, res) => {
     try {
-        const {title, text} = req.body
+        const {title, text, topic} = req.body
         const user = await User.findById(req.userId)
 
         if(req.files) {
@@ -20,6 +20,7 @@ export const createPost = async (req, res) => {
                 text,
                 imgUrl: fileName,
                 author: req.userId,
+                topic,
             })
 
             await newPostWithImage.save()
@@ -36,6 +37,7 @@ export const createPost = async (req, res) => {
             text,
             imgUrl: '',
             author: req.userId,
+            topic,
         })
 
         await newPostWithoutImage.save()
@@ -46,5 +48,50 @@ export const createPost = async (req, res) => {
 
     } catch (error) {
         res.json({message: 'Что-то пошло не так!'})
+    }
+}
+
+// Get All Posts
+export const getAll = async (req, res) => {
+    try {
+        const posts = await Post.find().sort('-createdAt')
+        const popularPosts = await Post.find().limit(5).sort('-views')
+        const topicPosts = await Post.find().sort('-topic')
+
+        if(!posts) {
+            return res.json({message: 'Пока статей не существует!'})
+        }
+
+        res.json({posts, popularPosts, topicPosts})
+    } catch (error) {
+        res.json({message: 'Что-то пошло не так..'})
+    }
+}
+
+// Get Post By ID
+export const getById = async (req, res) => {
+    try {
+        const post = await Post.findByIdAndUpdate(req.params.id, {
+            $inc: { views: 1},
+        })
+        res.json(post)
+    } catch (error) {
+        res.json({message: 'Что-то пошло не так..'})
+    }
+}
+
+// Get  My Posts
+export const getMyPosts = async (req, res) => {
+    try {
+        const user = await User.findById(req.userId)
+        const list = await Promise.all(
+          user.posts.map((post) => {
+              return Post.findById(post._id)
+          }),
+        )
+
+        res.json(list)
+    } catch (error) {
+        res.json({ message: 'Что-то пошло не так.' })
     }
 }
