@@ -18,7 +18,6 @@ export const Navbar = () => {
                         <ul className='main-nav__list'>
                             <li className='main-nav__link'><NavLink to={'/'} href='/'>Главная</NavLink></li>
                             <li className='main-nav__link'><NavLink to={'/feed'} href='/'>Лента</NavLink></li>
-                            <li className='main-nav__link'><NavLink to={'/new'} href='/'>Добавить статью</NavLink></li>
                             <li className='main-nav__link'><NavLink to={'/posts'} href='/'>Мои статьи</NavLink></li>
                             <li className='main-nav__link'><NavLink to={'/about'} href='/'>О проекте</NavLink></li>
                         </ul> 
