@@ -14,7 +14,9 @@ export const LoginPage = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(status) toast(status)
+        if(status) {
+            toast(status)
+        }
         if(isAuth) navigate('/')
     }, [status, isAuth, navigate])
 
