@@ -4,6 +4,7 @@ import {PostItem} from "../components/PostItem";
 
 export const PostsPage = () => {
     const [posts, setPosts] = useState([])
+
     const fetchMyPosts = async () => {
         try {
             const {data} = await axios.get('/posts/user/me')
@@ -12,21 +13,22 @@ export const PostsPage = () => {
             console.log(error)
         }
     }
-
+    
     useEffect(() => {
         fetchMyPosts()
     }, [])
-
+    
     if(!posts.length) {
         return (
-          <div className='no-posts'>Кажется, вы еще не добавили ни одной статьи &#129300;</div>
-        )
+            <div className='section-wrapper'>
+                <div className='no-posts'>Кажется, вы еще не добавили ни одной статьи &#129300;</div>
+            </div>
+        ) 
     }
-    
-    return <div className='section-wrapper'>
-        <div className='user-posts'>
+
+    return <div className='section-wrapper user-posts'>
+        <div className='user-posts__inner'>
             {posts?.map((post, idx) => (<PostItem key={idx} post={post}/>))}
         </div>
     </div>
-
 }
