@@ -107,14 +107,15 @@ h1, h2, h3 {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem;
-  margin-bottom: $base-size * 10;
+  box-sizing: border-box;
 }
 .btn {
-  width: 12rem;
-  height: 2.5rem;
+  width: 10rem;
+  height: 2.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @include font-main();
-  line-height: 1rem;
   padding: $base-size * 2;
   border: 2px solid var(--border-color);
   border-radius: $base-size;
