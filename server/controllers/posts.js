@@ -111,3 +111,28 @@ export const removePost = async (req, res) => {
         res.json({ message: 'Что-то пошло не так.' })
     }
 }
+
+// Update Post
+export const updatePost = async (req, res) => {
+    try {
+        const {title, text, topic, id} = req.body
+        const post = await Post.findById(id)
+
+        if(req.files) {
+            let fileName = Date.now().toString() + req.files.image.name
+            const __dirname = dirname(fileURLToPath(import.meta.url))
+            req.files.image.mv(path.join(__dirname, '..', 'uploads', fileName))
+            post.imgUrl = fileName || ''
+        }
+
+        post.title = title
+        post.text = text
+        post.topic = topic
+
+        await post.save()
+
+        res.json(post)
+    } catch (error) {
+        res.json({ message: 'Что-то пошло не так.' })
+    }
+}
