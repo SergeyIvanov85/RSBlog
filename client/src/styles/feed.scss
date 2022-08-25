@@ -41,9 +41,9 @@
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
-      line-height: 1.3em;
+      line-height: 1.1em;
       height: 3.9em;
       color: var(--font-color-main);
       font-size: 14px;
@@ -110,22 +110,12 @@
     display: flex;
     column-gap: 5px;
 
-
     &_img {
       width: 16px;
       filter: var(--filter-SVG);
-      //background-image: url('../assets/images/view.svg');
       background-repeat: no-repeat;
       background-size: contain;
     }
-  }
-
-  .icon__comment_img {
-    //background-image: url('../assets/images/comment-Regular.svg');
-  }
-
-  .icon__like_img {
-    //background-image: url('../assets/images/like.svg');
   }
 }
 
@@ -180,7 +170,6 @@
       outline: none;
       background-color: var(--bg-input);
 
-
       .icon-search {
         height: 100%;
         width: 100%;
@@ -220,6 +209,6 @@
     }
   }
 }
-.button-icon{
+.button-icon {
   cursor: pointer;
 }
