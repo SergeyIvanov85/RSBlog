@@ -103,6 +103,7 @@
         background-image: url("../assets/images/svg-edit.svg");
         background-repeat: no-repeat;
         background-size: contain;
+        cursor: pointer;
       }
       &_delete {
         height: 100%;
@@ -111,6 +112,7 @@
         background-image: url("../assets/images/svg-delete.svg");
         background-repeat: no-repeat;
         background-size: contain;
+        cursor: pointer;
       }
     }
   }

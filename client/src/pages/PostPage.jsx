@@ -1,12 +1,29 @@
 import React, {useCallback, useEffect, useState} from "react";
 import Moment from "react-moment";
-import {AiFillEye, AiOutlineMessage} from "react-icons/ai";
+import {AiFillEye, AiOutlineMessage, AiTwotoneEdit, AiFillDelete} from "react-icons/ai";
 import axios from "../utils/axios";
-import {Link, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {removePost} from "../redux/features/post/postSlice";
+import {toast} from "react-toastify";
 
 export const PostPage = () => {
     const [post, setPost] = useState(null)
+
+    const {user} = useSelector(state => state.auth)
+    const navigate = useNavigate()
     const params = useParams()
+    const dispatch = useDispatch()
+
+    const removePostHandler = () => {
+      try {
+        dispatch(removePost(params.id))
+        toast('Ваш пост был удален!')
+        navigate('/posts')
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
     const fetchPost = useCallback(async () => {
         const {data} = await axios.get(`/posts/${params.id}`)
@@ -50,10 +67,14 @@ export const PostPage = () => {
                     <AiOutlineMessage /> <span>{post.comments?.length || 0}</span>
                 </button>
             </div>
-            <div className='icon__change'>
-                <div className='icon__change_edit'></div>
-                <div className='icon__change_delete'></div>
-            </div>
+          {
+            user?._id === post.author && (
+              <div className='icon__change'>
+                <button className=''><AiTwotoneEdit/></button>
+                <button onClick={removePostHandler} className=''><AiFillDelete/></button>
+              </div>
+            )
+          }
         </div>
     </div>
   </div>

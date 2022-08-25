@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "../utils/axios";
 import {PostItem} from "../components/PostItem";
-import {RightSideMenu} from "../components/RightSideMenu";
+
 
 export const PostsPage = () => {
     const [posts, setPosts] = useState([])
