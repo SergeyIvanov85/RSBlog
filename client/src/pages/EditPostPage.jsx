@@ -2,6 +2,7 @@ import React, {useCallback, useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "../utils/axios";
+import {updatePost} from "../redux/features/post/postSlice";
 
 export const EditPostPage = () => {
 
@@ -25,7 +26,14 @@ export const EditPostPage = () => {
 
     const submitHandler = () => {
         try {
-
+            const updatedPost = new FormData()
+            updatedPost.append('title', title)
+            updatedPost.append('text', text)
+            updatedPost.append('id', params.id)
+            updatedPost.append('image', newImage)
+            updatedPost.append('topic', topic)
+            dispatch(updatePost(updatedPost))
+            navigate('/posts')
         } catch (error) {
             console.log(error)
         }
@@ -87,7 +95,7 @@ export const EditPostPage = () => {
             </div>
 
             <div className='add-post-btns'>
-                <button onClick={submitHandler} className='btn'>Добавить</button>
+                <button onClick={submitHandler} className='btn'>Редактировать</button>
                 <button onClick={clearFormHandler} className='btn'>Отменить</button>
             </div>
         </div>

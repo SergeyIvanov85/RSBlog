@@ -70,7 +70,7 @@ export const PostPage = () => {
           {
             user?._id === post.author && (
               <div className='icon__change'>
-                <button className=''><AiTwotoneEdit/></button>
+                <button className=''><Link to={`/${params.id}/edit`}><AiTwotoneEdit/></Link></button>
                 <button onClick={removePostHandler} className=''><AiFillDelete/></button>
               </div>
             )
