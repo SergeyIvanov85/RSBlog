@@ -13,14 +13,28 @@ interface IUserAuth {
   password: string;
 }
 
-export const registerUser = createAsyncThunk(
+interface IPost{
+  username: string,
+  title: string,
+  text: string,
+  imgUrl: string,
+  views: number,
+  author: string,
+  comments: Array<string>,
+  }
+
+  interface IUser{
+      username: string,
+      password: string,
+      posts: Array<IPost>,
+  }
+
+
+export const registerUser: any = createAsyncThunk(
   "auth/registerUser",
   async (user: IUserAuth) => {
     try {
-      const { data } = await axios.post("/auth/register", {
-        username,
-        password,
-      });
+      const { data } = await axios.post("/auth/register", {user: IUserAuth });
       if (data.token) {
         window.localStorage.setItem("token", data.token);
       }
