@@ -35,29 +35,30 @@ export const RegisterPage = () => {
                  className='section-wrapper form-container'>
         <div className='form-inner'>
             <h1 className='auth-form-title'>Регистрация</h1>
-        <label className='label'>
-            Логин
-            <input type='text'
-                   value={username}
-                   onChange={(e) => setUsername(e.target.value)}
-                   placeholder='Username'
-                   className='text-input'
-            />
-        </label>
 
-        <label className='label'>
-            Пароль
-            <input type='password'
-                   value={password}
-                   onChange={(e) => setPassword(e.target.value)}
-                   placeholder='Password'
-                   className='text-input'
-            />
-        </label>
-        <div className='confirm-btns'>
-            <button type='submit' onClick={handleSubmit} className='btn'>Подтвердить</button>
-            <Link to={'/login'} className='login-link'>Уже зарегистрированы?</Link>
-        </div>
+            <label className='label'>
+                Логин
+                <input type='text'
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder='Username'
+                    className='text-input'
+                />
+            </label>
+
+            <label className='label'>
+                Пароль
+                <input type='password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder='Password'
+                    className='text-input'
+                />
+            </label>
+            <div className='confirm-btns'>
+                <button type='submit' onClick={handleSubmit} className='btn'>Подтвердить</button>
+                <Link to={'/login'} className='login-link'>Уже зарегистрированы?</Link>
+            </div>
         </div>
     </form>
 }
