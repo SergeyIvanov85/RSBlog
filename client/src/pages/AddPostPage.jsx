@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import {useDispatch} from "react-redux";
 import {createPost} from "../redux/features/post/postSlice";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 export  const AddPostPage = () => {
 
@@ -62,7 +62,7 @@ export  const AddPostPage = () => {
         <div className='add-topic'>
           <label htmlFor='add-topic__select'>Тема статьи:
             <select name='add-topic__select' onChange={(e) => setTopic(e.target.value)} value={topic} id='add-topic__select' className='add-topic__select'>
-              <option>Выбрать тему:</option>
+              <option value='' disabled>Выбрать тему:</option>
               <option value='travel'>Путешествия</option>
               <option value='health'>Здоровье</option>
               <option value='education'>Образование</option>
@@ -74,7 +74,7 @@ export  const AddPostPage = () => {
 
       <div className='add-post-btns'>
         <button onClick={submitHandler} className='btn'>Добавить</button>
-        <button onClick={clearFormHandler} className='btn'>Отменить</button>
+        <button onClick={clearFormHandler} className='btn'><Link to={'/posts'}>Отменить</Link></button>
       </div>
       </div>
     </form>
