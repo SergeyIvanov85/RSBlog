@@ -1,40 +1,19 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { IUserAuth, IUser, State, Action, LoginResponse} from "../../../models";
 
-const initialState = {
+const initialState: State = {
   user: null,
   token: null,
   isLoading: false,
   status: null,
 };
 
-interface IUserAuth {
-  username: string;
-  password: string;
-}
-
-interface IPost{
-  username: string,
-  title: string,
-  text: string,
-  imgUrl: string,
-  views: number,
-  author: string,
-  comments: Array<string>,
-  }
-
-  interface IUser{
-      username: string,
-      password: string,
-      posts: Array<IPost>,
-  }
-
-
-export const registerUser: any = createAsyncThunk(
+export const registerUser = createAsyncThunk(
   "auth/registerUser",
   async (user: IUserAuth) => {
     try {
-      const { data } = await axios.post("/auth/register", {user: IUserAuth });
+      const { data } = await axios.post("/auth/register", {user});
       if (data.token) {
         window.localStorage.setItem("token", data.token);
       }
@@ -45,11 +24,11 @@ export const registerUser: any = createAsyncThunk(
   }
 );
 
-export const loginUser = createAsyncThunk(
+export const loginUser = createAsyncThunk (
   "auth/loginUser",
-  async ({ username, password }) => {
+  async ({ username, password }: IUserAuth) => {
     try {
-      const { data } = await axios.post("/auth/login", {
+      const { data } = await axios.post<LoginResponse>("/auth/login", {
         username,
         password,
       });
@@ -65,14 +44,14 @@ export const loginUser = createAsyncThunk(
 
 export const getMe = createAsyncThunk("auth/loginUser", async () => {
   try {
-    const { data } = await axios.get("/auth/me");
+    const { data } = await axios.get<IUser>("/auth/me");
     return data;
   } catch (error) {
     console.log(error);
   }
 });
 
-export const authSlice = createSlice({
+export const authSlice: any = createSlice({
   name: "auth",
   initialState,
   reducers: {
@@ -83,7 +62,56 @@ export const authSlice = createSlice({
       state.status = null;
     },
   },
-  extraReducers: {
+  extraReducers: (builder) => {
+    builder
+    // Register user
+    .AddCase(registerUser.pending, (state) => {
+      state.isLoading = true;
+      state.status = null;
+    })
+    .AddCase(registerUser.fulfilled, (state, action: Action) => {
+      state.isLoading = false;
+      state.status = action.payload.message;
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+    })
+    .AddCase(registerUser.rejected, (state, action: Action) => {
+      state.status = action.payload.message;
+      state.isLoading = false;
+    })
+     // Login user
+    .AddCase(loginUser.pending, (state) => {
+      state.isLoading = true;
+      state.status = null;
+    })
+    .AddCase(loginUser.fulfilled, (state, action: Action) => {
+      state.isLoading = false;
+      state.status = action.payload.message;
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+    })
+    .AddCase(loginUser.rejected, (state, action: Action) => {
+      state.status = action.payload.message;
+      state.isLoading = false;
+    })
+    //проверка авторизации
+    .AddCase(getMe.pending, (state) => {
+      state.isLoading = true;
+      state.status = null;
+    })
+    .AddCase(getMe.fulfilled, (state, action: Action) => {
+      state.isLoading = false;
+      state.status = null;
+      state.user = action.payload?.user;
+      state.token = action.payload?.token;
+    })
+    .AddCase(getMe.rejected, (state, action: Action) => {
+      state.status = action.payload.message;
+      state.isLoading = false;
+    })
+  }
+});
+/*
     // Register user
     [registerUser.pending]: (state) => {
       state.isLoading = true;
@@ -130,9 +158,11 @@ export const authSlice = createSlice({
       state.isLoading = false;
     },
   },
-});
-
+*/
 export const checkIsAuth = (state) => Boolean(state.auth.token);
 
 export const { logout } = authSlice.actions;
 export default authSlice.reducer;
+function createSlice(arg0: { name: string; initialState: { user: null; token: null; isLoading: boolean; status: null; }; reducers: { logout: (state: any) => void; }; extraReducers: { [x: number]: (state: any, action: any) => void; }; }): void {
+  throw new Error("Function not implemented.");
+}
