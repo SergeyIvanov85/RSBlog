@@ -3,6 +3,7 @@ import axios from "../utils/axios";
 import {PostItem} from "../components/PostItem";
 import {Link} from "react-router-dom";
 
+
 export const PostsPage = () => {
     const [posts, setPosts] = useState([])
 

@@ -17,7 +17,7 @@ export const LoginPage = () => {
         if(status) {
             toast(status)
         }
-        if(isAuth) navigate('/')
+        if(isAuth) navigate('/feed')
     }, [status, isAuth, navigate])
 
     const handleSubmit = () => {

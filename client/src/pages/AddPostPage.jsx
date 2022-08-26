@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
 import {useDispatch} from "react-redux";
 import {createPost} from "../redux/features/post/postSlice";
@@ -48,8 +47,8 @@ export  const AddPostPage = () => {
       </div>
 
         <div className='add-title'>
-          <label htmlFor='add-title__input'>Заголовок статьи:</label>
-          <input type='text' id='add-title__input' className='text-input'value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Заголовок'/>
+        <label htmlFor='add-title__input'>Заголовок статьи:</label>
+          <input type='text' id='add-title__input' className='text-input' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Заголовок'/>
         </div>
 
 

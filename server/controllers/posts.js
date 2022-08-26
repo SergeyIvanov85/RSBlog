@@ -2,6 +2,7 @@ import Post from '../models/Post.js'
 import User from '../models/User.js'
 import path, {dirname} from 'path'
 import  {fileURLToPath} from 'url'
+import Comment from "../models/Comment.js";
 
 // Create Post
 export const createPost = async (req, res) => {
@@ -90,6 +91,62 @@ export const getMyPosts = async (req, res) => {
           }),
         )
 
+        res.json(list)
+    } catch (error) {
+        res.json({ message: 'Что-то пошло не так.' })
+    }
+}
+
+// Remove Posts
+export const removePost = async (req, res) => {
+    try {
+        const post = await Post.findByIdAndDelete(req.params.id)
+        if(!post) return res.json({message: 'Такой статьи не существует!'})
+
+        await User.findByIdAndUpdate(req.userId, {
+            $pull: {posts: req.params.id},
+        })
+
+        res.json({message: 'Пост был удален.'})
+    } catch (error) {
+        res.json({ message: 'Что-то пошло не так.' })
+    }
+}
+
+// Update Post
+export const updatePost = async (req, res) => {
+    try {
+        const {title, text, topic, id} = req.body
+        const post = await Post.findById(id)
+
+        if(req.files) {
+            let fileName = Date.now().toString() + req.files.image.name
+            const __dirname = dirname(fileURLToPath(import.meta.url))
+            req.files.image.mv(path.join(__dirname, '..', 'uploads', fileName))
+            post.imgUrl = fileName || ''
+        }
+
+        post.title = title
+        post.text = text
+        post.topic = topic
+
+        await post.save()
+
+        res.json(post)
+    } catch (error) {
+        res.json({ message: 'Что-то пошло не так.' })
+    }
+}
+
+//Get Post Comments
+export const getPostComments = async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.id)
+        const list = await Promise.all(
+          post.comments.map((comment) => {
+              return Comment.findById(comment)
+          }),
+        )
         res.json(list)
     } catch (error) {
         res.json({ message: 'Что-то пошло не так.' })

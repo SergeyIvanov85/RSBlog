@@ -104,6 +104,7 @@
         background-image: url("../assets/images/svg-edit.svg");
         background-repeat: no-repeat;
         background-size: contain;
+        cursor: pointer;
       }
       &_delete {
         height: 100%;
@@ -112,6 +113,7 @@
         background-image: url("../assets/images/svg-delete.svg");
         background-repeat: no-repeat;
         background-size: contain;
+        cursor: pointer;
       }
     }
   }
@@ -174,12 +176,13 @@
         width: 40px;
         border-radius: 50%;
         @include bg-border();
-        font-size: 30px;
+        font-size: 15px;
         text-align: center;
       }
 
       &__text {
-        font-weight: 700;
+        font-weight: 400;
+        font-size: 13px;
       }
     }
   }
