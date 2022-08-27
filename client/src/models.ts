@@ -20,23 +20,15 @@ export interface IUser {
 } 
 
 export type State = {
-  user: null,
-  token: null,
+  user: IUser | null,
+  token: string | null,
   isLoading: boolean,
-  status: null,
-}
-  
-export type Action = {
-    payload: { 
-      message: string | null,
-      user: string | null,
-      token: string | null,
-    }; 
+  status: string | null,
 }
 
-export type LoginResponse = {
-    token: never, 
-    user: IUser, 
-    message: string,
-  }
+export type AuthResponse = {
+  token: never, 
+  user: IUser, 
+  message: string,
+}
   

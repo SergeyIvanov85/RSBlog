@@ -18,7 +18,7 @@ export const createPost = createAsyncThunk(
     }
   }
 );
-
+/*
 export const postSlice = createSlice({
   name: "post",
   initialState,
@@ -39,3 +39,4 @@ export const postSlice = createSlice({
 });
 
 export default postSlice.reducer;
+*/
