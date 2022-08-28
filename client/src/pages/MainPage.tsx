@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
 import {checkIsAuth, logout} from "../redux/features/auth/authSlice";
 import {toast} from "react-toastify";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+
+const ghIcon = require('../assets/images/github-icon.png');
+const rsLogo = require('../assets/images/rs-logo.png');
 
 export const MainPage = () => {
 
-    const isAuth = useSelector(checkIsAuth);
-    const  dispatch = useDispatch()
+    const isAuth = useAppSelector(checkIsAuth);
+    const dispatch = useAppDispatch()
 
     const logoutHandler = () => {
         dispatch(logout())
@@ -35,25 +38,25 @@ export const MainPage = () => {
                 <ul className='members'>
                     <li className='member-github'>
                         <a href='https://github.com/SergeyIvanov85' className='github-link'>
-                            <img src="../assets/images/github-icon.png" alt='Github:'></img>
+                            <img src={ghIcon} alt='Github:'></img>
                             <p>SergeyIvanov85</p>
                         </a>
                     </li>
                     <li className='member-github'>
                         <a href='https://github.com/Ponomareva-Nina' className='github-link'>
-                            <img src="../assets/images/github-icon.png" alt='Github:'></img>
+                            <img src={ghIcon} alt='Github:'></img>
                             <p>Ponomareva-Nina</p>
                         </a>
                     </li>
                     <li className='member-github'>
                         <a href='https://github.com/Swettlana' className='github-link'>
-                            <img src="../assets/images/github-icon.png" alt='Github:'></img>
+                            <img src={ghIcon} alt='Github:'></img>
                             <p>Swettlana</p>
                         </a>
                     </li>
                 </ul>
                 <div className='rs-logo'>
-                    <a href='https://rs.school/'><img src="../assets/images/rs-logo.png" alt='RS School'></img></a>
+                    <a href='https://rs.school/'><img src={rsLogo} alt='RS School'></img></a>
                 </div>
             </div>
         </footer>

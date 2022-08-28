@@ -42,9 +42,7 @@ export const loginUser = createAsyncThunk<AuthResponse, IUserAuth, {rejectValue:
       }
       return data;
     } catch (error) {
-      if(error){
         console.log(rejectWithValue("Login error!"))
-      };
     }
   }
 );

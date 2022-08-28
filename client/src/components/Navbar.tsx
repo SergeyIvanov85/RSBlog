@@ -2,7 +2,8 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import { useAppSelector} from "../redux/hooks";
 import { checkIsAuth } from "../redux/features/auth/authSlice";
-import '../assets/images/menu-icon.png';
+
+const menuIcon = require('../assets/images/menu-icon.png');
 
 export const Navbar = () => {
 
@@ -12,7 +13,7 @@ export const Navbar = () => {
     return <header className='header-wrapper'>
             <div className='section-wrapper header'>
                 <div className='logo'>        
-                    <p>RS Blog</p>
+                    <p>RS BLOG</p>
                 </div>
                 <nav className='main-nav'>
                     { isAuth && (
@@ -26,7 +27,7 @@ export const Navbar = () => {
                 </nav>
                 <div className='menu'>
                     { isAuth && (
-                        <img src="../assets/images/menu-icon.png" alt='Menu'></img>
+                        <img src={menuIcon} alt='Menu'></img>
                     )}
                 </div>
             </div>
