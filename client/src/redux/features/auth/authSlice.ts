@@ -11,9 +11,12 @@ const initialState: State = {
 
 export const registerUser = createAsyncThunk<AuthResponse, IUserAuth, {rejectValue: string}>(
   "auth/registerUser",
-  async (user, {rejectWithValue}) => {
+  async ({ username, password }, {rejectWithValue}) => {
     try {
-      const { data } = await axios.post("http://localhost:3002/api/auth/register", {user});
+      const { data } = await axios.post("http://localhost:3002/api/auth/register", {
+        username,
+        password,
+      });
       if (data.token) {
         window.localStorage.setItem("token", data.token);
       }
