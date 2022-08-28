@@ -48,7 +48,7 @@ export const loginUser = createAsyncThunk<AuthResponse, IUserAuth, {rejectValue:
 
 export const getMe = createAsyncThunk("auth/getMe", async () => {
   try {
-    const { data } = await axios.get("/auth/me");
+    const { data } = await axios.get("http://localhost:3002/api/auth/me");
     return data;
   } catch (error) {
     console.log(error);
