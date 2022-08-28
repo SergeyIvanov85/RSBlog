@@ -1,10 +1,10 @@
-@import "./variables";
+@import './variables';
 
 @font-face {
   font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 400;
-  src: url("../assets/fonts/Rubik-Regular.ttf");
+  src: url("../assets/fonts/Rubik-Regular.ttf")
 }
 
 @font-face {
@@ -43,7 +43,7 @@ $base-size: 5px;
   font-family: "Rubik", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--font-color-main);
 }
 
@@ -63,12 +63,6 @@ $base-size: 5px;
 
 // === ОБНУЛЕНИЕ СТИЛЕЙ ===
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 ul {
   list-style: none;
   margin: 0;
@@ -84,11 +78,7 @@ a {
   }
 }
 
-h1,
-h2,
-h3,
-p,
-button {
+h1,h2,h3, p {
   margin: 0;
   padding: 0;
 }
@@ -100,22 +90,16 @@ body {
   color: var(--font-color-main);
   background: var(--main-bg);
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   box-sizing: border-box;
-}
-
-button {
-  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   @include font-title();
 }
 
@@ -123,15 +107,15 @@ h3 {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem;
-  margin-bottom: $base-size * 10;
+  box-sizing: border-box;
 }
-
 .btn {
-  width: 12rem;
-  height: 2.5rem;
+  width: 10rem;
+  height: 2.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @include font-main();
-  line-height: 1rem;
   padding: $base-size * 2;
   border: 2px solid var(--border-color);
   border-radius: $base-size;
@@ -145,5 +129,20 @@ h3 {
   &:active {
     cursor: pointer;
     box-shadow: none;
+  }
+}
+.text-input {
+  @include font-main();
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: $base-size;
+  background-color: var(--bg-input) !important;
+  margin-top: $base-size;
+  padding: $base-size;
+
+  &:focus {
+    outline: none;
   }
 }

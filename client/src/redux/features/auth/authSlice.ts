@@ -13,14 +13,14 @@ export const registerUser = createAsyncThunk<AuthResponse, IUserAuth, {rejectVal
   "auth/registerUser",
   async (user, {rejectWithValue}) => {
     try {
-      const { data } = await axios.post("/auth/register", {user});
+      const { data } = await axios.post("http://localhost:3002/api/auth/register", {user});
       if (data.token) {
         window.localStorage.setItem("token", data.token);
       }
       return data;
     } catch (error) {
       if(error){
-        return rejectWithValue("An error occurred!")
+        console.log(rejectWithValue("Registration error!"))
       };
     }
   }
@@ -30,7 +30,7 @@ export const loginUser = createAsyncThunk<AuthResponse, IUserAuth, {rejectValue:
   "auth/loginUser",
   async ({ username, password }, {rejectWithValue}) => {
     try {
-      const { data } = await axios.post("/auth/login", {
+      const { data } = await axios.post("http://localhost:3002/api/auth/login", {
         username,
         password,
       });
@@ -40,18 +40,22 @@ export const loginUser = createAsyncThunk<AuthResponse, IUserAuth, {rejectValue:
       return data;
     } catch (error) {
       if(error){
-        return rejectWithValue("An error occurred!")
+        console.log(rejectWithValue("Login error!"))
       };
     }
   }
 );
 
-export const getMe = createAsyncThunk("auth/getMe", async () => {
+export const getMe = createAsyncThunk(
+  "auth/getMe", 
+  async () => {
   try {
     const { data } = await axios.get("http://localhost:3002/api/auth/me");
     return data;
   } catch (error) {
-    console.log(error);
+    if(error){
+      console.log("Auth error!");
+    };
   }
 });
 
