@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import { useAppDispatch } from "./redux/hooks";
 import { getMe } from "./redux/features/auth/authSlice";
 import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import {Routes, Route} from "react-router-dom";
 
 import {Layout} from "./components/Layout";
