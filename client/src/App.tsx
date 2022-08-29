@@ -11,6 +11,7 @@ import {MainPage} from "./pages/MainPage";
 import { PostPage } from "./pages/PostPage";
 import {RegisterPage} from "./pages/RegisterPage";
 import {LoginPage} from "./pages/LoginPage";
+import {AddPostPage} from "./pages/AddPostPage";
 
 
 function App() {
@@ -27,6 +28,7 @@ return (
       <Route path=':id' element={<PostPage />} />
       <Route path='register' element={<RegisterPage />} />
       <Route path='login' element={<LoginPage />} />
+      <Route path='new' element={<AddPostPage />} />
     </Routes>
     <ToastContainer position='bottom-right' />
   </Layout>
