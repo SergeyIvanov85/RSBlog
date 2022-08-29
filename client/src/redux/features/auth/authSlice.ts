@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "../../../utils/axios";
-import { IUserAuth, State, AuthResponse } from "../../../models";
+import { IUserAuth, State, AuthResponse, GetMeResponse } from "../../../models";
 
 const initialState: State = {
   user: null,
@@ -9,11 +9,11 @@ const initialState: State = {
   status: null,
 };
 
-export const registerUser = createAsyncThunk<AuthResponse, IUserAuth, {rejectValue: string}>(
+export const registerUser = createAsyncThunk(
   "auth/registerUser",
-  async ({ username, password }, {rejectWithValue}) => {
+  async ({ username, password }:IUserAuth, {rejectWithValue}) => {
     try {
-      const { data } = await axios.post("/auth/register", {
+      const { data } = await axios.post<AuthResponse>("/auth/register", {
         username,
         password,
       });
@@ -29,11 +29,11 @@ export const registerUser = createAsyncThunk<AuthResponse, IUserAuth, {rejectVal
   }
 );
 
-export const loginUser = createAsyncThunk<AuthResponse, IUserAuth, {rejectValue: string}> (
+export const loginUser = createAsyncThunk(
   "auth/loginUser",
-  async ({ username, password }, {rejectWithValue}) => {
+  async ({ username, password }: IUserAuth, {rejectWithValue}) => {
     try {
-      const { data } = await axios.post("/auth/login", {
+      const { data } = await axios.post<AuthResponse>("/auth/login", {
         username,
         password,
       });
@@ -51,7 +51,7 @@ export const getMe = createAsyncThunk(
   "auth/getMe", 
   async () => {
   try {
-    const { data } = await axios.get("/auth/me");
+    const { data } = await axios.get<GetMeResponse>("/auth/me");
     return data;
   } catch (error) {
     if(error){
@@ -80,9 +80,11 @@ export const authSlice = createSlice({
     })
     .addCase(registerUser.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.status = action.payload.message;
-      state.user = action.payload.user;
-      state.token = action.payload.token;
+      if(action.payload !== undefined) {
+        state.status = action.payload.message;
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+      }
     })
     // Login user
     .addCase(loginUser.pending, (state) => {
@@ -91,9 +93,11 @@ export const authSlice = createSlice({
     })
     .addCase(loginUser.fulfilled, (state, action) => {
       state.isLoading = false;
+      if(action.payload !== undefined) {
       state.status = action.payload.message;
       state.user = action.payload.user;
       state.token = action.payload.token;
+      }
     })
     //проверка авторизации
     .addCase(getMe.pending, (state) => {
@@ -103,8 +107,10 @@ export const authSlice = createSlice({
     .addCase(getMe.fulfilled, (state, action) => {
       state.isLoading = false;
       state.status = null;
-      state.user = action.payload?.user;
+      if(action.payload !== undefined) {
+        state.user = action.payload?.user;
       state.token = action.payload?.token;
+      }
     })
 }});
 

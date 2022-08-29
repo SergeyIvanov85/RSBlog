@@ -60,3 +60,8 @@ export type PostResponse = {
   user: IUser;
   message: string;
 };
+
+export type GetMeResponse = {
+  token: never;
+  user: IUser;
+};
