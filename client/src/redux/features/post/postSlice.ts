@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios from "../../../utils/axios";
 import { INewPost, IPost, IUpdatedPost, StatePost } from "../../../models";
 
 const initialState: StatePost = {
@@ -14,7 +14,7 @@ export const createPost = createAsyncThunk<IPost, INewPost, {}>(
   async (params) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/api/posts",
+        "/posts",
         params
       );
       return data;
@@ -28,7 +28,7 @@ export const getAllPosts = createAsyncThunk<Array<IPost>, undefined, {}>(
   "post/getAllPosts",
   async () => {
     try {
-      const { data } = await axios.get("http://localhost:3002/api/posts");
+      const { data } = await axios.get("/posts");
       return data;
     } catch (error) {
       console.log(error);
@@ -43,7 +43,7 @@ export const removePost = createAsyncThunk<Array<IPost>, string, {}>(
 
     try {
       const { data } = await axios.delete(
-        `http://localhost:3002/api/posts/${id}`,
+        `/posts/${id}`,
         { data: params }
       );
       return data;
