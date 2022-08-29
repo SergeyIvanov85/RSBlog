@@ -4,6 +4,7 @@ export interface IUserAuth {
 }
 
 export interface INewPost {
+  image?: File | null;
   title: string;
   text: string;
   topic: string;

@@ -12,7 +12,7 @@ import { PostPage } from "./pages/PostPage";
 import {RegisterPage} from "./pages/RegisterPage";
 import {LoginPage} from "./pages/LoginPage";
 import {AddPostPage} from "./pages/AddPostPage";
-
+import {PostsPage} from "./pages/PostsPage";
 
 function App() {
   const dispatch = useAppDispatch()
@@ -29,6 +29,7 @@ return (
       <Route path='register' element={<RegisterPage />} />
       <Route path='login' element={<LoginPage />} />
       <Route path='new' element={<AddPostPage />} />
+      <Route path='posts' element={<PostsPage />} />
     </Routes>
     <ToastContainer position='bottom-right' />
   </Layout>

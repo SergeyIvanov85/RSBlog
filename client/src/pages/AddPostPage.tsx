@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import {useAppDispatch} from "../redux/hooks";
 import {createPost} from "../redux/features/post/postSlice";
 import {Link, useNavigate} from "react-router-dom";
+import { INewPost } from "../models";
 
 export  const AddPostPage = () => {
 
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
-  const [image, setImage] = useState('')
+  const [image, setImage] = useState<File | null>(null)
   const [topic, setTopic] = useState('')
 
   const dispatch = useAppDispatch()
@@ -15,11 +16,12 @@ export  const AddPostPage = () => {
 
   const submitHandler = () => {
     try {
-      let data = new FormData()
-      data.append('title', title)
-      data.append('text', text)
-      data.append('image', image)
-      data.append('topic', topic)
+      let data: INewPost = {
+        image: image,
+        title: title,
+        text: text,
+        topic: topic,
+      }
       dispatch(createPost(data))
       navigate('/feed')
     } catch (error) {
@@ -30,18 +32,18 @@ export  const AddPostPage = () => {
   const clearFormHandler = () => {
     setText('')
     setTitle('')
-    setImage('')
+    setImage(null)
     setTopic('')
   }
 
-    return <form className='section-wrapper' onSubmit={e => e.preventDefault()}>
+    return <form name="AddPostForm" className='section-wrapper' onSubmit={e => e.preventDefault()}>
       <div className='form-container'>
       <div className='add-image'>
         <input type="file" name='add-image__input' id='add-image__input' accept='.jpeg, .jpg, .png, .heic' className='hidden' onChange={(e) => { if(e.target.files !== null ) { setImage(e.target.files[0])}}}/>
         <label htmlFor='add-image__input' className='add-image__label'>Прикрепить изображение:</label>
         <div className='image-preview'>
           { image && (
-            <img src={URL.createObjectURL(image)} alt={image.name}/>
+           <img src={URL.createObjectURL(image)} alt={image.name}/> 
           )}
         </div>
       </div>
