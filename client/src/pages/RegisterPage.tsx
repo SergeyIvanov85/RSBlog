@@ -43,7 +43,7 @@ export const RegisterPage = () => {
                     onChange={(e) => setUsername(e.target.value)}
                     placeholder='Username'
                     className='text-input'
-                />
+                    autoComplete="off"/>
             </label>
 
             <label className='label'>
@@ -53,7 +53,7 @@ export const RegisterPage = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder='Password'
                     className='text-input'
-                />
+                    autoComplete="off"/>
             </label>
             <div className='confirm-btns'>
                 <button type='submit' onClick={handleSubmit} className='btn'>Подтвердить</button>

@@ -37,14 +37,16 @@ export const LoginPage = () => {
                        value={username}
                        onChange={(e) => setUsername(e.target.value)}
                        placeholder='Username'
-                       className='text-input'/>
+                       className='text-input'
+                       autoComplete="on"/>
             </label>
             <label className='label'>Пароль:
                 <input type='password'
                        value={password}
                        onChange={(e) => setPassword(e.target.value)}
                        placeholder='Password'
-                       className='text-input'/>
+                       className='text-input'
+                       autoComplete="on"/>
             </label>
             <div className='confirm-btns'>
                 <button type='submit' onClick={handleSubmit} className='btn'>Подтвердить</button>
