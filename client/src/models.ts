@@ -17,7 +17,11 @@ export interface IUpdatedPost {
   id: string;
 }
 
+export interface IID {
+  $oid: string;
+}
 export interface IPost {
+  _id: IID;
   id: string;
   username: string;
   title: string;
@@ -31,6 +35,12 @@ export interface IPost {
   createAt: string;
   updateAt: string;
   __v: number;
+}
+
+export interface IAllPosts {
+  posts: IPost[];
+  popularPosts: IPost[];
+  topicPosts: IPost[];
 }
 
 export interface IUser {
