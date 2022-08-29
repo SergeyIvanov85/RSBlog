@@ -50,18 +50,18 @@ export type StatePost = {
 };
 
 export type AuthResponse = {
-  token: never;
+  token: string | null;
   user: IUser;
   message: string;
 };
 
 export type PostResponse = {
-  token: never;
+  token: string | null;
   user: IUser;
   message: string;
 };
 
 export type GetMeResponse = {
-  token: never;
+  token: string | null;
   user: IUser;
 };
