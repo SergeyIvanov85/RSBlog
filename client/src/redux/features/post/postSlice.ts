@@ -9,14 +9,11 @@ const initialState: StatePost = {
   loading: false,
 };
 
-export const createPost = createAsyncThunk<IPost, INewPost, {}>(
+export const createPost = createAsyncThunk(
   "post/createPost",
-  async (params) => {
+  async (params: INewPost) => {
     try {
-      const { data } = await axios.post(
-        "/posts",
-        params
-      );
+      const { data } = await axios.post<IPost[]>("/posts", params);
       return data;
     } catch (error) {
       console.log(error);
@@ -24,28 +21,24 @@ export const createPost = createAsyncThunk<IPost, INewPost, {}>(
   }
 );
 
-export const getAllPosts = createAsyncThunk<Array<IPost>, undefined, {}>(
-  "post/getAllPosts",
-  async () => {
-    try {
-      const { data } = await axios.get("/posts");
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
+export const getAllPosts = createAsyncThunk("post/getAllPosts", async () => {
+  try {
+    const { data } = await axios.get<IPost[]>("/posts");
+    return data;
+  } catch (error) {
+    console.log(error);
   }
-);
+});
 
-export const removePost = createAsyncThunk<Array<IPost>, string, {}>(
+export const removePost = createAsyncThunk(
   "post/removePost",
-  async (id) => {
+  async (id: string) => {
     const params = { id: id };
 
     try {
-      const { data } = await axios.delete(
-        `/posts/${id}`,
-        { data: params }
-      );
+      const { data } = await axios.delete<IPost[]>(`/posts/${id}`, {
+        data: params,
+      });
       return data;
     } catch (error) {
       console.log(error);
@@ -53,11 +46,14 @@ export const removePost = createAsyncThunk<Array<IPost>, string, {}>(
   }
 );
 
-export const updatePost = createAsyncThunk<Array<IPost>, IUpdatedPost, {}>(
+export const updatePost = createAsyncThunk(
   "post/updatePost",
-  async (updatedPost) => {
+  async (updatedPost: IUpdatedPost) => {
     try {
-      const { data } = await axios.put(`/posts/${updatedPost.id}`, updatedPost);
+      const { data } = await axios.put<IPost[]>(
+        `/posts/${updatedPost.id}`,
+        updatedPost
+      );
       return data;
     } catch (error) {
       console.log(error);

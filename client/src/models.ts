@@ -18,6 +18,7 @@ export interface IUpdatedPost {
 }
 
 export interface IPost {
+  id: string;
   username: string;
   title: string;
   text: string;
@@ -27,6 +28,9 @@ export interface IPost {
   author: string;
   comments: Array<string>;
   topic: string;
+  createAt: string;
+  updateAt: string;
+  __v: number;
 }
 
 export interface IUser {
