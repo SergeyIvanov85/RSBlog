@@ -24,12 +24,12 @@ function App() {
 return (
   <Layout>
     <Routes>
+    <Route path='login' element={<LoginPage />} />
     <Route path='/' element={<MainPage />} />
-      <Route path=':id' element={<PostPage />} />
-      <Route path='register' element={<RegisterPage />} />
-      <Route path='login' element={<LoginPage />} />
-      <Route path='new' element={<AddPostPage />} />
-      <Route path='posts' element={<PostsPage />} />
+    <Route path=':id' element={<PostPage />} />
+    <Route path='register' element={<RegisterPage />} />
+    <Route path='new' element={<AddPostPage />} />
+    <Route path='posts' element={<PostsPage />} />
     </Routes>
     <ToastContainer position='bottom-right' />
   </Layout>
