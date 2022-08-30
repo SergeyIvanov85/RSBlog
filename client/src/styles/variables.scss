@@ -8,8 +8,6 @@ body.light {
     --filter-SVG-input: invert(0);
 
     --main-bg: no-repeat center url("../assets/images/bg-image.jpg");
-    --bg-header: rgba(235, 221, 228, 0.4);
-    --bg-footer: rgba(235, 221, 228, 0.4);
     --bg-input: rgba(255, 255, 255, 0.5); /* для фона инпутов */
     --input-border:#A05C6B;
     --bg-btn: rgba(95, 43, 93, 0.5); /* для фона кнопок */
@@ -33,6 +31,4 @@ body.dark {
     --bg-btn: rgba(255, 255, 255, 0.5);
     --bg-block: rgba(122, 122, 122, 0.5);
     --bg-comments: rgba(33, 33, 33, 0.5);
-    --bg-header: transparent;
-    --bg-footer: rgba(122, 122, 122, 0.5);
 }

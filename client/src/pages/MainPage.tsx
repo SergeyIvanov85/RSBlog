@@ -8,7 +8,7 @@ const ghIcon = require('../assets/images/github-icon.png');
 const rsLogo = require('../assets/images/rs-logo.png');
 
 export const MainPage = () => {
-
+    
     const isAuth = useAppSelector(checkIsAuth);
     const dispatch = useAppDispatch()
 
@@ -16,8 +16,8 @@ export const MainPage = () => {
         dispatch(logout())
         window.localStorage.removeItem('token')
         toast('Вы вышли из аккаунта')
-    }
-
+    } 
+    
     return <div className='main-container'>
         <main className='section-wrapper main'>
             <div className='main-description'>

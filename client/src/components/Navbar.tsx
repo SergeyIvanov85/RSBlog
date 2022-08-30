@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { useAppSelector} from "../redux/hooks";
 import { checkIsAuth } from "../redux/features/auth/authSlice";
+import { Menu } from "./Menu";
 
 const menuIcon = require('../assets/images/menu-icon.png');
 
@@ -9,6 +10,7 @@ export const Navbar = () => {
 
     const isAuth = useAppSelector(checkIsAuth)
 
+    const [menuActive, setMenuActive] = useState(false);
 
     return <header className='header-wrapper'>
             <div className='section-wrapper header'>
@@ -25,11 +27,13 @@ export const Navbar = () => {
                         </ul> 
                     )}
                 </nav>
-                <div className='menu'>
+                <div className='menu-icon menu-icon_active'>
                     { isAuth && (
-                        <img src={menuIcon} alt='Menu'></img>
+                        <img src={menuIcon} onClick={() => setMenuActive(!menuActive)} alt='Menu'></img>
                     )}
                 </div>
-            </div>
+                  <Menu active={menuActive} setActive={setMenuActive}/>
+                </div>
+
     </header>
 }
