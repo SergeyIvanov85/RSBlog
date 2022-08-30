@@ -1,34 +1,34 @@
 .menu-icon {
-  z-index: 2;
   min-width: 7rem;
   text-align: end;
-    & img {
-      width: 50px;
-      height: 50px;
-    }
-    
+  z-index: 2;
+  & img {
+    width: 50px;
+    height: 50px;
+    transition: all .3s ease-in-out;
+      
     &:hover {
       cursor: pointer;
-    }
-
-    transition: all .3s ease-in-out;
+    } 
+  }
 }
 .menu-icon_active {
-    transform: scaleX(-1) translateX(-50px);
+  & img {
+    transform: scaleX(-1);
+  }
 }
 .menu {
-    @include font-navigation();
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateX(30rem);
-    height: 100%;
-    min-width: 30rem;
-    background-color: var(--bg-block);
-    border: 1px solid var(--border-color);
-    border-radius: 1rem;
+  @include font-navigation();
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(30rem);
+  height: 100%;
+  min-width: 30rem;
+  background-color: var(--bg-block);
+  transition: all .3s ease-in-out;
 }
-.menu.active {
+.menu_active {
     transform: translateX(0rem);
     z-index: 1;
 }
