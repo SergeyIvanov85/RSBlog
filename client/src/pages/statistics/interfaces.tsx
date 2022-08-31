@@ -11,7 +11,7 @@ export enum PeriodNames {
 export function PeriodItem({title}:Props) {
     return (
         <li className='statistics-sort-item'>
-            <a className='statistics-sort-link'>
+            <a href='#' className='statistics-sort-link'>
                 <span></span>    
                 {title}
             </a>

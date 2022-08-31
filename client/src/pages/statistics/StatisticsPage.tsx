@@ -47,7 +47,22 @@ export const StatisticsPage = () => {
                 <h2>Всего:</h2>
                 <div className='common-indicators'>
                     <ul className='common-indicators__list'>
-                        
+                        <li className='common-item common-posts'>
+                            <p>Количество созданных вами статей</p>
+                            <div></div>
+                        </li>
+                        <li className='common-item common-views'>
+                            <p>Количество просмотров ваших статей</p>
+                            <div></div>
+                        </li>
+                        <li className='common-item common-comments'>
+                            <p>Количество комментариев под вашими статьями</p>
+                            <div></div>
+                        </li>
+                        <li className='common-item common-likes'>
+                            <p>Количество отметок "нравится" на ваших статьях</p>
+                            <div></div>
+                        </li>
                     </ul>
                 </div>
                 <div>

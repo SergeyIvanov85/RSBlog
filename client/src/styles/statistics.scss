@@ -5,7 +5,7 @@
 }
 .statistics__upper {
     display: flex;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 .statistics-title {
     flex-grow: 2;
@@ -53,9 +53,14 @@
     justify-content: center;
     gap: 2rem;
 }
+.chart-indicators__item {
+    display: flex;
+    gap: $base-size;
+    align-items: center;
+}
 .chart-indicators__item span {
-    width: 10px;
-    height: 10px;
+    width: $base-size * 3;
+    height: $base-size * 3; 
 }
 .chart-indicators__views {
     background-color: #FCEF7A;
@@ -65,6 +70,9 @@
 }
 .chart-indicators__likes {
     background-color: #FEA3FA;
+}
+.chart-container {
+    min-height: 400px; // !!!! ВРЕМЕННО ПОКА НЕТ ОТРИСОВКИ ГРАФИКА!!!! 
 }
 .side-bar {
     min-width: 150px;
@@ -112,9 +120,36 @@
 }
 .statistics__common {
    @include bg-wrapper();
+   margin-bottom: $base-size * 4;
+   display: flex;
+   flex-direction: column;
+   gap: $base-size * 4;
+
     & h2 {
         @include font-main();
         font-weight: 600;
         color: var(--font-color-secondary);
     }
+}
+.common-indicators__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $base-size * 3;
+    text-align: center;
+}
+.common-item {
+    border-radius: $base-size;
+    padding: $base-size;
+}
+.common-views {
+    background-color: #FCEF7A;  
+}
+.common-comments {
+    background-color: #71E0E7;
+}
+.common-likes {
+    background-color: #FEA3FA;;
+}
+.common-posts {
+    background-color: hsla(0, 0%, 100%, 0.507);
 }
