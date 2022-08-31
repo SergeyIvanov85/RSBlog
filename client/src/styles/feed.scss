@@ -68,6 +68,29 @@
         background-position: center;
       }
 
+      &__image_no-img {
+        height: 80%;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        position: relative;
+
+        &::after {
+          content: "Изображение не было загружено";
+          border-radius: 10px 10px 0 0;
+          font-size: 10px;
+          align-items: end;
+          justify-content: end;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          background: linear-gradient(
+            180deg,
+            rgb(207, 180, 154),
+            rgb(255, 231, 107)
+          );
+        }
+      }
+
       &__caption {
         box-sizing: border-box;
         padding: 2px 7px;
