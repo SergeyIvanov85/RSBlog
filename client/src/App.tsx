@@ -13,6 +13,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { AddPostPage } from "./pages/AddPostPage";
 import { PostsPage } from "./pages/PostsPage";
 import { FeedPostsPage } from "./pages/FeedPostsPage";
+import { StatisticsPage } from "./pages/statistics/StatisticsPage"
 
 function App() {
   const dispatch = useAppDispatch();
@@ -31,6 +32,7 @@ function App() {
         <Route path='new' element={<AddPostPage />} />
         <Route path='feed' element={<FeedPostsPage />} />
         <Route path='posts' element={<PostsPage />} />
+        <Route path='about' element={<StatisticsPage />} />
       </Routes>
       <ToastContainer position='bottom-right' />
     </Layout>

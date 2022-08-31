@@ -1,0 +1,120 @@
+@mixin bg-wrapper {
+    background-color: var(--bg-block);
+    padding: 1rem;
+    border-radius: 10px;
+}
+.statistics__upper {
+    display: flex;
+    margin-bottom: 2rem;
+}
+.statistics-title {
+    flex-grow: 2;
+    text-align: center;
+    @include font-title();
+}
+.statistics__main {
+    @include bg-wrapper();
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.statistics__chart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 2;
+    border-right: 1px solid var(--font-color-secondary);
+}
+.period {
+    display: flex;
+    justify-content: center;
+}
+.period__segment {
+    min-width: 50px;
+    border: 1px solid var(--border-color);
+    padding: $base-size;
+    border-radius: $base-size;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.btn-prev {
+    font-weight: 600;
+    &:hover {
+        transform: translateX(-$base-size);
+    }
+}
+.btn-next {
+    font-weight: 600;
+    &:hover {
+        transform: translateX($base-size);
+    }
+}
+.chart-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.chart-indicators__item span {
+    width: 10px;
+    height: 10px;
+}
+.chart-indicators__views {
+    background-color: #FCEF7A;
+}
+.chart-indicators__comments {
+    background-color: #71E0E7;
+}
+.chart-indicators__likes {
+    background-color: #FEA3FA;
+}
+.side-bar {
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    & h2 {
+        @include font-main();
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--font-color-secondary);
+    }
+}
+.statistics-sort-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.statistics-sort-item {
+    display: flex;
+    overflow: hidden;
+}
+.statistics-sort-item span {
+    width: 20px;
+    height: 20px;
+    background-image: url("../assets/images/stats-list-icon.png");
+    background-size: cover;
+}
+.statistics-btn {
+    @include font-main();
+    border: none;
+    background-color: transparent;
+    color: var(--font-color-secondary);
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        border: none;
+    }
+}
+.statistics__common {
+   @include bg-wrapper();
+    & h2 {
+        @include font-main();
+        font-weight: 600;
+        color: var(--font-color-secondary);
+    }
+}

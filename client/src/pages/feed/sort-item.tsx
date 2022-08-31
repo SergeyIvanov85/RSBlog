@@ -2,7 +2,6 @@ interface Props{
   title:string
 }
 
-
 export function SortItem ({title}:Props) {
   return (
     <div className="sort__item">
