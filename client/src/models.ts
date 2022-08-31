@@ -2,14 +2,6 @@ export interface IUserAuth {
   username: string;
   password: string;
 }
-
-export interface INewPost {
-  image?: File | null;
-  title: string;
-  text: string;
-  topic: string;
-}
-
 export interface IUpdatedPost {
   title: string;
   text: string;

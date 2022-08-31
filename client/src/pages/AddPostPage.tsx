@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {useAppDispatch} from "../redux/hooks";
 import {createPost} from "../redux/features/post/postSlice";
 import {Link, useNavigate} from "react-router-dom";
-import { INewPost } from "../models";
 
 export  const AddPostPage = () => {
 
@@ -16,12 +15,11 @@ export  const AddPostPage = () => {
 
   const submitHandler = () => {
     try {
-      let data: INewPost = {
-        image: image,
-        title: title,
-        text: text,
-        topic: topic,
-      }
+      const data = new FormData()
+      data.append('title', title)
+      data.append('text', text)
+      data.append('image', image as Blob)
+      data.append('topic', topic)
       dispatch(createPost(data))
       navigate('/feed')
     } catch (error) {

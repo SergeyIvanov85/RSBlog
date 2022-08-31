@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "../../../utils/axios";
 import {
   IAllPosts,
-  INewPost,
   IPost,
   IUpdatedPost,
   StatePost,
@@ -17,7 +16,7 @@ const initialState: StatePost = {
 
 export const createPost = createAsyncThunk(
   "post/createPost",
-  async (params: INewPost) => {
+  async (params: FormData) => {
     try {
       const { data } = await axios.post<IPost>("/posts", params);
       return data;
