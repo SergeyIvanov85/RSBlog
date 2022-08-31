@@ -17,7 +17,7 @@ const initialState: StatePost = {
 
 export const createPost = createAsyncThunk(
   "post/createPost",
-  async (params: INewPost) => {
+  async (params: FormData) => {
     try {
       const { data } = await axios.post<IPost>("/posts", params);
       return data;

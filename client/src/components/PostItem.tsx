@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { AiFillEye, AiOutlineMessage } from "react-icons/ai";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
@@ -8,44 +9,45 @@ interface IPostItemProps {
   post: IPost;
 }
 
-export const PostItem = (postItem: IPostItemProps) => {
-  if (!postItem.post) {
+export const PostItem: FC<IPostItemProps> = ({ key, post }) => {
+  if (!post) {
     return <div className=''>Загрузка...</div>;
   }
 
   return (
-    <Link to={`/${postItem.post._id}`}>
+    <Link to={`/${post._id}`}>
       <div className='blog'>
         <div className='blog-info'>
           <div
-            className={
-              postItem.post.imgUrl
-                ? "blog-info__image"
-                : "blog-info__image_no-img"
+            className={"blog-info__image"}
+            style={
+              post.imgUrl
+                ? {
+                    backgroundImage: `url(${`http://localhost:3002/${post.imgUrl}`})`,
+                  }
+                : {
+                    backgroundImage: "none",
+                  }
             }
-            style={{
-              backgroundImage: `url(${`http://localhost:3002/${postItem.post.imgUrl}`})`,
-            }}
           ></div>
           <div className='blog-info__caption'>
-            <div className=''>{postItem.post.username}</div>
+            <div className=''>{post.username}</div>
             <div className=''>
-              <Moment date={postItem.post.createAt} format='D MMM YYYY' />
+              <Moment date={post.createAt} format='D MMM YYYY' />
             </div>
           </div>
-          <div className='blog-info__title'>{postItem.post.title}</div>
+          <div className='blog-info__title'>{post.title}</div>
         </div>
 
-        <p className='blog__text'>{postItem.post.text}</p>
+        <p className='blog__text'>{post.text}</p>
 
         <div className='blog__count'>
           <div className='icon'>
             <button className='button-icon'>
-              <AiFillEye /> <span>{postItem.post.views}</span>
+              <AiFillEye /> <span>{post.views}</span>
             </button>
             <button className='button-icon'>
-              <AiOutlineMessage />{" "}
-              <span>{postItem.post.comments?.length || 0}</span>
+              <AiOutlineMessage /> <span>{post.comments?.length || 0}</span>
             </button>
           </div>
           <button className='button-icon'> Подробнее </button>
