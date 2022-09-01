@@ -1,25 +1,27 @@
-.menu-icon {
-  min-width: 7rem;
-  text-align: end;
-  z-index: 3;
+.menu-btn {
+  z-index: 2;
+  display: flex;
+  align-items: center;
 
   & img {
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 60px;
     transition: all .3s ease-in-out;
+    filter: brightness(40%);
       
     &:hover {
       cursor: pointer;
+      filter: brightness(20%);
     } 
   }
 }
-.menu-icon_active {
+.menu-btn_active {
   & img {
     transform: scaleX(-1);
   }
 }
 .menu {
-  @include font-navigation();
+  @include font-main();
   position: absolute;
   top: 0;
   left: 0;
@@ -28,20 +30,21 @@
   box-sizing: border-box;
   transform: translateX(300%);
   z-index: 1;
+  transition: all .2s ease-in;
 
   .menu-content {
     position: absolute;
-    top: -10px;
-    right: 0;
+    top: 0;
+    right: 10px;
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: fit-content;
     transform: translateX(30rem);
-    min-width: 20rem;
+    min-width: 18rem;
     box-sizing: border-box;
     padding: 0 1rem;
     background-color: #ececec;
-    border-radius: 10px;
+    border-radius: 10% 0 10% 10%;
     z-index: 2;
   }
 }
@@ -51,7 +54,7 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   transform: translateX(300%);
   z-index: 1;
 
@@ -68,17 +71,46 @@
   }
 }
 .menu-content {
-  transition: all .3s ease-out;
+  transition: all .3s ease-in-out;
 }
 .menu-content__list {
   display: flex;
   flex-direction: column;
-  gap: 10%;
-  align-items: center;
+  gap: $base-size * 6;
+  align-items: flex-start;
   justify-content: center;
+  padding: 30px 0;
+  margin-top: 60px;
 }
-.blur {
-  position: absolute;
-    top: -10px;
-    right: 0;
+.menu-content__item{
+  display: flex;
+  align-items: center;
+  gap: $base-size * 2;
+  
+  & label:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-toggle {
+  width: 40px;
+  height: 40px;
+  transition: all .3s ease;
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+  }
+}
+.theme-toggle {
+  background-image: url("../assets/images/theme-sprite.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -47px 0;
+
+  &.dark {
+    background-position: 0;
+  }
 }

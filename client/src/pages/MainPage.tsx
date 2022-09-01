@@ -47,6 +47,7 @@ export const MainPage = () => {
                 </ul>
                 <div className='rs-logo'>
                     <a href='https://rs.school/'><img src={rsLogo} alt='RS School'></img></a>
+                    <p>2022</p>
                 </div>
             </div>
         </footer>
