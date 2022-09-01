@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { logout } from "../redux/features/auth/authSlice"
 import { useAppDispatch } from "../redux/hooks"
 import {toast} from "react-toastify";
+import { Link } from "react-router-dom";
 
 const iconImg = require('../assets/images/menu-icon.png');
 
@@ -23,7 +24,8 @@ export const Menu = () => {
         </div>
                 
         <div className={active ? 'menu menu_active' : 'menu'} onClick={() => setActive(false)}>
-                <div className="menu-content">
+                <div className="disabled"></div>
+                <div className="menu-content" onClick={(e) => e.stopPropagation()}>
                     <ul className="menu-content__list">
                         <li className="menu-content__item">
                             <p>Сменить тему</p>
@@ -35,7 +37,7 @@ export const Menu = () => {
                             <p>Статистика</p>
                         </li>
                         <li className="menu-content__item">
-                            <button onClick={logoutHandler} className='btn login-btn'>Выйти</button>
+                            <button onClick={logoutHandler} className='btn login-btn'><Link to={"/"}>Выйти</Link></button>
                         </li>
                     </ul>
                 </div>
