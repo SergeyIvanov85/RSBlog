@@ -20,6 +20,9 @@
     transform: scaleX(-1);
   }
 }
+.dark .menu-btn img {
+  filter: brightness(200%);
+}
 .menu {
   @include font-main();
   position: absolute;
@@ -43,7 +46,7 @@
     min-width: 18rem;
     box-sizing: border-box;
     padding: 0 1rem;
-    background-color: #ececec;
+    background-color: var(--bg-menu);
     border-radius: 10% 0 10% 10%;
     z-index: 2;
   }
@@ -105,12 +108,22 @@
   }
 }
 .theme-toggle {
-  background-image: url("../assets/images/theme-sprite.png");
+  background-image: url("../assets/images/theme.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: -47px 0;
-
-  &.dark {
-    background-position: 0;
-  }
+}
+.lang-toggle {
+  background-image: url("../assets/images/lang.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.statistics-icon {
+  width: 40px;
+  height: 40px;
+  background-image: url("../assets/images/statistics.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.dark .statistics-icon {
+  filter: drop-shadow(0 0 2px white);
 }

@@ -10,7 +10,6 @@ export const Menu = () => {
 
     const dispatch = useAppDispatch();
     const [active, setActive] = useState(false);
-    const [dark, setDarkTheme] = useState(false);
 
     const logoutHandler = () => {
         dispatch(logout())
@@ -23,7 +22,6 @@ export const Menu = () => {
     }
 
     const toggleTheme = () => {
-        setDarkTheme(!active);
         document.body.classList.toggle('dark');
     }
 
@@ -37,7 +35,7 @@ export const Menu = () => {
             <div className='menu-content' onClick={(e) => e.stopPropagation()}>
                 <ul className='menu-content__list'>
                     <li className='menu-content__item'>
-                        <input type='button' id='theme-toggle' className={dark ? 'btn-toggle theme-toggle dark' : 'btn-toggle theme-toggle'} onClick={() => toggleTheme()} />
+                        <input type='button' id='theme-toggle' className='btn-toggle theme-toggle' onClick={() => toggleTheme()}/>
                         <label htmlFor='theme-toggle'>Изменить тему</label>
                     </li>
                     <li className='menu-content__item'>
@@ -45,9 +43,9 @@ export const Menu = () => {
                         <label htmlFor='lang-toggle'>Изменить язык</label>
                     </li>
                     <li className='menu-content__item'>
+                        <span className='statistics-icon'></span>
                         <NavLink to={'/statistics'}>
-                            <span></span>
-                            <p>Статистика профиля</p>
+                            <p>Статистика</p>
                         </NavLink>
                     </li>
                     <li className='menu-content__item'>
