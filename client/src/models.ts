@@ -1,3 +1,7 @@
+export interface ICommentPost {
+  postId: string;
+  comment: string;
+}
 export interface IUserAuth {
   username: string;
   password: string;

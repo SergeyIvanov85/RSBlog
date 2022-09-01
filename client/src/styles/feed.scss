@@ -63,15 +63,17 @@
       &__image {
         height: 80%;
         width: 100%;
-        position: relative;
         border-radius: 10px 10px 0 0;
         background-size: cover;
         background-position: center;
-        background: linear-gradient(
-          180deg,
-          rgb(207, 180, 154),
-          rgb(255, 231, 107)
-        );
+      }
+
+      &__image_no-img {
+        height: 80%;
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        background: var(--bg-input);
+        position: relative;
 
         &::after {
           content: "Изображение не было загружено";
