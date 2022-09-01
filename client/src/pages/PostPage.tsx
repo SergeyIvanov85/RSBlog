@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { createComment } from "../redux/features/comments/commentSlice";
+import { removePost } from "../redux/features/post/postSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 
 export const PostPage = () => {
@@ -14,9 +16,11 @@ export const PostPage = () => {
 
   const removePostHandler = () => {
     try {
-      dispatch(removePost(params.id));
-      toast("Ваш пост был удален!");
-      navigate("/posts");
+      if (params.id) {
+        dispatch(removePost(params!.id));
+        toast("Ваш пост был удален!");
+        navigate("/posts");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -142,3 +146,6 @@ export const PostPage = () => {
     </div>
   );
 };
+function toast(arg0: string) {
+  throw new Error("Function not implemented.");
+}
