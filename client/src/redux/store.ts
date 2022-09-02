@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authSlice from "./features/auth/authSlice";
 import postSlice from "./features/post/postSlice";
-import commentSlice from "e:/art-quiz/rsblog/client/src/redux/features/comments/commentslice";
+import commentSlice from "./features/comments/commentSlice";
 
 const store = configureStore({
   reducer: {
