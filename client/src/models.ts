@@ -2,6 +2,13 @@ export interface ICommentPost {
   postId: string;
   comment: string;
 }
+export interface IComment {
+  comment: string;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
 export interface IUserAuth {
   username: string;
   password: string;
@@ -56,6 +63,11 @@ export type StatePost = {
   posts: Array<IPost>;
   popularPosts: Array<IPost>;
   topicPosts: Array<IPost>;
+  loading: boolean;
+};
+
+export type StateComment = {
+  comments: IComment[];
   loading: boolean;
 };
 
