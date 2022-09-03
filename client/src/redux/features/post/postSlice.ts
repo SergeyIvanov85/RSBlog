@@ -120,6 +120,7 @@ export const postSlice = createSlice({
       .addCase(updatePost.rejected, (state) => {
         state.loading = false;
       });
+
   },
 });
 

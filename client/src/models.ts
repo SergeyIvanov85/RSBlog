@@ -52,6 +52,9 @@ export interface IUser {
   posts: Array<IPost>;
   _id?: string;
 }
+export interface IAddLike {
+  likes: number;
+}
 
 export type State = {
   user: IUser | null;

@@ -24,7 +24,7 @@ export const registerUser = createAsyncThunk(
     } catch (error) {
       if(error){
         console.log(rejectWithValue("Registration error!"))
-      };
+      }
     }
   }
 );
@@ -56,7 +56,7 @@ export const getMe = createAsyncThunk(
   } catch (error) {
     if(error){
       console.log("Auth error!");
-    };
+    }
   }
 });
 
