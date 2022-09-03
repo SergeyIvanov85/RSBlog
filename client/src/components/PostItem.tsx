@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { AiFillEye, AiOutlineMessage } from "react-icons/ai";
+import {AiFillEye, AiOutlineLike, AiOutlineMessage} from "react-icons/ai";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import { IPost } from "../models";
@@ -50,7 +50,10 @@ export const PostItem: FC<IPostItemProps> = ({ key, post }) => {
               <AiOutlineMessage /> <span>{post.comments?.length || 0}</span>
             </button>
           </div>
-          <button className='button-icon'> Подробнее </button>
+          <button className='button-icon' onClick={event => event.preventDefault()}>
+            <span>{post.likes}</span>
+            <AiOutlineLike />
+          </button>
         </div>
       </div>
     </Link>

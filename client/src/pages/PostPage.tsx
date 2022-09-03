@@ -15,6 +15,7 @@ import {
   AiOutlineMessage,
   AiTwotoneEdit,
   AiFillDelete,
+  AiOutlineLike,
 } from "react-icons/ai";
 
 import { toast } from "react-toastify";
@@ -29,7 +30,6 @@ export const PostPage = () => {
   const navigate = useNavigate();
   const params = useParams();
 
-  console.log(params.id);
 
   const dispatch = useAppDispatch();
 
@@ -85,7 +85,7 @@ export const PostPage = () => {
           <div
             className={post!.imgUrl ? "post__image" : ""}
             style={{
-              backgroundImage: `url(${`http://localhost:3002/${post.imgUrl}`})`,
+              backgroundImage: `url(http://localhost:3002/${post.imgUrl})`,
             }}
           ></div>
           <div className='post__caption'>
@@ -102,7 +102,7 @@ export const PostPage = () => {
             <p>{post.text}</p>
           </div>
           <div className='post__buttons'>
-            <button className='btn'>
+            <button className='btn' onClick={event => event.preventDefault()}>
               <Link to={"/feed"}>Назад</Link>
             </button>
             <div className='post__buttons_icons'>
@@ -112,6 +112,9 @@ export const PostPage = () => {
                 </button>
                 <button className='button-icon'>
                   <AiOutlineMessage /> <span>{post.comments?.length || 0}</span>
+                </button>
+                <button className='button-icon'>
+                  <AiOutlineLike /> <span>{post.likes}</span>
                 </button>
               </div>
               {user?._id === post.author && (
