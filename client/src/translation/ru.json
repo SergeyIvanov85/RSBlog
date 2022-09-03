@@ -1,0 +1,15 @@
+{
+    "menu": {
+        "change-theme": "Изменить тему",
+        "change-lang": "Изменить язык",
+        "statistics": "Статистика профиля",
+        "logout-btn": "Выйти"
+    }, 
+
+    "navbar": {
+        "main": "Главная",
+        "feed": "Лента",
+        "users-posts": "Мои статьи",
+        "about": "О проекте"
+    }
+}

@@ -3,27 +3,47 @@ import { logout } from '../redux/features/auth/authSlice'
 import { useAppDispatch } from '../redux/hooks'
 import {toast} from 'react-toastify';
 import { Link, NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const iconImg = require('../assets/images/profile-menu.png');
 
 export const Menu = () => {
-
+    
     const dispatch = useAppDispatch();
-    const [active, setActive] = useState(false);
-
+    
+    // для выхода из учетки: 
     const logoutHandler = () => {
         dispatch(logout())
         window.localStorage.removeItem('token')
         toast('Вы вышли из аккаунта')
     } 
 
+    //=== для открытия/закрытия меню
+    const [active, setActive] = useState(false);
     const toggleMenu = () => {
         setActive(!active);
     }
 
-    const toggleTheme = () => {
-        document.body.classList.toggle('dark');
+    //=== для смены темы
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme === 'dark') {
+        document.body.className='dark';
+    };
+    const setThemeLight = () => {
+        localStorage.setItem("theme", 'light');
+        document.body.className='light';
     }
+    const setThemeDark = () => {
+        localStorage.setItem("theme", 'dark');
+        document.body.className='dark';
+    }
+
+    //=== для смены языка
+    const { t, i18n } = useTranslation();
+    const lngs:any = {
+        en: { nativeName: 'En' },
+        ru: { nativeName: 'Ru' }
+    };
 
     return (
         <> 
@@ -35,21 +55,30 @@ export const Menu = () => {
             <div className='menu-content' onClick={(e) => e.stopPropagation()}>
                 <ul className='menu-content__list'>
                     <li className='menu-content__item'>
-                        <input type='button' id='theme-toggle' className='btn-toggle theme-toggle' onClick={() => toggleTheme()}/>
-                        <label htmlFor='theme-toggle'>Изменить тему</label>
+                        <p>{t('menu.change-theme')}:</p>
+                        <div>
+                            <button className='theme-btn btn-theme-light' onClick={() => setThemeLight()}></button>
+                            <button className='theme-btn btn-theme-dark' onClick={() => setThemeDark()}></button>
+                        </div>
                     </li>
                     <li className='menu-content__item'>
-                        <input type='button' className='btn-toggle lang-toggle' id='lang-toggle'/>
-                        <label htmlFor='lang-toggle'>Изменить язык</label>
+                        <p>{t('menu.change-lang')}:</p>
+                        <div>
+                            {Object.keys(lngs).map((lng) => (
+                            <button key={lng} className={i18n.resolvedLanguage === lng ? 'lang-btn lang-btn_active' : 'lang-btn'} type="submit" onClick={() => i18n.changeLanguage(lng)}>
+                            {lngs[lng].nativeName}
+                            </button>
+                            ))}
+                        </div>
                     </li>
                     <li className='menu-content__item'>
                         <span className='statistics-icon'></span>
                         <NavLink to={'/statistics'}>
-                            <p>Статистика</p>
+                            <p>{t('menu.statistics')}</p>
                         </NavLink>
                     </li>
                     <li className='menu-content__item'>
-                        <button onClick={logoutHandler} className='btn login-btn'><Link to={'/'}>Выйти</Link></button>
+                        <button onClick={logoutHandler} className='btn login-btn'><Link to={'/'}>{t('menu.logout-btn')}</Link></button>
                     </li>
                 </ul>
             </div>

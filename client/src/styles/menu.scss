@@ -28,7 +28,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: calc(100vh - 10px);
+  height: calc(100vh - $base-size * 2);
   width: 100%;
   box-sizing: border-box;
   transform: translateX(300%);
@@ -38,14 +38,12 @@
   .menu-content {
     position: absolute;
     top: 0;
-    right: 10px;
-    display: flex;
-    justify-content: center;
+    right: 0;
     height: fit-content;
     transform: translateX(30rem);
-    min-width: 18rem;
+    min-width: 20rem;
     box-sizing: border-box;
-    padding: 0 1rem;
+    padding: 1rem 2rem;
     background-color: var(--bg-menu);
     border-radius: 10% 0 10% 10%;
     z-index: 2;
@@ -70,7 +68,7 @@
   transform: translateX(0%);
 
   & .menu-content{
-    transform: translateX(0rem);
+    transform: translateX(-$base-size * 2);
   }
 }
 .menu-content {
@@ -81,49 +79,63 @@
   flex-direction: column;
   gap: $base-size * 6;
   align-items: flex-start;
-  justify-content: center;
   padding: 30px 0;
   margin-top: 60px;
 }
 .menu-content__item{
   display: flex;
   align-items: center;
-  gap: $base-size * 2;
+  gap: $base-size;
   
   & label:hover {
     cursor: pointer;
   }
+
 }
 
-.btn-toggle {
-  width: 40px;
-  height: 40px;
-  transition: all .3s ease;
-  border: none;
-  background-color: transparent;
-
-  &:hover {
-    cursor: pointer;
-    transform: rotate(360deg);
-  }
-}
-.theme-toggle {
-  background-image: url("../assets/images/theme.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.lang-toggle {
-  background-image: url("../assets/images/lang.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 .statistics-icon {
-  width: 40px;
+  width: 30px;
   height: 40px;
   background-image: url("../assets/images/statistics.png");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .dark .statistics-icon {
   filter: drop-shadow(0 0 2px white);
+}
+.lang-btn {
+  width: 40px;
+  height: 30px;
+  margin-left: $base-size * 2;
+  display: inline-block;
+  border: 1px solid var(--border-color);
+  border-radius: $base-size;
+  @include font-post();
+  color: var(--font-color-main);
+  background-color: var(--bg-block);
+}
+.lang-btn_active {
+  font-weight: 600;
+  background-color: var(--bg-btn);
+}
+.theme-btn {
+  width: 40px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  margin-left: $base-size * 2;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+}
+.btn-theme-light {
+  background-image: url("../assets/images/sun.png");
+  background-size: 100%;
+}
+.btn-theme-dark {
+  background-image: url("../assets/images/moon.png");
 }
