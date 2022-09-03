@@ -1,0 +1,141 @@
+.menu-btn {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+
+  & img {
+    width: 65px;
+    height: 60px;
+    transition: all .3s ease-in-out;
+    filter: brightness(40%);
+      
+    &:hover {
+      cursor: pointer;
+      filter: brightness(20%);
+    } 
+  }
+}
+.menu-btn_active {
+  & img {
+    transform: scaleX(-1);
+  }
+}
+.dark .menu-btn img {
+  filter: brightness(200%);
+}
+.menu {
+  @include font-main();
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100vh - $base-size * 2);
+  width: 100%;
+  box-sizing: border-box;
+  transform: translateX(300%);
+  z-index: 1;
+  transition: all .2s ease-in;
+
+  .menu-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: fit-content;
+    transform: translateX(30rem);
+    min-width: 20rem;
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    background-color: var(--bg-menu);
+    border-radius: 10% 0 10% 10%;
+    z-index: 2;
+  }
+}
+.disabled {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateX(300%);
+  z-index: 1;
+
+  &_active {
+    transform: translateX(0%);
+  }
+
+}
+.menu_active {
+  transform: translateX(0%);
+
+  & .menu-content{
+    transform: translateX(-$base-size * 2);
+  }
+}
+.menu-content {
+  transition: all .3s ease-in-out;
+}
+.menu-content__list {
+  display: flex;
+  flex-direction: column;
+  gap: $base-size * 6;
+  align-items: flex-start;
+  padding: 30px 0;
+  margin-top: 60px;
+}
+.menu-content__item{
+  display: flex;
+  align-items: center;
+  gap: $base-size;
+  
+  & label:hover {
+    cursor: pointer;
+  }
+
+}
+
+.statistics-icon {
+  width: 30px;
+  height: 40px;
+  background-image: url("../assets/images/statistics.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.dark .statistics-icon {
+  filter: drop-shadow(0 0 2px white);
+}
+.lang-btn {
+  width: 40px;
+  height: 30px;
+  margin-left: $base-size * 2;
+  display: inline-block;
+  border: 1px solid var(--border-color);
+  border-radius: $base-size;
+  @include font-post();
+  color: var(--font-color-main);
+  background-color: var(--bg-block);
+}
+.lang-btn_active {
+  font-weight: 600;
+  background-color: var(--bg-btn);
+}
+.theme-btn {
+  width: 40px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  margin-left: $base-size * 2;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+}
+.btn-theme-light {
+  background-image: url("../assets/images/sun.png");
+  background-size: 100%;
+}
+.btn-theme-dark {
+  background-image: url("../assets/images/moon.png");
+}

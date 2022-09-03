@@ -51,7 +51,19 @@
         height: 40px;
     }
 }
-.rs-logo img {
-   width: 120px;
-   height: 70px;
+.rs-logo {
+    @include font-navigation();
+    display: flex;
+    gap: $base-size * 2;
+    align-items: flex-end;
+    font-weight: bold;
+
+    & p {
+        padding: $base-size;
+    }
+
+    & img {
+        width: 120px;
+        height: 50px
+    }
 }

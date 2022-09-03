@@ -1,0 +1,29 @@
+{
+  "menu": {
+    "change-theme": "Change theme",
+    "change-lang": "Change language",
+    "statistics": "Profile statistics",
+    "logout-btn": "Log out"
+  }, 
+  "navbar": {
+    "main": "Home",
+    "feed": "Feed",
+    "users-posts": "My posts",
+    "about": "About us"
+  },
+  "post-item": {
+    "loading": "loading..."
+  },
+  "main": {
+    "text": "Share your thoughts and stories on the RS Blog, read articles on different topics and find interesting people and friends.",
+    "register": "Register",
+    "login": "Log in"
+  },
+  "login-page": {
+    "login": "Log in",
+    "to-register": "Not registered yet?",
+    "submit": "Submit",
+    "username": "Username:",
+    "password": "Password:"
+  }
+}

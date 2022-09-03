@@ -108,6 +108,7 @@ h1, h2, h3 {
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+  padding: 0 1rem;
 }
 .btn {
   width: 10rem;
@@ -123,7 +124,7 @@ h1, h2, h3 {
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 5px 0 var(--hover-color);
+    box-shadow: 0 0 5px var(--hover-color);
   }
 
   &:active {
