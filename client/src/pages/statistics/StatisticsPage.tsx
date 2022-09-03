@@ -1,15 +1,15 @@
 import React from 'react';
-import { PeriodItem, PeriodNames } from './interfaces';
-
+import { useTranslation } from 'react-i18next';
 
 export const StatisticsPage = () => {
-  
+  const { t } = useTranslation();
+
   return (
     <div className='section-wrapper'>
         <div className='statistics'>
             <div className='statistics__upper'>
-                <h1 className='statistics-title'>Ваша статистика</h1>
-                <button className='btn'>Закрыть</button>
+                <h1 className='statistics-title'>{t('statistics.title')}</h1>
+                <button className='btn'>{t('statistics.close')}</button>
             </div>
             <div className='statistics__main'>
                 <div className='statistics__chart'>
@@ -21,15 +21,15 @@ export const StatisticsPage = () => {
                     <ul className='chart-indicators'>
                         <li className='chart-indicators__item'>
                             <span className='chart-indicators__views'></span>
-                            <p>просмотры</p> 
+                            <p>{t('statistics.views')}</p> 
                         </li>
                         <li className='chart-indicators__item'>
                             <span className='chart-indicators__comments'></span>
-                            <p>комментарии</p>
+                            <p>{t('statistics.comments')}</p>
                         </li>
                         <li className='chart-indicators__item'>
                             <span className='chart-indicators__likes'></span>
-                            <p>отметки "нравится"</p>
+                            <p>{t('statistics.likes')}</p>
                         </li>
                     </ul>
                     <div className='chart-container'>
@@ -37,36 +37,38 @@ export const StatisticsPage = () => {
                     </div>
                 </div>
                 <div className='side-bar'>
-                    <h2>Период:</h2>
+                    <h2>{t('statistics.period')}</h2>
                     <ul className='statistics-sort-list'>
-                        {Object.entries(PeriodNames).map(title => <PeriodItem title={title[1]}/>)}
+                        <li className='statistics-sort-item'><span></span>{t('statistics.week')}</li>
+                        <li className='statistics-sort-item'><span></span>{t('statistics.month')}</li>
+                        <li className='statistics-sort-item'><span></span>{t('statistics.year')}</li>
                     </ul>
                 </div>
             </div>
             <div className='statistics__common'>
-                <h2>Всего:</h2>
+                <h2>{t('statistics.total')}</h2>
                 <div className='common-indicators'>
                     <ul className='common-indicators__list'>
                         <li className='common-item common-posts'>
-                            <p>Количество созданных вами статей</p>
+                            <p>{t('statistics.common-posts')}</p>
                             <div></div>
                         </li>
                         <li className='common-item common-views'>
-                            <p>Количество просмотров ваших статей</p>
+                            <p>{t('statistics.common-views')}</p>
                             <div></div>
                         </li>
                         <li className='common-item common-comments'>
-                            <p>Количество комментариев под вашими статьями</p>
+                            <p>{t('statistics.common-comments')}</p>
                             <div></div>
                         </li>
                         <li className='common-item common-likes'>
-                            <p>Количество отметок "нравится" на ваших статьях</p>
+                            <p>{t('statistics.common-likes')}</p>
                             <div></div>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h2>Лучшая статья за неделю:</h2>
+                    <h2>{t('statistics.best-post')}</h2>
                 </div>
             </div>
         </div>

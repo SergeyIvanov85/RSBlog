@@ -4,11 +4,23 @@
     "change-lang": "Change language",
     "statistics": "Profile statistics",
     "logout-btn": "Log out"
+  },
+  "right-side-menu": {
+    "search": "SEARCH",
+    "search-placeholder": "Enter keyword...",
+    "sort": "SORT:",
+    "sort-by-date": "by newest",
+    "sort-by-popularity": "by popularity",
+    "topics": "TOPICS:",
+    "traveling": "Traveling",
+    "health": "Health", 
+    "education": "Education", 
+    "sport": "Sports"
   }, 
   "navbar": {
     "main": "Home",
     "feed": "Feed",
-    "users-posts": "My posts",
+    "users-posts": "My articles",
     "about": "About us"
   },
   "post-item": {
@@ -20,10 +32,57 @@
     "login": "Log in"
   },
   "login-page": {
-    "login": "Log in",
+    "title": "Log in",
     "to-register": "Not registered yet?",
     "submit": "Submit",
     "username": "Username:",
     "password": "Password:"
+  },
+  "register-page": {
+    "title": "Registration",
+    "to-login": "Already registered?",
+    "submit": "Submit",
+    "username": "Username:",
+    "password": "Password:"
+  }, 
+  "add-post-page": {
+    "add-image": "Add image",
+    "title": "Post title:",
+    "title-placeholder": "Title",
+    "text-placeholder": "Enter your text here...",
+    "text": "Text:",
+    "topic": "Topic:",
+    "topic-placeholder": "Choose the topic:",
+    "traveling": "Traveling",
+    "health": "Health", 
+    "education": "Education", 
+    "sport": "Sports",
+    "other": "Other",
+    "add": "Submit", 
+    "cancel": "Cancel"
+  },
+  "posts-page": {
+    "no-posts": "Seems like you haven't created any articles yet",
+    "add": "Add"
+  },
+  "feed-page": {
+    "no-posts": "No articles yet."
+  },
+  "statistics": {
+    "title": "Profile statistics",
+    "close": "Close",
+    "views": "views",
+    "comments": "comments",
+    "likes": "likes",
+    "period": "Period:",
+    "week": "week",
+    "month": "month",
+    "year": "year",
+    "total": "Total:",
+    "common-posts": "Number of articles you have created",
+    "common-views": "Number of views on your articles",
+    "common-comments": "Number of comments on your articles",
+    "common-likes": "Number of likes on your articles",
+    "best-post": "Most popular article of the period:"
   }
 }

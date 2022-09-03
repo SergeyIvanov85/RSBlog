@@ -3,8 +3,10 @@ import { PostItem } from "../components/PostItem";
 import { RightSideMenu } from "../components/RightSideMenu";
 import { getAllPosts } from "../redux/features/post/postSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { useTranslation } from 'react-i18next';
 
 export const FeedPostsPage = () => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const { posts, popularPosts, topicPosts } = useAppSelector(
     (state) => state.post
@@ -15,7 +17,7 @@ export const FeedPostsPage = () => {
   }, [dispatch]);
 
   if (!posts.length) {
-    return <div className=''>Статей не существует.</div>;
+    return <div className=''>{t('feed-page.no-posts')}</div>;
   }
 
   return (
