@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import { IPost } from "../models";
 
 interface IPostItemProps {
-  key: number;
+  // key: number;
   post: IPost;
 }
 
-export const PostItem: FC<IPostItemProps> = ({ key, post }) => {
+export const PostItem: FC<IPostItemProps> = ({ post }) => {
   if (!post) {
     return <div className=''>Загрузка...</div>;
   }

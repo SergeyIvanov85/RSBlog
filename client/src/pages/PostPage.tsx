@@ -68,11 +68,11 @@ export const PostPage = () => {
   }, [params.id]);
 
   useEffect(() => {
-    fetchPost();
+    fetchPost().then(r => {});
   }, [fetchPost]);
 
   useEffect(() => {
-    fetchComments();
+    fetchComments().then(r => {});
   }, [fetchComments]);
 
   if (!post) {
