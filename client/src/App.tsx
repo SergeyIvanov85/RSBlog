@@ -14,6 +14,7 @@ import { AddPostPage } from "./pages/AddPostPage";
 import { PostsPage } from "./pages/PostsPage";
 import { FeedPostsPage } from "./pages/FeedPostsPage";
 import { StatisticsPage } from "./pages/statistics/StatisticsPage"
+import { AboutPage} from "./pages/AboutPage";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -32,7 +33,8 @@ function App() {
         <Route path='new' element={<AddPostPage />} />
         <Route path='feed' element={<FeedPostsPage />} />
         <Route path='posts' element={<PostsPage />} />
-        <Route path='about' element={<StatisticsPage />} />
+        <Route path='statistics' element={<StatisticsPage />} />
+        <Route path='about' element={<AboutPage />} />
       </Routes>
       <ToastContainer position='bottom-right' />
     </Layout>
