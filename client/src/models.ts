@@ -4,7 +4,7 @@ export interface ICommentPost {
 }
 export interface IComment {
   comment: string;
-  id: string;
+  _id: string;
   createdAt: string;
   updatedAt: string;
   __v: number;
@@ -50,6 +50,7 @@ export interface IUser {
   username: string;
   password: string;
   posts: Array<IPost>;
+  _id?: string;
 }
 
 export type State = {
