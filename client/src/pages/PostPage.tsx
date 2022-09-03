@@ -136,7 +136,7 @@ export const PostPage = () => {
           <div className='comments__button-close'></div>
           <div className='comments__list'>
             {comments?.map((cmt) => (
-              <CommentItem key={cmt._id} cmt={cmt} />
+              <CommentItem cmt={cmt} />
             ))}
           </div>
 
