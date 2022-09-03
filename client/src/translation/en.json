@@ -1,0 +1,15 @@
+{
+    "menu": {
+      "change-theme": "Change theme",
+      "change-lang": "Change language",
+      "statistics": "Profile statistics",
+      "logout-btn": "Log out"
+    }, 
+
+    "navbar": {
+        "main": "Home",
+        "feed": "Feed",
+        "users-posts": "My posts",
+        "about": "About us"
+    }
+}

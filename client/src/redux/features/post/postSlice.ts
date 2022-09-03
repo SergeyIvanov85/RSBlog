@@ -1,11 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "../../../utils/axios";
-import {
-  IAllPosts,
-  IPost,
-  IUpdatedPost,
-  StatePost,
-} from "../../../models";
+import { IAllPosts, IPost, IUpdatedPost, StatePost } from "../../../models";
 
 const initialState: StatePost = {
   posts: [],

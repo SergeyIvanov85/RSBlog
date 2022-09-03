@@ -19,15 +19,15 @@ export const PostItem: FC<IPostItemProps> = ({ key, post }) => {
       <div className='blog'>
         <div className='blog-info'>
           <div
-            className={"blog-info__image"}
+            className={
+              post.imgUrl ? "blog-info__image" : "blog-info__image_no-img"
+            }
             style={
               post.imgUrl
                 ? {
                     backgroundImage: `url(${`http://localhost:3002/${post.imgUrl}`})`,
                   }
-                : {
-                    backgroundImage: "none",
-                  }
+                : {}
             }
           ></div>
           <div className='blog-info__caption'>
