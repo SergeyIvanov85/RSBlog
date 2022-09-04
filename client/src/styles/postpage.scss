@@ -21,12 +21,13 @@
   align-items: flex-start;
   justify-content: space-between;
 }
+
 .post {
   &__wrapper {
     height: 100%;
     width: 60%;
     background-color: var(--bg-block);
-    border-radius: 25px;
+    border-radius: $base-size * 2;
     border: 1px solid var(--input-border);
     padding: 3px 5px;
   }
@@ -38,7 +39,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include font-post;
+    @include font-post();
     color: var(--font-color-auxiliary);
   }
 
@@ -77,56 +78,75 @@
       @include font-post();
     }
   }
+}
 
-  &__buttons {
-    box-sizing: border-box;
-    width: 100%;
+.post__buttons {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_icons {
+    height: 18px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
+    column-gap: 10px;
+    align-items: flex-end;
+  }
 
-    &_icons {
-      height: 18px;
-      display: flex;
-      column-gap: 10px;
-      align-items: flex-end;
-    }
+  .icon__change {
+    display: flex;
+    gap: $base-size;
 
-    .icon__change {
+    &_edit {
       height: 100%;
-      column-gap: 20px;
-      display: flex;
-
-      &_edit {
-        height: 100%;
-        width: 20px;
-        filter: var(--filter-SVG);
-        background-image: url("../assets/images/svg-edit.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        cursor: pointer;
-      }
-      &_delete {
-        height: 100%;
-        width: 20px;
-        filter: var(--filter-SVG);
-        background-image: url("../assets/images/svg-delete.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        cursor: pointer;
-      }
+      width: 20px;
+      filter: var(--filter-SVG);
+      background-image: url("../assets/images/svg-edit.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+    &_delete {
+      height: 100%;
+      width: 20px;
+      filter: var(--filter-SVG);
+      background-image: url("../assets/images/svg-delete.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
     }
   }
 }
+
 .icon {
-  button {
-    background-color: transparent;
-    align-self: flex-end;
-    border: none;
-    font-size: 14px;
-    color: var(--font-color-auxiliary);
+  box-sizing: border-box;
+  display: flex;
+  color: var(--font-color-main);
+  font-size: 12px;
+
+  .icon__view,
+  .icon__comment,
+  .icon__like {
+    display: flex;
+    column-gap: 5px;
+
+    &_img {
+      width: 16px;
+      filter: var(--filter-SVG);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
   }
+}
+
+.button-icon {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: $base-size;
+  border: none;
+  @include font-post();
+  color: var(--font-color-main);
 }
 
 .comments {
@@ -136,7 +156,7 @@
   display: flex;
   flex-direction: column;
   background-color: var(--bg-block);
-  border-radius: 25px;
+  border-radius: $base-size * 2;
   row-gap: 30px;
   border: 1px solid var(--input-border);
   padding: 15px 25px 25px 25px;
