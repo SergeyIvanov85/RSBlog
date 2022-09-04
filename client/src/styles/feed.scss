@@ -78,8 +78,8 @@
         &::after {
           content: "Изображение не было загружено";
           font-size: 10px;
-          align-items: end;
-          justify-content: end;
+          align-items: flex-end;
+          justify-content: flex-end;
           height: 100%;
           width: 100%;
           display: flex;

@@ -1,27 +1,36 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {checkIsAuth } from "../redux/features/auth/authSlice";
-import { useAppSelector } from "../redux/hooks";
 import { useTranslation } from 'react-i18next';
 
 const ghIcon = require('../assets/images/github-icon.png');
 const rsLogo = require('../assets/images/rs-logo.png');
+const communityImg = require('../assets/images/community.png');
+const hangoutsImg = require('../assets/images/hangouts.png');
+const settingsImg = require('../assets/images/settings.png');
 
 export const MainPage = () => {
     const { t } = useTranslation();
-    const isAuth = useAppSelector(checkIsAuth);
     
     return <div className='main-container'>
         <main className='section-wrapper main'>
-            <div className='main-description'>
-                <h1 className='title'>FREE RS BLOG</h1>
-                <p>{t('main.text')}</p>               
-                <div className='auth-btns'>
-                    {isAuth ? ('') : (
-                        <Link to={'/login'}><button className='btn login-btn'>{t('main.login')}</button></Link>
-                        )}
-                    {isAuth ? ('') : (<Link to={'/register'}><button className='btn registration-btn'>{t('main.register')}</button></Link>)}
-                </div>
+            <h1 className='title'>{t('main.welcome')}FREE RS BLOG</h1>
+            <div className='main-description'> 
+                    <div className="text">
+                        <h2>Платформа для творчества</h2>
+                        <p>Делись своими историями, идеями и размышлениями без ограничений по количеству символов.
+                        <br/>А также читай статьи других пользователей, выбирая интересующие темы по тегам.</p>
+                        <p className="note">* бесплатно и без sms &#128579;</p>
+                    </div>
+                    <img src={hangoutsImg} alt=''/>
+                    <img src={communityImg} alt=''/>
+                    <div className="text">
+                        <h2>Большое и дружное комьюнити </h2>
+                        <p>Находи новых друзей и интересных для себя людей в RS Blog. Поддерживай авторов лайками &#128151; и обсуждай статьи в комментариях.</p>
+                    </div>
+                    <div className="text">
+                        <h2>Кастомизация и статистика &#128200;</h2>
+                        <p>Заходи в меню пользователя и отслеживай статистику профиля за разные периоды времени, а также меняй настройки языка и темы по своим предпочтениям.</p>
+                    </div>
+                    <img src={settingsImg} alt=''/>
             </div>
         </main>
         <footer className='footer-wrapper'>

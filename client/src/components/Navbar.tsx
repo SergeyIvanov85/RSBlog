@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAppSelector} from "../redux/hooks";
 import { checkIsAuth } from "../redux/features/auth/authSlice";
 import { Menu } from "./Menu";
@@ -8,12 +8,12 @@ import { useTranslation } from 'react-i18next';
 
 export const Navbar = () => {
     const { t } = useTranslation();
-    const isAuth = useAppSelector(checkIsAuth)
+    const isAuth = useAppSelector(checkIsAuth);
 
     return <header className='header-wrapper'>
             <div className='section-wrapper header'>
                 <div className='logo'>        
-                    <p>R&nbsp; &nbsp;S<br/>BLOG</p>
+                    <Link to={'/'}><p>R&nbsp; &nbsp;S<br/>BLOG</p></Link>
                 </div>
                 <nav className='main-nav'>
                     { isAuth && (
@@ -25,6 +25,13 @@ export const Navbar = () => {
                         </ul> 
                     )}
                 </nav>
+                    {isAuth ? ('') : (
+                        <div className='auth-btns'>
+                            <Link to={'/login'}><button className='btn login-btn'>{t('main.login')}</button></Link>
+                            <Link to={'/register'}><button className='btn registration-btn'>{t('main.register')}</button></Link> 
+                        </div>
+                        )}               
+                
                     { isAuth && (
                         <Menu/>
                     )}

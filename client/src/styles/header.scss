@@ -12,7 +12,12 @@
   margin-bottom: 0;
   min-height: 3rem;
 }
-
+.auth-btns {
+  display: flex;
+  align-self: flex-end;
+  gap: 1rem;
+  align-self: center;
+}
 .logo {
   @include font-logo();
   color: var(--font-color-main);
@@ -22,7 +27,6 @@
     cursor: pointer;
   }
 }
-
 .main-nav__list {
   display: flex;
   gap: 4rem;
@@ -30,7 +34,6 @@
   align-items: center;
   @include font-navigation();
 }
-
 .main-nav__link {
   position: relative;
   transition: all .5s ease-in-out;
@@ -55,7 +58,6 @@
     }
   }
 }
-
 .active {
   border-bottom: 2px solid var(--border-color);
 }

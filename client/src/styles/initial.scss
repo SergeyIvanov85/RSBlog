@@ -1,30 +1,39 @@
-.title {
-    @include font-logo();
-    color: var(--font-color-secondary);
-}
 .main-container {
     display: flex;
     flex-direction: column;
     height: 60vh;
+    overflow: scroll;
 }
 .main {
-    height: 100%;
-    overflow-y: scroll; 
+    width: 75%;
+}
+.title {
+    @include font-logo();
+    color: var(--font-color-secondary);
+    margin: 2rem 0;
 }
 .main-description {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
-    margin:$base-size * 4 auto;
+
+    & h2 {
+        margin-bottom: 1.4rem;
+    }
+    & img {
+        max-width: 14rem;
+    }
 }
-.auth-btns {
-    display: flex;
-    align-self: flex-end;
-    gap: 1rem;
+.note {
+    color: var(--font-color-auxiliary);
+    font-size: smaller;
     margin-top: 2rem;
 }
+
 .footer-wrapper {
     padding-top: 1rem;
     height: 5rem;
@@ -75,3 +84,5 @@
         height: 45px
     }
 }
+
+// ====  классы для переключения слайдера ====

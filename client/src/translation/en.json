@@ -29,7 +29,8 @@
   "main": {
     "text": "Share your thoughts and stories on the RS Blog, read articles on different topics and find interesting people and friends.",
     "register": "Register",
-    "login": "Login"
+    "login": "Login",
+    "welcome": "Welcome to "
   },
   "login-page": {
     "title": "Login",

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { logout } from '../redux/features/auth/authSlice'
-import { useAppDispatch } from '../redux/hooks'
+import { checkIsAuth, logout } from '../redux/features/auth/authSlice'
+import { useAppDispatch, useAppSelector } from '../redux/hooks'
 import {toast} from 'react-toastify';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +8,8 @@ import { useTranslation } from 'react-i18next';
 const iconImg = require('../assets/images/profile-menu.png');
 
 export const Menu = () => {
-    
+    const isAuth = useAppSelector(checkIsAuth);
+    const [auth, checkAuth] = useState(isAuth);
     const dispatch = useAppDispatch();
     
     // для выхода из учетки: 
@@ -16,6 +17,7 @@ export const Menu = () => {
         dispatch(logout())
         window.localStorage.removeItem('token')
         toast('Вы вышли из аккаунта')
+        checkAuth(auth);
     } 
 
     //=== для открытия/закрытия меню
