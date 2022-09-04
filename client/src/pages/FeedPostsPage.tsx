@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineVerticalAlignTop } from "react-icons/ai";
 import { BsSortDown } from "react-icons/bs";
 import { PostItem } from "../components/PostItem";
-import { RightSideMenu } from "../components/RightSideMenu";
 import { IPost } from "../models";
 import { getAllPosts } from "../redux/features/post/postSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
