@@ -1,18 +1,17 @@
 import { FC } from "react";
-import {AiFillEye, AiOutlineLike, AiOutlineMessage} from "react-icons/ai";
+import { AiFillEye, AiOutlineLike, AiOutlineMessage } from "react-icons/ai";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import { IPost } from "../models";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 interface IPostItemProps {
-  // key: number;
   post: IPost;
 }
 
 export const PostItem: FC<IPostItemProps> = ({ post }) => {
   const { t } = useTranslation();
   if (!post) {
-    return <div className=''>{t('post-item.loading')}</div>;
+    return <div className=''>{t("post-item.loading")}</div>;
   }
 
   return (
@@ -51,7 +50,10 @@ export const PostItem: FC<IPostItemProps> = ({ post }) => {
               <AiOutlineMessage /> <span>{post.comments?.length || 0}</span>
             </button>
           </div>
-          <button className='button-icon' onClick={event => event.preventDefault()}>
+          <button
+            className='button-icon'
+            onClick={(event) => event.preventDefault()}
+          >
             <span>{post.likes}</span>
             <AiOutlineLike />
           </button>

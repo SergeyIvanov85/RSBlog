@@ -208,11 +208,83 @@
     flex-direction: column;
     row-gap: 5px;
 
+    .ascending {
+      transform: scaleY(-1);
+    }
+
+    .btn-sort {
+      background-color: transparent;
+      background-image: url("../../src/assets/images/descending-sort.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: var(--filter-SVG-input);
+      cursor: pointer;
+      border: none;
+      width: 1.5rem;
+      height: 1.1rem;
+      border-radius: 5px;
+
+      &_active {
+        background-image: url("../../src/assets/images/descending-sort.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: var(--filter-SVG-input);
+        cursor: pointer;
+        border: none;
+        width: 1.5rem;
+        height: 1.1rem;
+        border-radius: 5px;
+        background-color: var(--bg-input);
+      }
+
+      &:hover {
+        background-color: var(--bg-input);
+      }
+    }
+
+    .btn-filter {
+      background-color: transparent;
+      background-image: url("../../src/assets/images/filter.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: var(--filter-SVG-input);
+      cursor: pointer;
+      border: none;
+      width: 1.5rem;
+      height: 1.1rem;
+      border-radius: 5px;
+
+      &_active {
+        background-image: url("../../src/assets/images/filter.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: var(--filter-SVG-input);
+        cursor: pointer;
+        border: none;
+        width: 1.5rem;
+        height: 1.1rem;
+        border-radius: 5px;
+        background-color: var(--bg-input);
+      }
+
+      &:hover {
+        background-color: var(--bg-input);
+      }
+    }
+
     &__item {
       display: flex;
       width: 100%;
       justify-content: space-between;
       color: var(--font-color-secondary);
+
+      p {
+        width: 10rem;
+      }
     }
   }
   .theme {
@@ -231,4 +303,35 @@
 }
 .button-icon {
   cursor: pointer;
+}
+.btn-filter {
+  background-color: transparent;
+  background-image: url("../../src/assets/images/filter.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: var(--filter-SVG-input);
+  cursor: pointer;
+  border: none;
+  width: 1.5rem;
+  height: 1.1rem;
+  border-radius: 5px;
+
+  &_active {
+    background-image: url("../../src/assets/images/filter.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: var(--filter-SVG-input);
+    cursor: pointer;
+    border: none;
+    width: 1.5rem;
+    height: 1.1rem;
+    border-radius: 5px;
+    background-color: var(--bg-input);
+  }
+
+  &:hover {
+    background-color: var(--bg-input);
+  }
 }
