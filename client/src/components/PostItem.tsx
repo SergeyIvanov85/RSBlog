@@ -34,7 +34,7 @@ export const PostItem: FC<IPostItemProps> = ({ post }) => {
           <div className='blog-info__caption'>
             <div className=''>{post.username}</div>
             <div className=''>
-              <Moment date={post.createAt} format='D MMM YYYY' />
+              <Moment date={post.createdAt} format='D MMM YYYY' />
             </div>
           </div>
           <div className='blog-info__title'>{post.title}</div>
