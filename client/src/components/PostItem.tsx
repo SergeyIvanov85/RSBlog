@@ -55,12 +55,6 @@ export const PostItem: FC<IPostItemProps> = ({ post }) => {
               <span>{post.likes}</span>
               <AiOutlineLike />
             </button>
-            <button
-            className='button-icon'
-            onClick={(event) => event.preventDefault()}>
-            <span>{post.likes}</span>
-            <AiOutlineLike />
-          </button>
           </div>
         </div>
       </div>
