@@ -1,7 +1,33 @@
+import { FC, useState } from "react";
 import { AiOutlineVerticalAlignTop } from "react-icons/ai";
 import { BsSortDown } from "react-icons/bs";
+import { IPost } from "../models";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
 
-export const RightSideMenu = () => {
+interface ISearchProps {
+  data: IPost[];
+}
+
+export const RightSideMenu: FC<ISearchProps> = ({ data }) => {
+  const [searchField, setSearchField] = useState("");
+  let { posts, popularPosts, topicPosts } = useAppSelector(
+    (state) => state.post
+  );
+
+  const dispatch = useAppDispatch();
+
+  const filterPosts = (data: IPost[]) => {
+    data.filter((post) => {
+      return post.title.toLowerCase().includes(searchField.toLowerCase());
+    });
+  };
+
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    console.log(e.currentTarget.value);
+    setSearchField(e.currentTarget.value);
+    filterPosts(posts);
+  };
+
   return (
     <div className='options'>
       <div className='options__search'>
@@ -15,6 +41,7 @@ export const RightSideMenu = () => {
             name=''
             className=''
             placeholder='Введите ключевое слово...'
+            onChange={handleChange}
           />
           <button>
             <div className='icon-search'></div>
