@@ -85,8 +85,7 @@ export const PostPage = () => {
           <div
             className={post!.imgUrl ? "post__image" : ""}
             style={{
-              backgroundImage: `url(http://localhost:3002/${post.imgUrl})`,
-            }}
+              backgroundImage: `url(http://localhost:3002/${post.imgUrl})`,}}
           ></div>
           <div className='post__caption'>
             <p> {post.username} </p>
