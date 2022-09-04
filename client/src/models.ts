@@ -13,13 +13,6 @@ export interface IUserAuth {
   username: string;
   password: string;
 }
-export interface IUpdatedPost {
-  title: string;
-  text: string;
-  topic: string;
-  id: string;
-}
-
 export interface IID {
   $oid: string;
 }
@@ -36,7 +29,7 @@ export interface IPost {
   comments: Array<string>;
   topic: string;
   createdAt: number;
-  updatedAt: number;
+  updatedAt: string;
   __v: number;
 }
 

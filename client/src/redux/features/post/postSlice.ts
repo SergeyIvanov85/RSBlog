@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "../../../utils/axios";
-import { IAllPosts, IPost, IUpdatedPost, StatePost } from "../../../models";
+import { IAllPosts, IPost, StatePost } from "../../../models";
 
 const initialState: StatePost = {
   posts: [],
@@ -48,9 +48,10 @@ export const removePost = createAsyncThunk(
 
 export const updatePost = createAsyncThunk(
   "post/updatePost",
-  async (updatedPost: IUpdatedPost) => {
+  async (updatedPost: FormData) => {
     try {
       const { data } = await axios.put<IPost>(
+        // @ts-ignore
         `/posts/${updatedPost.id}`,
         updatedPost
       );
