@@ -3,7 +3,7 @@
     "change-theme": "Change theme",
     "change-lang": "Change language",
     "statistics": "Profile statistics",
-    "logout-btn": "Log out"
+    "logout-btn": "Logout"
   },
   "right-side-menu": {
     "search": "SEARCH",
@@ -29,10 +29,10 @@
   "main": {
     "text": "Share your thoughts and stories on the RS Blog, read articles on different topics and find interesting people and friends.",
     "register": "Register",
-    "login": "Log in"
+    "login": "Login"
   },
   "login-page": {
-    "title": "Log in",
+    "title": "Login",
     "to-register": "Not registered yet?",
     "submit": "Submit",
     "username": "Username:",

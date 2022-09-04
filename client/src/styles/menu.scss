@@ -44,7 +44,7 @@
     min-width: 20rem;
     box-sizing: border-box;
     padding: 1rem 2rem;
-    background-color: var(--bg-menu);
+    background-color: var(--bg-block);
     border-radius: 10% 0 10% 10%;
     z-index: 2;
   }
@@ -92,17 +92,30 @@
   }
 
 }
+.statistics-link,
+.logout-btn {
+  position: relative;
+  transition: all .5s ease-in-out;
 
-.statistics-icon {
-  width: 30px;
-  height: 40px;
-  background-image: url("../assets/images/statistics.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.dark .statistics-icon {
-  filter: drop-shadow(0 0 2px white);
+  &::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    border-bottom: 2px solid var(--border-color);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+  }
+  
+  &:hover {
+    cursor: pointer;
+  
+    &::after {
+      opacity: 1;
+    }
+  }
 }
 .lang-btn {
   width: 40px;
@@ -114,28 +127,51 @@
   @include font-post();
   color: var(--font-color-main);
   background-color: var(--bg-block);
+  transition: all .3s ease;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 }
 .lang-btn_active {
   font-weight: 600;
   background-color: var(--bg-btn);
 }
-.theme-btn {
+.menu-icon {
   width: 40px;
   height: 30px;
   border: none;
   background-color: transparent;
-  margin-left: $base-size * 2;
   display: inline-block;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-
-
+  transition: all .3s ease;
 }
 .btn-theme-light {
   background-image: url("../assets/images/sun.png");
   background-size: 100%;
+  margin-left: $base-size * 2;
+  display: inline-block;
+  
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 }
 .btn-theme-dark {
   background-image: url("../assets/images/moon.png");
+  margin-left: $base-size * 2;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+.logout-btn {
+  @include font-main();
+  color: var(--font-color-main);
+  border: none;
+  background-color: transparent;
 }

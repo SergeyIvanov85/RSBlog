@@ -57,8 +57,8 @@ export const Menu = () => {
                     <li className='menu-content__item'>
                         <p>{t('menu.change-theme')}:</p>
                         <div>
-                            <button className='theme-btn btn-theme-light' onClick={() => setThemeLight()}></button>
-                            <button className='theme-btn btn-theme-dark' onClick={() => setThemeDark()}></button>
+                            <button className='menu-icon btn-theme-light' onClick={() => setThemeLight()}></button>
+                            <button className='menu-icon btn-theme-dark' onClick={() => setThemeDark()}></button>
                         </div>
                     </li>
                     <li className='menu-content__item'>
@@ -72,13 +72,12 @@ export const Menu = () => {
                         </div>
                     </li>
                     <li className='menu-content__item'>
-                        <span className='statistics-icon'></span>
                         <NavLink to={'/statistics'}>
-                            <p>{t('menu.statistics')}</p>
+                            <p className='statistics-link'>{t('menu.statistics')}</p>
                         </NavLink>
                     </li>
                     <li className='menu-content__item'>
-                        <button onClick={logoutHandler} className='btn login-btn'><Link to={'/'}>{t('menu.logout-btn')}</Link></button>
+                        <button onClick={logoutHandler} className='logout-btn'><Link to={'/'}>{t('menu.logout-btn')}</Link></button>
                     </li>
                 </ul>
             </div>

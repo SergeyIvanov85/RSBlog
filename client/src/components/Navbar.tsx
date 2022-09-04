@@ -13,7 +13,7 @@ export const Navbar = () => {
     return <header className='header-wrapper'>
             <div className='section-wrapper header'>
                 <div className='logo'>        
-                    <p>RS BLOG</p>
+                    <p>R&nbsp; &nbsp;S<br/>BLOG</p>
                 </div>
                 <nav className='main-nav'>
                     { isAuth && (

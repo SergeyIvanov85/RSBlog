@@ -15,7 +15,7 @@ export const MainPage = () => {
         <main className='section-wrapper main'>
             <div className='main-description'>
                 <h1 className='title'>FREE RS BLOG</h1>
-                <p>{t('main.text')}</p>
+                <p>{t('main.text')}</p>               
                 <div className='auth-btns'>
                     {isAuth ? ('') : (
                         <Link to={'/login'}><button className='btn login-btn'>{t('main.login')}</button></Link>

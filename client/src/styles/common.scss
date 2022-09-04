@@ -1,46 +1,26 @@
 @import './variables';
-
-@font-face {
-  font-family: "Rubik", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  src: url("../assets/fonts/Rubik-Regular.ttf")
-}
-
-@font-face {
-  font-family: "Rubik", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  src: url("../assets/fonts/Rubik-Bold.ttf");
-}
-
-@font-face {
-  font-family: "Abril Fatface", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  src: url("../assets/fonts/AbrilFatface-Regular.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&family=Open+Sans:wght@600&display=swap');
 
 // === ОБЩИЕ ПЕРЕМЕННЫЕ
 $base-size: 5px;
 
 // === МИКСИНЫ ДЛЯ ШРИФТОВ === ДЛЯ ИСПОЛЬЗОВАНИЯ МИКСИНОВ - @include name() ===
 @mixin font-logo {
-  font-family: "Abril Fatface";
+  font-family: "Nunito Sans", sans-serif;
   font-style: normal;
-  font-weight: 600;
-  font-size: 3rem;
+  font-weight: 800;
+  font-size: 2.7rem;
 }
 
 @mixin font-navigation {
-  font-family: "Abril Fatface";
+  font-family: "Nunito Sans", sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 
 @mixin font-title {
-  font-family: "Rubik", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 1.5rem;
@@ -48,14 +28,14 @@ $base-size: 5px;
 }
 
 @mixin font-main {
-  font-family: "Rubik", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 1.2rem;
 }
 
 @mixin font-post {
-  font-family: "Rubik", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -75,6 +55,7 @@ a {
 
   &:hover {
     cursor: pointer;
+    color: var(--font-color-secondary);
   }
 }
 
@@ -104,6 +85,7 @@ h1, h2, h3 {
 }
 
 .section-wrapper {
+  position: relative;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -120,11 +102,12 @@ h1, h2, h3 {
   padding: $base-size * 2;
   border: 2px solid var(--border-color);
   border-radius: $base-size;
-  background-color: var(--bg-btn);
+  background-color: transparent;
+  color: var(--font-color-main);
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 5px var(--hover-color);
+    background-color: var(--bg-btn);
   }
 
   &:active {

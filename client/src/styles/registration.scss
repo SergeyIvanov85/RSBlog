@@ -11,7 +11,11 @@
 }
 .auth-form-title {
   @include font-title();
+  color: var(--font-color-secondary);
   text-align: center;
+}
+.text-input {
+  border: 1px solid var(--border-color);
 }
 .label {
   display: block;
