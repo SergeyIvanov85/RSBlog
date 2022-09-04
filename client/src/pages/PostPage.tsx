@@ -68,11 +68,11 @@ export const PostPage = () => {
   }, [params.id]);
 
   useEffect(() => {
-    fetchPost().then(r => {});
+    fetchPost();
   }, [fetchPost]);
 
   useEffect(() => {
-    fetchComments().then(r => {});
+    fetchComments();
   }, [fetchComments]);
 
   if (!post) {
@@ -85,7 +85,7 @@ export const PostPage = () => {
           <div
             className={post!.imgUrl ? "post__image" : ""}
             style={{
-              backgroundImage: `url(http://localhost:3002/${post.imgUrl})`,
+              backgroundImage: `url(${`http://localhost:3002/${post.imgUrl}`})`,
             }}
           ></div>
           <div className='post__caption'>
@@ -102,7 +102,7 @@ export const PostPage = () => {
             <p>{post.text}</p>
           </div>
           <div className='post__buttons'>
-            <button className='btn' onClick={event => event.preventDefault()}>
+            <button className='btn'>
               <Link to={"/feed"}>Назад</Link>
             </button>
             <div className='post__buttons_icons'>

@@ -16,7 +16,7 @@ export const PostsPage = () => {
   };
 
   useEffect(() => {
-    fetchMyPosts().then(r => {});
+    fetchMyPosts();
   }, []);
 
   if (!posts.length) {

@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import { IPost } from "../models";
 import { useTranslation } from 'react-i18next';
 interface IPostItemProps {
-  // key: number;
+  key: number;
   post: IPost;
 }
 
-export const PostItem: FC<IPostItemProps> = ({ post }) => {
+export const PostItem: FC<IPostItemProps> = ({ key, post }) => {
   const { t } = useTranslation();
   if (!post) {
     return <div className=''>{t('post-item.loading')}</div>;
@@ -51,7 +51,7 @@ export const PostItem: FC<IPostItemProps> = ({ post }) => {
               <AiOutlineMessage /> <span>{post.comments?.length || 0}</span>
             </button>
           </div>
-          <button className='button-icon' onClick={event => event.preventDefault()}>
+          <button className='button-icon'>
             <span>{post.likes}</span>
             <AiOutlineLike />
           </button>
