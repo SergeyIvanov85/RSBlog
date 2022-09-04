@@ -5,8 +5,8 @@ export interface ICommentPost {
 export interface IComment {
   comment: string;
   _id: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: number;
+  updatedAt: number;
   __v: number;
 }
 export interface IUserAuth {
@@ -35,8 +35,8 @@ export interface IPost {
   author: string;
   comments: Array<string>;
   topic: string;
-  createAt: string;
-  updateAt: string;
+  createdAt: number;
+  updatedAt: number;
   __v: number;
 }
 

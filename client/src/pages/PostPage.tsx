@@ -92,7 +92,7 @@ export const PostPage = () => {
             <p> {post.username} </p>
             <p>
               {" "}
-              <Moment date={post.createAt} format='D MMM YYYY' />{" "}
+              <Moment date={post.createdAt} format='D MMM YYYY' />{" "}
             </p>
           </div>
           <div className='post__title'>

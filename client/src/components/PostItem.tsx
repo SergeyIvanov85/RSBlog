@@ -1,3 +1,4 @@
+import React from 'react'
 import { FC } from "react";
 import {AiFillEye, AiOutlineLike, AiOutlineMessage} from "react-icons/ai";
 import Moment from "react-moment";
@@ -9,7 +10,7 @@ interface IPostItemProps {
   post: IPost;
 }
 
-export const PostItem: FC<IPostItemProps> = ({ key, post }) => {
+export const PostItem: FC<IPostItemProps> = ({ post }) => {
   const { t } = useTranslation();
   if (!post) {
     return <div className=''>{t('post-item.loading')}</div>;
@@ -34,7 +35,7 @@ export const PostItem: FC<IPostItemProps> = ({ key, post }) => {
           <div className='blog-info__caption'>
             <div className=''>{post.username}</div>
             <div className=''>
-              <Moment date={post.createAt} format='D MMM YYYY' />
+              <Moment date={post.createdAt} format='D MMM YYYY' />
             </div>
           </div>
           <div className='blog-info__title'>{post.title}</div>
