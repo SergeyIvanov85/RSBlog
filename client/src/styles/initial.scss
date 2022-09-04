@@ -26,6 +26,7 @@
     }
     & img {
         max-width: 14rem;
+        filter: var(--filter-SVG-input) var(--filter-SVG);
     }
 }
 .note {
@@ -62,6 +63,7 @@
     & img {
         width: 40px;
         height: 40px;
+        filter: var(--filter-SVG-input) var(--filter-SVG);
     }
 }
 .rs-logo {
@@ -70,7 +72,7 @@
     align-items: flex-end;
     font-weight: 800;
     color: var(--font-color-secondary);
-
+    
     & p {
         padding: $base-size;
         font-size: 1.5rem;
@@ -81,7 +83,8 @@
 
     & img {
         width: 115px;
-        height: 45px
+        height: 45px;
+        filter: var(--filter-SVG-input) var(--filter-SVG);
     }
 }
 
