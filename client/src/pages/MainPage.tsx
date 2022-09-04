@@ -15,20 +15,19 @@ export const MainPage = () => {
             <h1 className='title'>{t('main.welcome')}FREE RS BLOG</h1>
             <div className='main-description'> 
                     <div className="text">
-                        <h2>Платформа для творчества</h2>
-                        <p>Делись своими историями, идеями и размышлениями без ограничений по количеству символов.
-                        <br/>А также читай статьи других пользователей, выбирая интересующие темы по тегам.</p>
-                        <p className="note">* бесплатно и без sms &#128579;</p>
+                        <h2>{t('main.block-title1')}</h2>
+                        <p>{t('main.block-text1')}</p>
+                        <p className="note">* {t('main.note')} &#128579;</p>
                     </div>
                     <img src={hangoutsImg} alt=''/>
                     <img src={communityImg} alt=''/>
                     <div className="text">
-                        <h2>Большое и дружное комьюнити </h2>
-                        <p>Находи новых друзей и интересных для себя людей в RS Blog. Поддерживай авторов лайками &#128151; и обсуждай статьи в комментариях.</p>
+                        <h2>{t('main.block-title2')}</h2>
+                        <p>{t('main.block-text2')}</p>
                     </div>
                     <div className="text">
-                        <h2>Кастомизация и статистика &#128200;</h2>
-                        <p>Заходи в меню пользователя и отслеживай статистику профиля за разные периоды времени, а также меняй настройки языка и темы по своим предпочтениям.</p>
+                        <h2>{t('main.block-title3')} &#128200;</h2>
+                        <p>{t('main.block-text2')}</p>
                     </div>
                     <img src={settingsImg} alt=''/>
             </div>

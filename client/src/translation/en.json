@@ -30,7 +30,14 @@
     "text": "Share your thoughts and stories on the RS Blog, read articles on different topics and find interesting people and friends.",
     "register": "Register",
     "login": "Login",
-    "welcome": "Welcome to "
+    "welcome": "Welcome to ",
+    "block-title1": "A platform for creativity",
+    "block-title2": "A large and friendly community",
+    "block-title3": "Customization and statistics",
+    "block-text1": "Share your stories, ideas and thoughts without length limitations. Read other authors and filter interesting articles by topic tags.",
+    "block-text2": "Find new friends and interesting people in RS Blog. Support the authors with likes &#128151; and discuss articles in the comments.",
+    "block-text3": "Customize language and theme settings according to your preferences and analyze profile statistics for different time periods.",
+    "note": "for free but after registration"
   },
   "login-page": {
     "title": "Login",
