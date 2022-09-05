@@ -29,7 +29,7 @@ export interface IPost {
   comments: Array<string>;
   topic: string;
   createdAt: number;
-  updatedAt: string;
+  updatedAt: number;
   __v: number;
 }
 
