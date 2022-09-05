@@ -17,6 +17,7 @@
 }
 .team-members-grid {
     width: 90%;
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: $base-size * 3;
@@ -27,19 +28,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: $base-size * 2;
-    padding: $base-size * 2;
+    gap: $base-size * 4;
+    padding: $base-size * 4;
     background-color: var(--bg-block);
     border-radius: $base-size * 2;
 }
 .team-member__role {
-    & span {
+    & p {
+        @include font-main();
+        font-weight: 600;
+        text-align: center;
         display: block;
+        color: var(--font-color-main);
     }
 }
 .team-member__description {
     color: var(--font-main);
+    text-align: justify;
 }
 .team-member__avatar {
     display: flex;
@@ -50,4 +55,7 @@
     border-radius: 100%;
     border: 1px solid var(--border-color);
     }  
+}
+.team-member__git{
+    margin-top: auto;
 }

@@ -15,7 +15,6 @@ export const AboutPage = () => {
                 <h2>Цель проекта</h2>
                 <p>Привет! Наш блог - это пространство для творчества и общения. Тут вы можете делиться своими мыслями, путешествиями, новостями, историями, находить единомышленников и интересных людей.</p>
             </div>
-            
             <div className='about__team'>
                 <h2>Наша команда</h2>
                 <div className='team-members-grid'>
@@ -23,8 +22,11 @@ export const AboutPage = () => {
                         <div className='team-member__avatar sergey'>
                             <img src={sergeyAvatar} alt="Sergey" />
                         </div>
-                        <h3 className='team-member__role'><span>Сергей</span>Team lead<br/>Back-end Developer</h3>
-                        <p className='team-member__description'></p>
+                        <div className='team-member__role'>
+                            <h3>Сергей</h3>
+                            <p>Team lead, Back-end Developer</p>
+                        </div>
+                        <p className='team-member__description'>Придумал концепцию проекта, разработал серверную часть приложения с нуля и логику работы с api</p>
                         <div className='team-member__git'>
                             <a href='https://github.com/SergeyIvanov85' className='github-link'>
                                 <img src={ghIcon} alt='Github:'></img>
@@ -33,11 +35,14 @@ export const AboutPage = () => {
                         </div>
                     </div>
                     <div className='team-member'>
-                    <div className='team-member__avatar nina'>
-                    <img src={ninaAvatar} alt="Nina" />
-                    </div>
-                        <h3 className='team-member__role'><span>Нина</span>Front-End Developer</h3>
-                        <p className='team-member__description'></p>
+                        <div className='team-member__avatar nina'>
+                            <img src={ninaAvatar} alt="Nina" />
+                        </div>
+                        <div className='team-member__role'>
+                            <h3>Нина</h3>
+                            <p>Front-End Developer</p>
+                        </div>
+                        <p className='team-member__description'>Выполнила макет приложения и прописала стили в проекте, реализовала функционал пользовательского меню</p>       
                         <div className='team-member__git'>
                             <a href='https://github.com/Ponomareva-Nina' className='github-link'>
                                 <img src={ghIcon} alt='Github:'></img>
@@ -46,11 +51,14 @@ export const AboutPage = () => {
                         </div>
                     </div>
                     <div className='team-member'>
-                    <div className='team-member__avatar svetlana'>
-                        <img src={svetlanaAvatar} alt="Svetlana" />
-                    </div>
-                        <h3 className='team-member__role'><span>Cветлана</span>Front-End Developer</h3>
-                        <p className='team-member__description'></p>
+                        <div className='team-member__avatar svetlana'>
+                            <img src={svetlanaAvatar} alt="Svetlana" />
+                        </div>
+                        <div className='team-member__role'>
+                            <h3>Cветлана</h3>
+                            <p>Front-End Developer</p>
+                        </div>
+                        <p className='team-member__description'>Работала над реализацией ленты постов, реализовала функционал по сортировке и фильтрации</p>
                         <div className='team-member__git'>
                             <a href='https://github.com/Swettlana' className='github-link'>
                                 <img src={ghIcon} alt='Github:'></img>
