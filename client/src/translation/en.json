@@ -92,5 +92,16 @@
     "common-comments": "Number of comments on your articles",
     "common-likes": "Number of likes on your articles",
     "best-post": "Most popular article of the period:"
+  },
+  "about": {
+    "title-goal": "Project goals",
+    "goal": "Hi! Our blog is a space for creativity and communication. Here you can share your thoughts, stories, ideas and find like-minded and interesting people.",
+    "title-team": "Our team and contribution",
+    "sergey": "Sergey",
+    "nina": "Nina",
+    "svetlana": "Svetlana",
+    "sergey-contribution": "Came up with the concept of the project from scratch, developed the back-end part of the project and designed API policies and logic constructs.",
+    "nina-contribution": "Created design of the application, did major work on creating layouts of pages and css-styling of the project, implemented the functionality of the user menu.",
+    "svetlana-contribution": "Implemented the feed page and the functionality for sorting and filtering. Made a great contribution into migration to TypeScript."
   }
 }
