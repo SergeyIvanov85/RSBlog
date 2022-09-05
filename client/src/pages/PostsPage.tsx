@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import { PostItem } from "../components/PostItem";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export const PostsPage = () => {
+  const { t } = useTranslation();
   const [posts, setPosts] = useState([]);
 
   const fetchMyPosts = async () => {
@@ -24,10 +26,10 @@ export const PostsPage = () => {
       <div className='section-wrapper'>
         <div className='no-posts'>
           <p className='no-posts__title'>
-            Кажется, вы еще не добавили ни одной статьи &#129300;
+            {t('posts-page.no-posts')} &#129300;
           </p>
           <Link to={"/new"}>
-            <button className='btn'>Добавить</button>
+            <button className='btn'>{t('posts-page.add')}</button>
           </Link>
         </div>
       </div>
@@ -45,7 +47,7 @@ export const PostsPage = () => {
       </div>
       <div>
         <Link to={"/new"}>
-          <button className='btn'>Добавить</button>
+          <button className='btn'>{t('posts-page.add')}</button>
         </Link>
       </div>
     </div>

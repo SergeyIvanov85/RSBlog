@@ -3,12 +3,24 @@
     "change-theme": "Change theme",
     "change-lang": "Change language",
     "statistics": "Profile statistics",
-    "logout-btn": "Log out"
+    "logout-btn": "Logout"
+  },
+  "right-side-menu": {
+    "search": "SEARCH",
+    "search-placeholder": "Enter keyword...",
+    "sort": "SORT:",
+    "sort-by-date": "by newest",
+    "sort-by-popularity": "by popularity",
+    "topics": "TOPICS:",
+    "traveling": "Traveling",
+    "health": "Health", 
+    "education": "Education", 
+    "sport": "Sports"
   }, 
   "navbar": {
     "main": "Home",
     "feed": "Feed",
-    "users-posts": "My posts",
+    "users-posts": "My articles",
     "about": "About us"
   },
   "post-item": {
@@ -17,13 +29,79 @@
   "main": {
     "text": "Share your thoughts and stories on the RS Blog, read articles on different topics and find interesting people and friends.",
     "register": "Register",
-    "login": "Log in"
+    "login": "Login",
+    "welcome": "Welcome to ",
+    "block-title1": "A platform for creativity",
+    "block-title2": "A large and friendly community",
+    "block-title3": "Customization and statistics",
+    "block-text1": "Share your stories, ideas and thoughts without length limitations. Read other authors and filter interesting articles by topic tags.",
+    "block-text2": "Find new friends and interesting people in RS Blog. Support the authors with likes and discuss articles in the comments.",
+    "block-text3": "Customize language and theme settings according to your preferences and analyze profile statistics for different time periods.",
+    "note": "for free but after registration"
   },
   "login-page": {
-    "login": "Log in",
+    "title": "Login",
     "to-register": "Not registered yet?",
     "submit": "Submit",
     "username": "Username:",
     "password": "Password:"
+  },
+  "register-page": {
+    "title": "Registration",
+    "to-login": "Already registered?",
+    "submit": "Submit",
+    "username": "Username:",
+    "password": "Password:"
+  }, 
+  "add-post-page": {
+    "add-image": "Add image",
+    "title": "Post title:",
+    "title-placeholder": "Title",
+    "text-placeholder": "Enter your text here...",
+    "text": "Text:",
+    "topic": "Topic:",
+    "topic-placeholder": "Choose the topic:",
+    "traveling": "Traveling",
+    "health": "Health", 
+    "education": "Education", 
+    "sport": "Sports",
+    "other": "Other",
+    "add": "Submit", 
+    "cancel": "Cancel"
+  },
+  "posts-page": {
+    "no-posts": "Seems like you haven't created any articles yet",
+    "add": "Add"
+  },
+  "feed-page": {
+    "no-posts": "No articles yet."
+  },
+  "statistics": {
+    "title": "Profile statistics",
+    "close": "Close",
+    "views": "views",
+    "comments": "comments",
+    "likes": "likes",
+    "period": "Period:",
+    "week": "week",
+    "month": "month",
+    "year": "year",
+    "total": "Total:",
+    "common-posts": "Number of articles you have created",
+    "common-views": "Number of views on your articles",
+    "common-comments": "Number of comments on your articles",
+    "common-likes": "Number of likes on your articles",
+    "best-post": "Most popular article of the period:"
+  },
+  "about": {
+    "title-goal": "Project goals",
+    "goal": "Hi! Our blog is a space for creativity and communication. Here you can share your thoughts, stories, ideas and find like-minded and interesting people.",
+    "title-team": "Our team and contribution",
+    "sergey": "Sergey",
+    "nina": "Nina",
+    "svetlana": "Svetlana",
+    "sergey-contribution": "Came up with the concept of the project from scratch, developed the back-end part of the project and designed API policies and logic constructs.",
+    "nina-contribution": "Created design of the application, did major work on creating layouts of pages and css-styling of the project, implemented the functionality of the user menu.",
+    "svetlana-contribution": "Implemented the feed page and the functionality for sorting and filtering. Made a great contribution into migration to TypeScript."
   }
 }

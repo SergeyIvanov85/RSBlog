@@ -85,14 +85,13 @@ export const PostPage = () => {
           <div
             className={post!.imgUrl ? "post__image" : ""}
             style={{
-              backgroundImage: `url(http://localhost:3002/${post.imgUrl})`,
-            }}
+              backgroundImage: `url(http://localhost:3002/${post.imgUrl})`,}}
           ></div>
           <div className='post__caption'>
             <p> {post.username} </p>
             <p>
               {" "}
-              <Moment date={post.createAt} format='D MMM YYYY' />{" "}
+              <Moment date={post.createdAt} format='D MMM YYYY' />{" "}
             </p>
           </div>
           <div className='post__title'>
@@ -143,8 +142,7 @@ export const PostPage = () => {
           <form className='' onSubmit={(e) => e.preventDefault()}>
             <textarea
               className=''
-              rows={10}
-              cols={45}
+              rows={5}
               name='text'
               value={comment}
               onChange={(e) => setComment(e.target.value)}
@@ -154,7 +152,7 @@ export const PostPage = () => {
 
           <div className='comments__buttons'>
             <button
-              className='btn btn_small'
+              className='btn'
               type='submit'
               onClick={handlerSubmit}
             >

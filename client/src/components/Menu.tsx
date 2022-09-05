@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { logout } from '../redux/features/auth/authSlice'
-import { useAppDispatch } from '../redux/hooks'
+import { checkIsAuth, logout } from '../redux/features/auth/authSlice'
+import { useAppDispatch, useAppSelector } from '../redux/hooks'
 import {toast} from 'react-toastify';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +8,8 @@ import { useTranslation } from 'react-i18next';
 const iconImg = require('../assets/images/profile-menu.png');
 
 export const Menu = () => {
-    
+    const isAuth = useAppSelector(checkIsAuth);
+    const [auth, checkAuth] = useState(isAuth);
     const dispatch = useAppDispatch();
     
     // для выхода из учетки: 
@@ -16,6 +17,7 @@ export const Menu = () => {
         dispatch(logout())
         window.localStorage.removeItem('token')
         toast('Вы вышли из аккаунта')
+        checkAuth(auth);
     } 
 
     //=== для открытия/закрытия меню
@@ -57,8 +59,8 @@ export const Menu = () => {
                     <li className='menu-content__item'>
                         <p>{t('menu.change-theme')}:</p>
                         <div>
-                            <button className='theme-btn btn-theme-light' onClick={() => setThemeLight()}></button>
-                            <button className='theme-btn btn-theme-dark' onClick={() => setThemeDark()}></button>
+                            <button className='menu-icon btn-theme-light' onClick={() => setThemeLight()}></button>
+                            <button className='menu-icon btn-theme-dark' onClick={() => setThemeDark()}></button>
                         </div>
                     </li>
                     <li className='menu-content__item'>
@@ -72,13 +74,12 @@ export const Menu = () => {
                         </div>
                     </li>
                     <li className='menu-content__item'>
-                        <span className='statistics-icon'></span>
                         <NavLink to={'/statistics'}>
-                            <p>{t('menu.statistics')}</p>
+                            <p className='statistics-link'>{t('menu.statistics')}</p>
                         </NavLink>
                     </li>
                     <li className='menu-content__item'>
-                        <button onClick={logoutHandler} className='btn login-btn'><Link to={'/'}>{t('menu.logout-btn')}</Link></button>
+                        <button onClick={logoutHandler} className='logout-btn'><Link to={'/'}>{t('menu.logout-btn')}</Link></button>
                     </li>
                 </ul>
             </div>

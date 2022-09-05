@@ -1,37 +1,35 @@
 body {
-    --border-color: #212121; /* цвета бордеров кнопок/блоков */
-    --font-color-main: #212121; /* для основного текста, заголовков, навигации, логотипа, гит-ссылок */
-    --font-color-secondary: #51004E; /* заголовки статей, теги */
-    --font-color-auxiliary: rgba(33, 33, 33, 0.6); /* вспомогательные элементы (подсказки в инпутах, автор и дата поста)*/
+    --border-color: #106869; /* цвета бордеров кнопок/блоков */
+    --font-color-main: #2C3531; /* для основного текста, заголовков, навигации, логотипа, гит-ссылок */
+    --font-color-secondary: #106869; /* заголовки статей, теги */
+    --font-color-auxiliary: #574d45; /* вспомогательные элементы (подсказки в инпутах, автор и дата поста)*/
     --font-color-btn: #212121; /* цвет шрифта в кнопках*/
     --filter-SVG: brightness(1); /* цвет иконок просмотра, лайков и комментариев*/
     --filter-SVG-input: invert(0);
-    --hover-color: #51004E;
+    --hover-color: #137072;
 
-    --main-bg: no-repeat center url("../assets/images/bg-image.jpg");
+    --main-bg: linear-gradient(45deg, #d1c09f 0%,#dacbab 10%,#f8f3e0 50%,#fefdf9 100%);
     --bg-input: rgba(255, 255, 255, 0.5); /* для фона инпутов */
-    --input-border:#A05C6B;
-    --bg-btn: rgba(95, 43, 93, 0.5); /* для фона кнопок */
-    --bg-block: rgba(255, 255, 255, 0.5); /* для фона блоков */
-    --bg-menu: rgb(236, 236, 236);
-    --bg-comments: rgba(95, 43, 93, 0.5); /* для фона иконок комментирующих и фон поля ввода коммента */
+    --input-border:#474853;
+    --bg-btn: #91dbcb; /* для фона кнопок */
+    --bg-block: #faf6e9; /* для фона блоков */
+    --bg-comments: #fdfbf4; /* для фона иконок комментирующих и фон поля ввода коммента */
    }
 
 body.dark {
-    --border-color: #212121;
+    --border-color: #5e83ff;
     --font-color-main: #FFFFFF;
-    --font-color-secondary: #FFFFFF;
-    --font-color-auxiliary: #000000;
-    --font-color-btn: #000000;
+    --font-color-secondary: #7a99ff;
+    --font-color-auxiliary: #ffffff;
+    --font-color-btn: #0B172A;
     --filter-SVG: brightness(9);
     --filter-SVG-input: invert(1);
-    --hover-color: #51004E;
+    --hover-color: #ffffff;
 
-    --main-bg: linear-gradient(180deg, #232223 0%, #2B232D 30%, #342634 50%, #202D39 70%, rgba(0, 2, 10, 0.94) 100%);
+    --main-bg: #202020;
     --bg-input: rgba(255, 255, 255, 0.5);
     --input-border:#fff;
-    --bg-btn: rgba(95, 43, 93, 0.5);
-    --bg-block: rgba(122, 122, 122, 0.5);
-    --bg-menu: rgb(85, 85, 85);
-    --bg-comments: rgba(33, 33, 33, 0.5);
+    --bg-btn: #5e83ff;
+    --bg-block: rgb(41, 41, 46);
+    --bg-comments: rgb(46, 46, 51);
 }

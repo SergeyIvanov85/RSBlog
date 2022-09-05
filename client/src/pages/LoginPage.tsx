@@ -32,7 +32,7 @@ export const LoginPage = () => {
     
     return <form onSubmit={e => e.preventDefault()}className='section-wrapper form-container'>
         <div className='form-inner'>
-            <h1 className='auth-form-title'>{t('login-page.login')}</h1>
+            <h1 className='auth-form-title'>{t('login-page.title')}</h1>
             <label className='label'>{t('login-page.username')}
                 <input type='text'
                        value={username}

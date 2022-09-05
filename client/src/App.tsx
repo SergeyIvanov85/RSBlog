@@ -15,6 +15,7 @@ import { PostsPage } from "./pages/PostsPage";
 import { FeedPostsPage } from "./pages/FeedPostsPage";
 import { StatisticsPage } from "./pages/statistics/StatisticsPage"
 import { AboutPage} from "./pages/AboutPage";
+import {EditPostPage} from "./pages/EditPostPage";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -29,6 +30,7 @@ function App() {
         <Route path='login' element={<LoginPage />} />
         <Route path='/' element={<MainPage />} />
         <Route path=':id' element={<PostPage />} />
+        <Route path=':id/edit' element={<EditPostPage />} />
         <Route path='register' element={<RegisterPage />} />
         <Route path='new' element={<AddPostPage />} />
         <Route path='feed' element={<FeedPostsPage />} />

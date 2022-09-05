@@ -1,18 +1,17 @@
 import { FC } from "react";
-import {AiFillEye, AiOutlineLike, AiOutlineMessage} from "react-icons/ai";
+import { AiFillEye, AiOutlineLike, AiOutlineMessage } from "react-icons/ai";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import { IPost } from "../models";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 interface IPostItemProps {
-  // key: number;
   post: IPost;
 }
 
 export const PostItem: FC<IPostItemProps> = ({ post }) => {
   const { t } = useTranslation();
   if (!post) {
-    return <div className=''>{t('post-item.loading')}</div>;
+    return <div className=''>{t("post-item.loading")}</div>;
   }
 
   return (
@@ -31,30 +30,32 @@ export const PostItem: FC<IPostItemProps> = ({ post }) => {
                 : {}
             }
           ></div>
-          <div className='blog-info__caption'>
-            <div className=''>{post.username}</div>
-            <div className=''>
-              <Moment date={post.createAt} format='D MMM YYYY' />
-            </div>
-          </div>
-          <div className='blog-info__title'>{post.title}</div>
         </div>
+        <div className='blog-content'>
+          <div className='blog-content__caption'>
+              <div className=''>{post.username}</div>
+              <div className=''>
+                <Moment date={post.createdAt} format='D MMM YYYY' />
+              </div>
+          </div>
+          <div className='blog-content__title'>{post.title}</div>
 
-        <p className='blog__text'>{post.text}</p>
+          <p className='blog-content__text'>{post.text}</p>
 
-        <div className='blog__count'>
-          <div className='icon'>
-            <button className='button-icon'>
-              <AiFillEye /> <span>{post.views}</span>
-            </button>
-            <button className='button-icon'>
-              <AiOutlineMessage /> <span>{post.comments?.length || 0}</span>
+          <div className='blog-content__count'>
+            <div className='icon'>
+              <button className='button-icon'>
+                <AiFillEye /> <span>{post.views}</span>
+              </button>
+              <button className='button-icon'>
+                <AiOutlineMessage /> <span>{post.comments?.length || 0}</span>
+              </button>
+            </div>
+            <button className='button-icon' onClick={event => event.preventDefault()}>
+              <span>{post.likes}</span>
+              <AiOutlineLike />
             </button>
           </div>
-          <button className='button-icon' onClick={event => event.preventDefault()}>
-            <span>{post.likes}</span>
-            <AiOutlineLike />
-          </button>
         </div>
       </div>
     </Link>

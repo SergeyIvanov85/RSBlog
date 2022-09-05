@@ -1,27 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {checkIsAuth } from "../redux/features/auth/authSlice";
-import { useAppSelector } from "../redux/hooks";
 import { useTranslation } from 'react-i18next';
 
 const ghIcon = require('../assets/images/github-icon.png');
 const rsLogo = require('../assets/images/rs-logo.png');
+const communityImg = require('../assets/images/community.png');
+const hangoutsImg = require('../assets/images/hangouts.png');
+const settingsImg = require('../assets/images/settings.png');
 
 export const MainPage = () => {
     const { t } = useTranslation();
-    const isAuth = useAppSelector(checkIsAuth);
     
     return <div className='main-container'>
         <main className='section-wrapper main'>
-            <div className='main-description'>
-                <h1 className='title'>FREE RS BLOG</h1>
-                <p>{t('main.text')}</p>
-                <div className='auth-btns'>
-                    {isAuth ? ('') : (
-                        <Link to={'/login'}><button className='btn login-btn'>{t('main.login')}</button></Link>
-                        )}
-                    {isAuth ? ('') : (<Link to={'/register'}><button className='btn registration-btn'>{t('main.register')}</button></Link>)}
-                </div>
+            <h1 className='title'>{t('main.welcome')}FREE RS BLOG</h1>
+            <div className='main-description'> 
+                    <div className="text">
+                        <h2>{t('main.block-title1')}</h2>
+                        <p>{t('main.block-text1')}</p>
+                        <p className="note">* {t('main.note')} &#128579;</p>
+                    </div>
+                    <img src={hangoutsImg} alt=''/>
+                    <img src={communityImg} alt=''/>
+                    <div className="text">
+                        <h2>{t('main.block-title2')}</h2>
+                        <p>{t('main.block-text2')}</p>
+                    </div>
+                    <div className="text">
+                        <h2>{t('main.block-title3')} &#128200;</h2>
+                        <p>{t('main.block-text2')}</p>
+                    </div>
+                    <img src={settingsImg} alt=''/>
             </div>
         </main>
         <footer className='footer-wrapper'>

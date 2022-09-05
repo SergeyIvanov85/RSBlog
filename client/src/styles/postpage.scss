@@ -1,32 +1,20 @@
-@mixin close-btn {
-  display: block;
-  position: absolute;
-  width: 80%;
-  height: 2px;
-  background-color: var(--font-color-secondary);
-  content: "";
-  top: 50%;
-  left: 10%;
-}
-
-@mixin bg-border {
-  background-color: var(--bg-btn);
-  border: 1px solid var(--font-color-secondary);
-}
-
 .post-page__wrapper {
   width: 100%;
-  height: 85vh;
+  height: 83vh;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
+
 .post {
   &__wrapper {
     height: 100%;
     width: 60%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg-block);
-    border-radius: 25px;
+    border-radius: $base-size * 2;
     border: 1px solid var(--input-border);
     padding: 3px 5px;
   }
@@ -38,7 +26,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include font-post;
+    @include font-post();
     color: var(--font-color-auxiliary);
   }
 
@@ -59,7 +47,7 @@
   &__image {
     height: 30%;
     width: 100%;
-    border-radius: 25px;
+    border-radius: $base-size * 2;
     background-size: cover;
     background-position: center;
   }
@@ -77,66 +65,87 @@
       @include font-post();
     }
   }
+}
 
-  &__buttons {
-    box-sizing: border-box;
-    width: 100%;
+.post__buttons {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding: $base-size * 4;
+
+  &_icons {
+    height: 18px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
+    column-gap: 10px;
+    align-items: flex-end;
+  }
 
-    &_icons {
-      height: 18px;
-      display: flex;
-      column-gap: 10px;
-      align-items: flex-end;
-    }
+  .icon__change {
+    display: flex;
+    gap: $base-size;
 
-    .icon__change {
+    &_edit {
       height: 100%;
-      column-gap: 20px;
-      display: flex;
-
-      &_edit {
-        height: 100%;
-        width: 20px;
-        filter: var(--filter-SVG);
-        background-image: url("../assets/images/svg-edit.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        cursor: pointer;
-      }
-      &_delete {
-        height: 100%;
-        width: 20px;
-        filter: var(--filter-SVG);
-        background-image: url("../assets/images/svg-delete.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        cursor: pointer;
-      }
+      width: 20px;
+      filter: var(--filter-SVG);
+      background-image: url("../assets/images/svg-edit.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+    &_delete {
+      height: 100%;
+      width: 20px;
+      filter: var(--filter-SVG);
+      background-image: url("../assets/images/svg-delete.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
     }
   }
 }
+
 .icon {
-  button {
-    background-color: transparent;
-    align-self: end;
-    border: none;
-    font-size: 14px;
-    color: var(--font-color-auxiliary);
+  box-sizing: border-box;
+  display: flex;
+  color: var(--font-color-main);
+  font-size: 12px;
+
+  .icon__view,
+  .icon__comment,
+  .icon__like {
+    display: flex;
+    column-gap: 5px;
+
+    &_img {
+      width: 16px;
+      filter: var(--filter-SVG);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
   }
+}
+
+.button-icon {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: $base-size;
+  border: none;
+  @include font-post();
+  color: var(--font-color-main);
 }
 
 .comments {
   box-sizing: border-box;
-  height: 73%;
+  height: 100%;
   width: 38%;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-block);
-  border-radius: 25px;
+  border-radius: $base-size * 2;
   row-gap: 30px;
   border: 1px solid var(--input-border);
   padding: 15px 25px 25px 25px;
@@ -145,26 +154,25 @@
     align-self: flex-end;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    @include bg-border();
-    position: relative;
+    border-radius: 100%;
+    background: linear-gradient(45deg, transparent 45%, var(--border-color) 45%, var(--border-color) 51%, transparent 51%),
+    linear-gradient(-45deg, transparent 45%, var(--border-color) 45%, var(--border-color) 51%, transparent 51%);
+    scale: 0.9;
+    transition: all .3s ease;
 
-    &::after {
-      @include close-btn();
-      transform: rotate(45deg);
-    }
-    &::before {
-      @include close-btn();
-      transform: rotate(-45deg);
+    &:hover {
+      cursor: pointer;
+      scale: 1;
     }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
-    height: 40%;
+    row-gap: $base-size * 4;
+    flex-grow: 1;
     overflow-y: scroll;
+   padding: $base-size * 2 0;
 
     .comment-item {
       display: flex;
@@ -173,33 +181,37 @@
       align-items: center;
 
       &__user {
-        height: 100%;
-        width: 40px;
-        border-radius: 50%;
-        @include bg-border();
-        font-size: 15px;
-        text-align: center;
-      }
-
-      &__text {
-        font-weight: 400;
-        font-size: 13px;
+        @include font-post();
+        color: var(--font-color-secondary);
+        font-weight: 600;
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-comments);
       }
     }
   }
 
   textarea {
     resize: none;
-    height: 20%;
-    @include bg-border();
-    border-radius: 5px;
+    width: 100%;
+    border-radius: $base-size;
+    box-sizing: border-box;
+    @include font-main();
+    color: var(--font-color-main);
+    background-color: var(--bg-comments);
 
     &:focus::placeholder {
       color: transparent;
     }
 
     &::placeholder {
-      color: var(--font-color-btn);
+      @include font-main();
+      color: var(--font-color-auxiliary);
     }
   }
 
@@ -208,11 +220,5 @@
     justify-content: center;
     column-gap: 5%;
     height: 30px;
-
-    .btn_small {
-      width: 35%;
-      height: 100%;
-      padding: 0;
-    }
   }
 }

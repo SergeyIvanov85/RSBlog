@@ -13,93 +13,10 @@
   gap: $base-size * 3;
 }
 .user-posts {
-    height: 80vh;
+  height: 80vh;
 }
 .user-posts__inner {
-    height: 100%;
-    overflow-y: scroll;
-    margin: 0 auto;
-
-    .blog {
-        width: 100%;
-        height: 70%;
-        display: flex;
-        flex-direction: column;
-        border-radius: 10px;
-        row-gap: 10px;
-        box-sizing: border-box;
-        background-color: var(--bg-block);
-        margin-bottom: $base-size * 3;
-    
-        &__count {
-          @include font-post();
-          display: flex;
-          width: 100%;
-          justify-content: space-between;
-    
-          button {
-            @include font-post();
-            background-color: transparent;
-            border: none;
-            color: var(--font-color-main);
-          }
-        }
-    
-        &__text {
-          @include font-post();
-          width: 100%;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          color: var(--font-color-main);
-          box-sizing: border-box;
-          padding: 5px 10px;
-    
-          &_wrapper {
-            height: 15%;
-            overflow: hidden;
-          }
-        }
-    
-        &-info {
-          width: 100%;
-          height: 85%;
-    
-          &__image {
-            height: 80%;
-            width: 100%;
-            border-radius: 10px 10px 0 0;
-            background-size: cover;
-            background-position: center;
-          }
-    
-          &__caption {
-            @include font-post();
-            box-sizing: border-box;
-            padding: 10px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--font-color-auxiliary);
-          }
-    
-          &__title {
-            @include font-title();
-            display: flex;
-            box-sizing: border-box;
-            padding: 5px 10px;
-            color: var(--font-color-secondary);
-            justify-content: space-between;
-            font-size: 18px;
-    
-            &_category {
-              font-size: 10px;
-              color: var(--font-color-auxiliary);
-            }
-          }
-        }
-    }
+  height: 100%;
+  overflow-y: scroll;
+  margin: 0 auto;
 }

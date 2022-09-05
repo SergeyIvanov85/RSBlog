@@ -3,8 +3,10 @@ import {Link, useNavigate} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../redux/hooks";
 import {checkIsAuth, registerUser} from "../redux/features/auth/authSlice";
 import {toast} from "react-toastify";
+import { useTranslation } from 'react-i18next';
 
 export const RegisterPage = () => {
+    const { t } = useTranslation();
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const { status } = useAppSelector((state) => state.auth)
@@ -34,10 +36,10 @@ export const RegisterPage = () => {
     return <form onSubmit={e => e.preventDefault()}
                  className='section-wrapper form-container'>
         <div className='form-inner'>
-            <h1 className='auth-form-title'>Регистрация</h1>
+            <h1 className='auth-form-title'>{t('register-page.title')}</h1>
 
             <label className='label'>
-                Логин
+            {t('register-page.username')}
                 <input type='text'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
@@ -47,7 +49,7 @@ export const RegisterPage = () => {
             </label>
 
             <label className='label'>
-                Пароль
+            {t('login-page.password')}
                 <input type='password'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -56,8 +58,8 @@ export const RegisterPage = () => {
                     autoComplete="off"/>
             </label>
             <div className='confirm-btns'>
-                <button type='submit' onClick={handleSubmit} className='btn'>Подтвердить</button>
-                <Link to={'/login'} className='login-link'>Уже зарегистрированы?</Link>
+                <button type='submit' onClick={handleSubmit} className='btn'>{t('register-page.submit')}</button>
+                <Link to={'/login'} className='login-link'>{t('register-page.to-login')}</Link>
             </div>
         </div>
     </form>
