@@ -1,6 +1,6 @@
 .about {
     width: 100%;
-
+    margin-top: 2rem;
     & h2,
     h3 {
         @include font-title();
