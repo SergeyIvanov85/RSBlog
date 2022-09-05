@@ -103,5 +103,11 @@
     "sergey-contribution": "Came up with the concept of the project from scratch, developed the back-end part of the project and designed API policies and logic constructs.",
     "nina-contribution": "Created design of the application, did major work on creating layouts of pages and css-styling of the project, implemented the functionality of the user menu.",
     "svetlana-contribution": "Implemented the feed page and the functionality for sorting and filtering. Made a great contribution into migration to TypeScript."
+  },
+  "postpage": {
+    "loading": "loading...",
+    "send": "Send", 
+    "comment": "Leave comment", 
+    "back": "Back"
   }
 }
