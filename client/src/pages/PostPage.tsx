@@ -142,8 +142,7 @@ export const PostPage = () => {
           <form className='' onSubmit={(e) => e.preventDefault()}>
             <textarea
               className=''
-              rows={10}
-              cols={45}
+              rows={5}
               name='text'
               value={comment}
               onChange={(e) => setComment(e.target.value)}
@@ -153,7 +152,7 @@ export const PostPage = () => {
 
           <div className='comments__buttons'>
             <button
-              className='btn btn_small'
+              className='btn'
               type='submit'
               onClick={handlerSubmit}
             >
