@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/RSBlog/static/css/main.30f9d78e.css",
+    "main.js": "/RSBlog/static/js/main.06dc423f.js",
+    "static/media/nina-avatar.jpg": "/RSBlog/static/media/nina-avatar.e00b5c6c3d7746dc7328.jpg",
+    "static/media/sergey-avatar.jpg": "/RSBlog/static/media/sergey-avatar.e4fe73d114e8688d4bcf.jpg",
+    "static/media/community.png": "/RSBlog/static/media/community.70b05e3bdbd6cd980dad.png",
+    "static/media/sveta-avatar.png": "/RSBlog/static/media/sveta-avatar.79dcb5c33585743c522e.png",
+    "static/media/settings.png": "/RSBlog/static/media/settings.c65eb07f44dd5363c0d6.png",
+    "static/media/moon.png": "/RSBlog/static/media/moon.fbe3b0c23d3455a4a51e.png",
+    "static/media/descending-sort.svg": "/RSBlog/static/media/descending-sort.74b3ee8a9a9d4cc4977d.svg",
+    "static/media/svg-delete.svg": "/RSBlog/static/media/svg-delete.694c64caf3323de44bc5.svg",
+    "static/media/svg-edit.svg": "/RSBlog/static/media/svg-edit.9702455cc3268aeff131.svg",
+    "index.html": "/RSBlog/index.html",
+    "static/media/search.svg": "/RSBlog/static/media/search.35867ea3ee23494019cf.svg",
+    "static/media/filter.svg": "/RSBlog/static/media/filter.5edb47a28b4acfc28942.svg",
+    "main.30f9d78e.css.map": "/RSBlog/static/css/main.30f9d78e.css.map",
+    "main.06dc423f.js.map": "/RSBlog/static/js/main.06dc423f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30f9d78e.css",
+    "static/js/main.06dc423f.js"
+  ]
+}
