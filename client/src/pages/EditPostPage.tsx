@@ -45,6 +45,7 @@ export const EditPostPage = () => {
         setText('')
         setTitle('')
         setTopic('')
+        navigate('/posts')
     }
 
     useEffect(() => {
