@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import Moment from "react-moment";
 import axios from "../utils/axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 import { removePost } from "../redux/features/post/postSlice";
 import {
@@ -22,6 +23,7 @@ import { toast } from "react-toastify";
 import { CommentItem } from "../components/CommentItem";
 
 export const PostPage = () => {
+  const { t } = useTranslation();
   const [post, setPost] = useState<IPost | null>(null);
   const [comment, setComment] = useState("");
 
@@ -76,7 +78,7 @@ export const PostPage = () => {
   }, [fetchComments]);
 
   if (!post) {
-    return <div className=''>Загрузка...</div>;
+    return <div className=''>{t('postpage.loading')}</div>;
   }
   return (
     <div className='section-wrapper'>
@@ -102,7 +104,7 @@ export const PostPage = () => {
           </div>
           <div className='post__buttons'>
             <button className='btn' onClick={event => event.preventDefault()}>
-              <Link to={"/feed"}>Назад</Link>
+              <Link to={"/feed"}>{t('postpage.back')}</Link>
             </button>
             <div className='post__buttons_icons'>
               <div className='icon'>
@@ -146,7 +148,7 @@ export const PostPage = () => {
               name='text'
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              placeholder='Комментировать'
+              placeholder={t('postpage.comment')}
             ></textarea>
           </form>
 
@@ -156,7 +158,7 @@ export const PostPage = () => {
               type='submit'
               onClick={handlerSubmit}
             >
-              Отправить
+             {t('postpage.send')}
             </button>
           </div>
         </div>
