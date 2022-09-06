@@ -6,6 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const iconImg = require('../assets/images/profile-menu.png');
+const qr = require('../assets/images/qr.png')
 
 export const Menu = () => {
     const isAuth = useAppSelector(checkIsAuth);
@@ -81,7 +82,7 @@ export const Menu = () => {
                     <li>
                         <a className='qr' href="https://sergeyivanov85.github.io/RSBlog/">
                             <p>Поделиться приложением:</p>
-                            <img src="http://qrcoder.ru/code/?https%3A%2F%2Fsergeyivanov85.github.io%2FRSBlog%2F&6&0" alt="QR код" />
+                            <img src={qr} alt="QR код" />
                         </a>
                     </li>
                     <li className='menu-content__item'>
