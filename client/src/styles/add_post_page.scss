@@ -1,9 +1,9 @@
 .form-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 0 auto;
-    gap: $base-size * 3;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  gap: $base-size * 3;
 }
 .user-posts {
   display: flex;
@@ -24,7 +24,7 @@
 .add-title,
 .add-text,
 .add-topic {
-   width: 100%;
+  width: 100%;
 }
 .add-image__label {
     @include font-main();
@@ -70,7 +70,7 @@
   display: block;
   border: 1px solid var(--border-color);
   border-radius: $base-size;
-  background-color: var(--bg-input);
+  background-color: var(--bg-block);
   text-align: center;
   padding: $base-size;
   width: 100%;
@@ -119,6 +119,7 @@
 }
 .add-topic__select {
   color: var(--font-color-main);
+  background-color: var(--bg-block);
   
   & option {
     color: var(--font-color-main);
@@ -129,4 +130,14 @@
 }
 .add-topic__select option:disabled {
   color: var(--font-color-auxiliary);
+}
+.add-text textarea {
+  @include font-main();
+  color: var(--font-color-main);
+  background-color: var(--bg-block); 
+}
+.add-title input {
+  @include font-main();
+  color: var(--font-color-main);
+  background-color: var(--bg-block);
 }

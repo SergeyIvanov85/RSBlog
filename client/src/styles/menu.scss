@@ -175,3 +175,8 @@
   border: none;
   background-color: transparent;
 }
+.qr img {
+  margin-top: $base-size * 2;
+  width: 160px;
+  height: 160px;
+}

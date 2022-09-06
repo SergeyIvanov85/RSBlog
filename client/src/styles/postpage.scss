@@ -178,9 +178,11 @@
       display: flex;
       column-gap: 20px;
       height: 40px;
-      align-items: center;
+      align-items: flex-start;
 
       &__user {
+        flex-shrink: 0;
+        flex-grow: 0;
         @include font-post();
         color: var(--font-color-secondary);
         font-weight: 600;
