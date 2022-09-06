@@ -151,6 +151,7 @@
   padding: 15px 25px 25px 25px;
 
   &__button-close {
+    opacity: 0; /* СКРЫЛА ВРЕМЕННО КРЕСТИК, ПОКА НЕ РЕАЛИЗОВАН ПОПАП */
     align-self: flex-end;
     width: 30px;
     height: 30px;
@@ -167,6 +168,7 @@
   }
 
   &__list {
+    position: relative;
     display: flex;
     flex-direction: column;
     row-gap: $base-size * 4;
