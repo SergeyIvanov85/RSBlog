@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/RSBlog/static/css/main.30f9d78e.css",
-    "main.js": "/RSBlog/static/js/main.65c808a6.js",
+    "main.css": "/RSBlog/static/css/main.ce27fcb6.css",
+    "main.js": "/RSBlog/static/js/main.cc0d5e6c.js",
     "static/media/nina-avatar.jpg": "/RSBlog/static/media/nina-avatar.e00b5c6c3d7746dc7328.jpg",
     "static/media/sergey-avatar.jpg": "/RSBlog/static/media/sergey-avatar.e4fe73d114e8688d4bcf.jpg",
     "static/media/community.png": "/RSBlog/static/media/community.70b05e3bdbd6cd980dad.png",
@@ -14,11 +14,11 @@
     "index.html": "/RSBlog/index.html",
     "static/media/search.svg": "/RSBlog/static/media/search.35867ea3ee23494019cf.svg",
     "static/media/filter.svg": "/RSBlog/static/media/filter.5edb47a28b4acfc28942.svg",
-    "main.30f9d78e.css.map": "/RSBlog/static/css/main.30f9d78e.css.map",
-    "main.65c808a6.js.map": "/RSBlog/static/js/main.65c808a6.js.map"
+    "main.ce27fcb6.css.map": "/RSBlog/static/css/main.ce27fcb6.css.map",
+    "main.cc0d5e6c.js.map": "/RSBlog/static/js/main.cc0d5e6c.js.map"
   },
   "entrypoints": [
-    "static/css/main.30f9d78e.css",
-    "static/js/main.65c808a6.js"
+    "static/css/main.ce27fcb6.css",
+    "static/js/main.cc0d5e6c.js"
   ]
 }
