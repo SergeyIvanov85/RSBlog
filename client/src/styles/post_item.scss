@@ -1,98 +1,100 @@
 .blog {
-    width: 100%;
-    height: 65%;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    box-sizing: border-box;
-    background-color: var(--bg-block);
-    margin-bottom: $base-size * 3;
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: var(--bg-block);
+  margin-bottom: $base-size * 3;
 }
 .blog-info {
+  width: 100%;
+  height: 55%;
+  flex-shrink: 0;
+
+  &__image {
+    height: 100%;
     width: 100%;
-    height: 55%;
-    flex-shrink: 0;
+    border-radius: 10px 10px 0 0;
+    background-size: cover;
+    background-position: center;
+  }
 
-    &__image {
-        height: 100%;
-        width: 100%;
-        border-radius: 10px 10px 0 0;
-        background-size: cover;
-        background-position: center;
+  &__image_no-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    background-image: var(--bg-no-img);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::after {
+      content: "Изображение не было загружено";
+      font-size: 10px;
+      align-items: flex-end;
+      justify-content: flex-end;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      padding: 10px;
+      box-sizing: border-box;
     }
+  }
 
-    &__image_no-img {
-        height: 100%;
-        width: 100%;
-        border-radius: 10px 10px 0 0;
-        background: var(--bg-input);
-        position: relative;
-        
-        &::after {
-            content: "Изображение не было загружено";
-            font-size: 10px;
-            align-items: flex-end;
-            justify-content: flex-end;
-            height: 100%;
-            width: 100%;
-            display: flex;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-    } 
-
-    &_category {
-        font-size: 10px;
-        color: var(--font-color-auxiliary);
-    }
+  &_category {
+    font-size: 10px;
+    color: var(--font-color-auxiliary);
+  }
 }
-.blog-content{
-    height: 45%;
-    padding: $base-size * 2;
-    display: flex;
-    flex-direction: column;
-    row-gap: $base-size;
-    box-sizing: border-box;
+.blog-content {
+  height: 45%;
+  padding: $base-size * 2;
+  display: flex;
+  flex-direction: column;
+  row-gap: $base-size;
+  box-sizing: border-box;
 }
 .blog-content__caption {
-    @include font-post();
-    box-sizing: border-box;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--font-color-auxiliary);
+  @include font-post();
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--font-color-auxiliary);
 }
 .blog-content__title {
-    @include font-title();
-    font-size: 1.2rem;
-    display: flex;
-    box-sizing: border-box;
-    color: var(--font-color-secondary);
-    justify-content: space-between;
+  @include font-title();
+  font-size: 1.2rem;
+  display: flex;
+  box-sizing: border-box;
+  color: var(--font-color-secondary);
+  justify-content: space-between;
 }
 .blog-content__text {
-    @include font-post();
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    color: var(--font-color-main);
-    box-sizing: border-box;
+  @include font-post();
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: var(--font-color-main);
+  box-sizing: border-box;
 }
 .blog-content__count {
-    @include font-post();
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    margin-top: auto;
+  @include font-post();
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: auto;
 
-    .button-icon {
-       @include font-post();
-       background-color: transparent;
-       border: none;
-       color: var(--font-color-main);
-    }
+  .button-icon {
+    @include font-post();
+    background-color: transparent;
+    border: none;
+    color: var(--font-color-main);
+  }
 }

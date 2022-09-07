@@ -80,11 +80,26 @@
     display: flex;
     column-gap: 10px;
     align-items: flex-end;
+
+    .button-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .button-icon:hover > svg {
+      fill: var(--hover-color);
+    }
+    .button-icon:hover > span {
+      color: var(--hover-color);
+    }
   }
 
   .icon__change {
     display: flex;
     gap: $base-size;
+
+    button {
+      cursor: pointer;
+    }
 
     &_edit {
       height: 100%;
@@ -156,10 +171,22 @@
     width: 30px;
     height: 30px;
     border-radius: 100%;
-    background: linear-gradient(45deg, transparent 45%, var(--border-color) 45%, var(--border-color) 51%, transparent 51%),
-    linear-gradient(-45deg, transparent 45%, var(--border-color) 45%, var(--border-color) 51%, transparent 51%);
+    background: linear-gradient(
+        45deg,
+        transparent 45%,
+        var(--border-color) 45%,
+        var(--border-color) 51%,
+        transparent 51%
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 45%,
+        var(--border-color) 45%,
+        var(--border-color) 51%,
+        transparent 51%
+      );
     scale: 0.9;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 
     &:hover {
       cursor: pointer;
@@ -174,12 +201,11 @@
     row-gap: $base-size * 4;
     flex-grow: 1;
     overflow-y: scroll;
-   padding: $base-size * 2 0;
+    padding: $base-size * 2 0;
 
     .comment-item {
       display: flex;
       column-gap: 20px;
-      height: 40px;
       align-items: flex-start;
 
       &__user {
@@ -225,4 +251,8 @@
     column-gap: 5%;
     height: 30px;
   }
+}
+.no-active {
+  cursor: default;
+  pointer-events: none;
 }
