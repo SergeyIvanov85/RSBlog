@@ -33,10 +33,10 @@ export const PostItem: FC<IPostItemProps> = ({ post }) => {
         </div>
         <div className='blog-content'>
           <div className='blog-content__caption'>
-              <div className=''>{post.username}</div>
-              <div className=''>
-                <Moment date={post.createdAt} format='D MMM YYYY' />
-              </div>
+            <div className=''>{post.username}</div>
+            <div className=''>
+              <Moment date={post.createdAt} format='D MMM YYYY' />
+            </div>
           </div>
           <div className='blog-content__title'>{post.title}</div>
 
@@ -51,7 +51,10 @@ export const PostItem: FC<IPostItemProps> = ({ post }) => {
                 <AiOutlineMessage /> <span>{post.comments?.length || 0}</span>
               </button>
             </div>
-            <button className='button-icon' onClick={event => event.preventDefault()}>
+            <button
+              className='button-icon'
+              onClick={(event) => event.preventDefault()}
+            >
               <span>{post.likes}</span>
               <AiOutlineLike />
             </button>
