@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import Moment from "react-moment";
 import axios from "../utils/axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 import { removePost } from "../redux/features/post/postSlice";
 import {
@@ -31,7 +31,6 @@ export const PostPage = () => {
   const { comments } = useAppSelector((state) => state.comment);
   const navigate = useNavigate();
   const params = useParams();
-
 
   const dispatch = useAppDispatch();
 
@@ -70,15 +69,15 @@ export const PostPage = () => {
   }, [params.id]);
 
   useEffect(() => {
-    fetchPost().then(r => {});
+    fetchPost().then((r) => {});
   }, [fetchPost]);
 
   useEffect(() => {
-    fetchComments().then(r => {});
+    fetchComments().then((r) => {});
   }, [fetchComments]);
 
   if (!post) {
-    return <div className=''>{t('postpage.loading')}</div>;
+    return <div className=''>{t("postpage.loading")}</div>;
   }
   return (
     <div className='section-wrapper'>
@@ -87,7 +86,8 @@ export const PostPage = () => {
           <div
             className={post!.imgUrl ? "post__image" : ""}
             style={{
-              backgroundImage: `url(http://localhost:3002/${post.imgUrl})`,}}
+              backgroundImage: `url(http://localhost:3002/${post.imgUrl})`,
+            }}
           ></div>
           <div className='post__caption'>
             <p> {post.username} </p>
@@ -103,15 +103,15 @@ export const PostPage = () => {
             <p>{post.text}</p>
           </div>
           <div className='post__buttons'>
-            <button className='btn' onClick={event => event.preventDefault()}>
-              <Link to={"/feed"}>{t('postpage.back')}</Link>
+            <button className='btn' onClick={(event) => event.preventDefault()}>
+              <Link to={"/feed"}>{t("postpage.back")}</Link>
             </button>
             <div className='post__buttons_icons'>
               <div className='icon'>
-                <button className='button-icon'>
+                <button className='button-icon no-active'>
                   <AiFillEye /> <span>{post.views}</span>
                 </button>
-                <button className='button-icon'>
+                <button className='button-icon no-active'>
                   <AiOutlineMessage /> <span>{post.comments?.length || 0}</span>
                 </button>
                 <button className='button-icon'>
@@ -148,17 +148,13 @@ export const PostPage = () => {
               name='text'
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              placeholder={t('postpage.comment')}
+              placeholder={t("postpage.comment")}
             ></textarea>
           </form>
 
           <div className='comments__buttons'>
-            <button
-              className='btn'
-              type='submit'
-              onClick={handlerSubmit}
-            >
-             {t('postpage.send')}
+            <button className='btn' type='submit' onClick={handlerSubmit}>
+              {t("postpage.send")}
             </button>
           </div>
         </div>

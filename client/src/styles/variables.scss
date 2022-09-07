@@ -14,6 +14,7 @@ body {
     --bg-btn: #91dbcb; /* для фона кнопок */
     --bg-block: #faf6e9; /* для фона блоков */
     --bg-comments: #fdfbf4; /* для фона иконок комментирующих и фон поля ввода коммента */
+    --bg-no-img:url(../assets/images/light-noimg.jpg);
    }
 
 body.dark {
@@ -32,4 +33,5 @@ body.dark {
     --bg-btn: #5e83ff;
     --bg-block: rgb(41, 41, 46);
     --bg-comments: rgb(46, 46, 51);
+    --bg-no-img:url(../assets/images/dark-noimg.jpg);
 }

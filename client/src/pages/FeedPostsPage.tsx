@@ -3,7 +3,7 @@ import { PostItem } from "../components/PostItem";
 import { IPost } from "../models";
 import { getAllPosts } from "../redux/features/post/postSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 enum SortDirections {
   ascending = "ascending",
@@ -39,8 +39,8 @@ export const FeedPostsPage = () => {
       .sort((a: IPost, b: IPost) => {
         if (sortValue === "data") {
           return sortDirection === SortDirections.descending
-            ? +b.createdAt - +a.createdAt
-            : +a.createdAt - +b.createdAt;
+            ? new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+            : new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
         }
         if (sortValue === "views") {
           return sortDirection === SortDirections.descending
@@ -60,7 +60,7 @@ export const FeedPostsPage = () => {
   }, [searchField, sortValue, sortDirection, filterValue, dispatch, posts]);
 
   if (!posts.length) {
-    return <div className=''>{t('feed-page.no-posts')}</div>;
+    return <div className=''>{t("feed-page.no-posts")}</div>;
   }
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -68,8 +68,8 @@ export const FeedPostsPage = () => {
   };
 
   const handleSort = (value: string, e: any) => {
+    console.log(e.target.className);
     setSortValue(value);
-    console.log(e.currentTarget);
     setSortDirection((prev) => {
       return prev === SortDirections.ascending
         ? SortDirections.descending
@@ -88,7 +88,7 @@ export const FeedPostsPage = () => {
         <div className='options'>
           <div className='options__search'>
             <label htmlFor='' className='options__title'>
-            {t('right-side-menu.search')}
+              {t("right-side-menu.search")}
             </label>
             <div className='options__search_input'>
               <input
@@ -96,7 +96,7 @@ export const FeedPostsPage = () => {
                 id=''
                 name=''
                 className=''
-                placeholder={t('right-side-menu.search-placeholder')}
+                placeholder={t("right-side-menu.search-placeholder")}
                 onChange={handleChange}
               />
               <button>
@@ -106,9 +106,20 @@ export const FeedPostsPage = () => {
           </div>
 
           <div className='sort'>
-            <p className='options__title'>{t('right-side-menu.sort')}</p>
-            <div className='sort__item'>
-              <p className=''>{t('right-side-menu.sort-by-date')}</p>
+            <p className='options__title'>{t("right-side-menu.sort")}</p>
+            <div
+              className='sort__item'
+              onClick={(e) => {
+                handleSort("data", e);
+              }}
+            >
+              <p
+                className={
+                  sortValue === "data" ? "sort-text_active" : "sort-text"
+                }
+              >
+                {t("right-side-menu.sort-by-date")}
+              </p>
               <button
                 className={
                   sortValue === "data"
@@ -117,13 +128,21 @@ export const FeedPostsPage = () => {
                       : "btn-sort_active"
                     : "btn-sort"
                 }
-                onClick={(e) => {
-                  handleSort("data", e);
-                }}
               ></button>
             </div>
-            <div className='sort__item'>
-              <p className=''>{t('right-side-menu.sort-by-popularity')}</p>
+            <div
+              className='sort__item'
+              onClick={(e) => {
+                handleSort("views", e);
+              }}
+            >
+              <p
+                className={
+                  sortValue === "data" ? "sort-text_active" : "sort-text"
+                }
+              >
+                {t("right-side-menu.sort-by-popularity")}
+              </p>
               <button
                 className={
                   sortValue === "views"
@@ -132,55 +151,73 @@ export const FeedPostsPage = () => {
                       : "btn-sort_active"
                     : "btn-sort"
                 }
-                onClick={(e) => {
-                  handleSort("views", e);
-                }}
               ></button>
             </div>
           </div>
 
           <div className='theme'>
-            <p className='options__title'>{t('right-side-menu.topics')}</p>
+            <p className='options__title'>{t("right-side-menu.topics")}</p>
             <div className='theme__item'>
-              <button
-                className={"btn-filter"}
-                onClick={(e) => {
+              <div
+                data-active='false'
+                className={
+                  filterValue === "travel"
+                    ? "btn-filter"
+                    : "btn-filter btn-filter_active"
+                }
+                onClick={() => {
                   setFilterValue("travel");
                 }}
-              ></button>
-              <div className=''>{t('right-side-menu.traveling')}</div>
+              >
+                {t("right-side-menu.traveling")}
+              </div>
             </div>
             <div className='theme__item'>
-              <button
-                className={"btn-filter"}
-                onClick={(e) => {
+              <div
+                className={
+                  filterValue === "education"
+                    ? "btn-filter"
+                    : "btn-filter btn-filter_active"
+                }
+                onClick={() => {
                   setFilterValue("education");
                 }}
-              ></button>
-              <div className=''>{t('right-side-menu.education')}</div>
+              >
+                {t("right-side-menu.education")}
+              </div>
             </div>
             <div className='theme__item'>
-              <button
-                className={"btn-filter"}
-                onClick={(e) => {
+              <div
+                className={
+                  filterValue === "sport"
+                    ? "btn-filter"
+                    : "btn-filter btn-filter_active"
+                }
+                onClick={() => {
                   setFilterValue("sport");
                 }}
-              ></button>
-              <div className=''>{t('right-side-menu.sport')}</div>
+              >
+                {t("right-side-menu.sport")}
+              </div>
             </div>
             <div className='theme__item'>
-              <button
-                className={"btn-filter"}
-                onClick={(e) => {
+              <div
+                className={
+                  filterValue === "health"
+                    ? "btn-filter"
+                    : "btn-filter btn-filter_active"
+                }
+                onClick={() => {
                   setFilterValue("health");
                 }}
-              ></button>
-              <div className=''>{t('right-side-menu.health')}</div>
+              >
+                {t("right-side-menu.health")}
+              </div>
             </div>
           </div>
           <button
             className='btn'
-            onClick={(e) => {
+            onClick={() => {
               setFilterValue("");
             }}
           >

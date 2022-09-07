@@ -118,43 +118,33 @@
       }
     }
 
-    .btn-filter {
-      background-color: transparent;
-      background-image: url("../../src/assets/images/filter.svg");
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      filter: var(--filter-SVG-input);
-      cursor: pointer;
-      border: none;
-      width: 1.5rem;
-      height: 1.1rem;
-      border-radius: 5px;
-
-      &_active {
-        background-image: url("../../src/assets/images/filter.svg");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        filter: var(--filter-SVG-input);
-        cursor: pointer;
-        border: none;
-        width: 1.5rem;
-        height: 1.1rem;
-        border-radius: 5px;
-        background-color: var(--bg-input);
-      }
-
-      &:hover {
-        background-color: var(--bg-input);
-      }
-    }
-
     &__item {
       display: flex;
       width: 100%;
       justify-content: space-between;
       color: var(--font-color-main);
+      cursor: pointer;
+
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        width: 0%;
+        box-sizing: border-box;
+        right: 0;
+        height: 100%;
+        background-color: rgba(184, 187, 187, 0.43);
+        transition: 0.5s;
+      }
+
+      &_active {
+        background-color: rgba(184, 187, 187, 0.43);
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
     }
   }
   .theme {
@@ -176,33 +166,30 @@
   cursor: pointer;
 }
 .btn-filter {
-  background-color: transparent;
-  background-image: url("../../src/assets/images/filter.svg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: var(--filter-SVG-input);
   cursor: pointer;
-  border: none;
-  width: 1.5rem;
-  height: 1.1rem;
-  border-radius: 5px;
+  padding: 2px;
+  width: 9rem;
+  box-sizing: border-box;
+  position: relative;
+  background-color: rgba(184, 187, 187, 0.43);
 
-  &_active {
-    background-image: url("../../src/assets/images/filter.svg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: var(--filter-SVG-input);
-    cursor: pointer;
-    border: none;
-    width: 1.5rem;
-    height: 1.1rem;
-    border-radius: 5px;
-    background-color: var(--bg-input);
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 0%;
+    box-sizing: border-box;
+    right: 0;
+    height: 100%;
+    background-color: rgba(184, 187, 187, 0.43);
+    transition: 0.5s;
   }
 
-  &:hover {
-    background-color: var(--bg-input);
+  &_active {
+    background-color: transparent;
+  }
+
+  &:hover::after {
+    width: 100%;
   }
 }
