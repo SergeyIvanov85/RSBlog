@@ -80,6 +80,7 @@
     display: flex;
     column-gap: 10px;
     align-items: flex-end;
+    transition: all .3s ease;
 
     .button-icon:hover {
       transform: scale(1.1);
@@ -255,4 +256,16 @@
 .no-active {
   cursor: default;
   pointer-events: none;
+}
+.post__image.no-img {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "Изображение не было загружено";
+    @include font-post();
+    color: var(--font-color-main);
+    right: 10px;
+    bottom: 10px;
+  }
 }
