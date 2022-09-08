@@ -1,0 +1,22 @@
+.no-posts {
+  @include font-title();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $base-size * 5; 
+}
+.no-posts__title {
+  flex-grow: 3;
+}
+.posts-page-wrapper {
+  display: flex;
+  gap: $base-size * 3;
+}
+.user-posts {
+  height: 80vh;
+}
+.user-posts__inner {
+  height: 100%;
+  overflow-y: scroll;
+  margin: 0 auto;
+}

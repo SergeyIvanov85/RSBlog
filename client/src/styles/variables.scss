@@ -1,0 +1,37 @@
+body {
+    --border-color: #106869; /* цвета бордеров кнопок/блоков */
+    --font-color-main: #2C3531; /* для основного текста, заголовков, навигации, логотипа, гит-ссылок */
+    --font-color-secondary: #106869; /* заголовки статей, теги */
+    --font-color-auxiliary: #574d45; /* вспомогательные элементы (подсказки в инпутах, автор и дата поста)*/
+    --font-color-btn: #212121; /* цвет шрифта в кнопках*/
+    --filter-SVG: brightness(1); /* цвет иконок просмотра, лайков и комментариев*/
+    --filter-SVG-input: invert(0);
+    --hover-color: #137072;
+
+    --main-bg: linear-gradient(45deg, #d1c09f 0%,#dacbab 10%,#f8f3e0 50%,#fefdf9 100%);
+    --bg-input: rgba(255, 255, 255, 0.5); /* для фона инпутов */
+    --input-border:#474853;
+    --bg-btn: #91dbcb; /* для фона кнопок */
+    --bg-block: #faf6e9; /* для фона блоков */
+    --bg-comments: #fdfbf4; /* для фона иконок комментирующих и фон поля ввода коммента */
+    --bg-no-img:url(../assets/images/light-noimg.jpg);
+   }
+
+body.dark {
+    --border-color: #5e83ff;
+    --font-color-main: #FFFFFF;
+    --font-color-secondary: #7a99ff;
+    --font-color-auxiliary: #ffffff;
+    --font-color-btn: #0B172A;
+    --filter-SVG: brightness(9);
+    --filter-SVG-input: invert(1);
+    --hover-color: #ffffff;
+
+    --main-bg: #202020;
+    --bg-input: rgba(255, 255, 255, 0.5);
+    --input-border:#fff;
+    --bg-btn: #5e83ff;
+    --bg-block: rgb(41, 41, 46);
+    --bg-comments: rgb(46, 46, 51);
+    --bg-no-img:url(../assets/images/dark-noimg.jpg);
+}

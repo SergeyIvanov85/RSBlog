@@ -1,0 +1,91 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    width: 75%;
+    overflow: scroll;
+    height: calc(100vh - 11rem);
+}
+.title {
+    @include font-logo();
+    color: var(--font-color-secondary);
+    margin: 2rem 0;
+}
+.main-description {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    & h2 {
+        margin-bottom: 1.4rem;
+    }
+    & img {
+        max-width: 14rem;
+        filter: var(--filter-SVG-input) var(--filter-SVG);
+    }
+}
+.note {
+    color: var(--font-color-auxiliary);
+    font-size: smaller;
+    margin-top: 2rem;
+}
+.footer-wrapper {
+    min-height: 5rem;
+    box-sizing: border-box;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: $base-size * 4 0;
+}
+.footer-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.members {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-size: 1.1rem;
+}
+.github-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & img {
+        width: 40px;
+        height: 40px;
+        filter: var(--filter-SVG-input) var(--filter-SVG);
+    }
+}
+.rs-logo {
+    display: flex;
+    gap: $base-size;
+    align-items: flex-end;
+    font-weight: 800;
+    color: var(--font-color-secondary);
+    
+    & p {
+        padding: $base-size;
+        font-size: 1.5rem;
+        line-height: 1.4rem;
+        font-weight: 800;
+        letter-spacing: -2px;
+    }
+
+    & img {
+        width: 115px;
+        height: 45px;
+        filter: var(--filter-SVG-input) var(--filter-SVG);
+    }
+}
+
+// ====  классы для переключения слайдера ====

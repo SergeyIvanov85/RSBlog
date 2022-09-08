@@ -1,0 +1,35 @@
+.form-container {
+  display: flex;
+  height: calc(100vh - 20rem);
+  align-items: center;
+  justify-content: center;
+}
+.form-inner {
+  display: flex;
+  flex-direction: column;
+  gap: $base-size * 5;
+}
+.auth-form-title {
+  @include font-title();
+  color: var(--font-color-secondary);
+  text-align: center;
+}
+.text-input {
+  border: 1px solid var(--border-color);
+}
+.label {
+  display: block;
+  text-align: left;
+}
+.confirm-btns {
+  display: flex;
+  gap: $base-size * 3;
+  align-items: center;
+}
+.login-link {
+  color: var(--font-color-auxiliary);
+
+  &:hover {
+    color: var(--font-color-secondary);
+  }
+}

@@ -1,0 +1,132 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&family=Open+Sans:wght@600&display=swap');
+
+// === ОБЩИЕ ПЕРЕМЕННЫЕ
+$base-size: 5px;
+
+// === МИКСИНЫ ДЛЯ ШРИФТОВ === ДЛЯ ИСПОЛЬЗОВАНИЯ МИКСИНОВ - @include name() ===
+@mixin font-logo {
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 2.7rem;
+}
+
+@mixin font-navigation {
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+@mixin font-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--font-color-main);
+}
+
+@mixin font-main {
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+@mixin font-post {
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+// === ОБНУЛЕНИЕ СТИЛЕЙ ===
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--font-color-main);
+
+  &:hover {
+    cursor: pointer;
+    color: var(--font-color-secondary);
+  }
+}
+
+h1,h2,h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+// === БАЗОВЫЕ СТИЛИ ===
+
+body {
+  @include font-main();
+  color: var(--font-color-main);
+  background: var(--main-bg);
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1, h2, h3 {
+  @include font-title();
+}
+
+.section-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  padding: 0 1rem;
+}
+.btn {
+  min-width: 9rem;
+  height: 2.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include font-main();
+  padding: $base-size * 2;
+  border: 2px solid var(--border-color);
+  border-radius: $base-size;
+  background-color: transparent;
+  color: var(--font-color-main);
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--bg-btn);
+  }
+
+  &:active {
+    cursor: pointer;
+    box-shadow: none;
+  }
+}
+.text-input {
+  @include font-main();
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: $base-size;
+  background-color: var(--bg-input);
+  margin-top: $base-size;
+  padding: $base-size;
+
+  &:focus {
+    outline: none;
+  }
+}
