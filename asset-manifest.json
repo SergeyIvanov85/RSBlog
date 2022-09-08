@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/RSBlog/static/css/main.b4921e0b.css",
-    "main.js": "/RSBlog/static/js/main.28843fee.js",
+    "main.js": "/RSBlog/static/js/main.1215c0fe.js",
     "static/media/nina-avatar.jpg": "/RSBlog/static/media/nina-avatar.e00b5c6c3d7746dc7328.jpg",
     "static/media/light-noimg.jpg": "/RSBlog/static/media/light-noimg.07800b0ef69458e867f3.jpg",
     "static/media/dark-noimg.jpg": "/RSBlog/static/media/dark-noimg.f544547111989d11964d.jpg",
@@ -16,10 +16,10 @@
     "index.html": "/RSBlog/index.html",
     "static/media/search.svg": "/RSBlog/static/media/search.35867ea3ee23494019cf.svg",
     "main.b4921e0b.css.map": "/RSBlog/static/css/main.b4921e0b.css.map",
-    "main.28843fee.js.map": "/RSBlog/static/js/main.28843fee.js.map"
+    "main.1215c0fe.js.map": "/RSBlog/static/js/main.1215c0fe.js.map"
   },
   "entrypoints": [
     "static/css/main.b4921e0b.css",
-    "static/js/main.28843fee.js"
+    "static/js/main.1215c0fe.js"
   ]
 }
