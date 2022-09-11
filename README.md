@@ -62,3 +62,10 @@ https://github.com/SergeyIvanov85/RSBlog/pull/1
 
 ## Схема приложения
 ![Scheme-blog2](https://user-images.githubusercontent.com/91127690/189524104-0df83c92-0c3f-44af-9db5-d6d99d4cd917.jpg)
+
+
+## Разработчики
+
+- [Сергей Иванов](https://github.com/SergeyIvanov85)
+- [Нина Пономарева](https://github.com/Ponomareva-Nina)
+- [Светлана](https://github.com/Swettlana)
